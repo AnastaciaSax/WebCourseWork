@@ -266,18 +266,30 @@ nav a {
     font-size: 24px;
     letter-spacing: 0.24px;
 }
+
 .map-container {
     flex: 1;
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;     
-  }
-#map {
+    align-items: center;
+}
 
+#map {
     width: 653px;
     height: 700px;
     border-radius: 0px 326.5px 0px 123px;
     background: #C4C4C4;
     flex-shrink: 0;
+    overflow: hidden;
+}
+
+/* Testimonial */
+
+.testimonial{
+    margin: 200px auto;
+    width: 62.5%;
+height: 12%;
+border-radius: 70px;
+background-color: #F4F0EC;;
 }
