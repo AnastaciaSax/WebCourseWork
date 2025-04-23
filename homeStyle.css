@@ -286,10 +286,81 @@ nav a {
 
 /* Testimonial */
 
-.testimonial{
+.testimonial {
+    display: flex;
     margin: 200px auto;
     width: 62.5%;
-height: 12%;
-border-radius: 70px;
-background-color: #F4F0EC;;
+    height: 12%;
+    border-radius: 70px;
+    background-color: #F4F0EC;
+    justify-content: center;
+    align-items: center;
+}
+
+.testimonial-content {
+    display: flex;
+    width: 95.83%;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+}
+
+.content-head {
+    width: 45.65%;
+}
+
+.content-head h2 {
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.content-comment {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#FFF;
+    border-radius:30px;
+    height: 339px;
+    width: 32%;
+    gap: 25px;
+    flex-direction: column;
+}
+.person{
+    display: flex;
+    width: 69.46%;
+    align-items: center;
+    gap: 23px;  
+}
+.person-info h3{
+    font-size: 22px;
+    letter-spacing: 0.25px;
+    line-height: 150%;
+    white-space: nowrap;
+}
+.person-info span{
+    font-size: 18px;
+    letter-spacing: 0.18px;
+}
+.comment-text{
+    width: 80.3%;
+}
+.comment-text p{
+    font-size: 22px;
+    letter-spacing: 0.22px;
+}
+.client-logo{
+    display: flex;
+width: 56.82%;
+justify-content: center;
+align-items: center;
+gap: 9.9%;
 }
