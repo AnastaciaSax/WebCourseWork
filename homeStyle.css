@@ -327,40 +327,94 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#FFF;
-    border-radius:30px;
+    background-color: #FFF;
+    border-radius: 30px;
     height: 339px;
     width: 32%;
     gap: 25px;
     flex-direction: column;
 }
-.person{
+
+.person {
     display: flex;
     width: 69.46%;
     align-items: center;
-    gap: 23px;  
+    gap: 23px;
 }
-.person-info h3{
+
+.person-info h3 {
     font-size: 22px;
     letter-spacing: 0.25px;
     line-height: 150%;
     white-space: nowrap;
 }
-.person-info span{
+
+.person-info span {
     font-size: 18px;
     letter-spacing: 0.18px;
 }
-.comment-text{
+
+.comment-text {
     width: 80.3%;
 }
-.comment-text p{
+
+.comment-text p {
     font-size: 22px;
     letter-spacing: 0.22px;
 }
-.client-logo{
+
+/* client logo */
+.client-logo {
     display: flex;
-width: 56.82%;
+    width: 56.82%;
+    justify-content: center;
+    align-items: center;
+    gap: 9.9%;
+}
+
+/* counter */
+
+.counter{
+    padding-left: 50px;
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+height: 8.08%;
+background-color:#F4F0EC;
+flex-shrink: 0;
+}
+.counter-digit{
+    display: flex;
+    width: 59.53%;
+    height: 36.55%;
+    justify-content: center;
+    align-items: center;
+    gap: 76px;
+    flex-shrink: 0;
+}
+.digit{
+    display: flex;
+width: 14.87%;
+flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 9.9%;
+gap: 16px;
+flex-shrink: 0;
+}
+.digit h3{
+    font-size: 85px;
+    letter-spacing: 1.7px;
+    color: #CDA274;
+}
+.digit span{
+    font-size: 22px;
+    white-space: nowrap;
+}
+.counter-line{
+    width: 1px;
+height: 77.84%;
+background-color: #CDA274;
+flex-shrink: 0;
 }
