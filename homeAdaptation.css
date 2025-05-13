@@ -1,13 +1,15 @@
-@media (min-width: 768px) and (max-width: 1024px)
-{
-html,
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    html,
     body {
         width: 738px;
         height: auto;
         background-size: cover;
     }
-.container {
-        align-items: stretch; /* растягиваем содержимое по ширине */
+
+    .container {
+        align-items: stretch;
+        /* растягиваем содержимое по ширине */
     }
 
     .header-container {
@@ -45,7 +47,7 @@ html,
 
     .burger-toggle img {
         width: 32px;
-        height: 32px;
+        height: auto;
     }
 
     .burger-menu {
@@ -56,51 +58,55 @@ html,
         background: white;
         padding: 20px;
         border: 1px solid #ddd;
-        border-radius:20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         display: none;
         flex-direction: column;
         gap: 12px;
         z-index: 100;
     }
-        .burger-menu.active {
+
+    .burger-menu.active {
         display: flex;
     }
+
     /* banner */
-.banner {
-    width: 95%;
-    height: auto;
-    padding: 120px 30px 60px;
-    border-radius: 40px;
-    background-position: center;
-    background-size: cover;
-  }
+    .banner {
+        width: 95%;
+        height: auto;
+        padding: 120px 30px 60px;
+        border-radius: 40px;
+        background-position: center;
+        background-size: cover;
+    }
 
-  .banner-intro {
-    width: 100%;
-    gap: 16px;
-  }
+    .banner-intro {
+        width: 100%;
+        gap: 16px;
+    }
 
-  .banner-intro-text h2 {
-    font-size: 45px;
-  }
+    .banner-intro-text h2 {
+        font-size: 45px;
+    }
 
-  .banner-intro-text p {
-    font-size: 18px;
-  }
+    .banner-intro-text p {
+        font-size: 18px;
+    }
 
-  .banner-but {
-    padding: 18px 32px;
-    border-radius: 12px;
-  }
+    .banner-but {
+        padding: 18px 32px;
+        border-radius: 12px;
+    }
 
-  .get-started span {
-    font-size: 16px;
-  }
-  /* slider */
-.slider {
-        width: 85%;
+    .get-started span {
+        font-size: 16px;
+    }
+
+    /* slider */
+    .slider {
+        width: 95%;
         margin: 150px auto;
+        padding-bottom: 10px;
     }
 
     .slider h2 {
@@ -120,8 +126,55 @@ html,
         width: 50px;
         height: 50px;
     }
-}
-@media (min-width: 320px) and (max-width: 767px)
-{
 
+    /* wanna contact */
+    .wanna-contact {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .wanna-content {
+        width: 100%;
+        max-width: 472px;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .content-text h2 {
+        font-size: 36px;
+    }
+
+    .content-text p {
+        font-size: 18px;
+    }
+
+    .content-contact {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .contact span {
+        font-size: 20px;
+    }
+
+    .map-container {
+        width: 100%;
+        justify-content: center;
+        height: auto;
+    }
+
+    #map {
+        width: 100%;
+        max-width: 670px;
+        height: 350px;
+        border-radius: 20px;
+    }
+    /* Testimonial */
+    
 }
+
+@media (min-width: 320px) and (max-width: 767px) {}

@@ -1,106 +1,112 @@
 // SLIDER
 
-const visibleSlides = 3;
+const visibleSlidesByScreen = () => {
+  const w = window.innerWidth;
+  return w <= 768 ? 1 : w <= 1024 ? 2 : 3;
+};
 
-// Элементы
 const sliderContainer = document.querySelector(".slider");
 const slidesContainer = document.querySelector(".slides");
-const originalSlides = Array.from(document.querySelectorAll(".slide"));
-const totalOriginal = originalSlides.length;
+const btnPrev = document.querySelector(".prev");
+const btnNext = document.querySelector(".next");
 
-// Функция клонирования: последние visibleSlides в начало, первые visibleSlides в конец
-function cloneSlides() {
-  originalSlides.slice(-visibleSlides).forEach((slide) => {
-    const clone = slide.cloneNode(true);
-    clone.classList.add("clone");
-    slidesContainer.insertBefore(clone, slidesContainer.firstChild);
-  });
-  originalSlides.slice(0, visibleSlides).forEach((slide) => {
-    const clone = slide.cloneNode(true);
-    clone.classList.add("clone");
-    slidesContainer.appendChild(clone);
-  });
+let currentIndex = 0;
+let visibleSlides = visibleSlidesByScreen();
+let slideStep = 0;
+let totalOriginal = 0;
+
+// Обновляем слайды и создаём клоны
+function initSlider() {
+  visibleSlides = visibleSlidesByScreen();
+  const original = Array.from(document.querySelectorAll(".slide:not(.clone)"));
+  totalOriginal = original.length;
+
+  slidesContainer.innerHTML = "";
+
+  const clonesBefore = original.slice(-visibleSlides).map(s => cloneSlide(s));
+  const clonesAfter = original.slice(0, visibleSlides).map(s => cloneSlide(s));
+
+  clonesBefore.forEach(s => slidesContainer.appendChild(s));
+  original.forEach(s => slidesContainer.appendChild(s));
+  clonesAfter.forEach(s => slidesContainer.appendChild(s));
+
+  currentIndex = visibleSlides;
+  updateDimensions();
 }
-cloneSlides();
 
-// Получаем полный список слайдов (оригиналы + клоны)
-const allSlides = Array.from(document.querySelectorAll(".slide"));
+// Клонирование слайда
+function cloneSlide(slide) {
+  const clone = slide.cloneNode(true);
+  clone.classList.add("clone");
+  return clone;
+}
 
-// Устанавливаем начальный индекс на первый оригинальный слайд (учитывая, что спереди уже есть клоны)
-let currentIndex = visibleSlides;
-let slideStep = 0; // шаг (ширина слайда + gap) – вычисляется в updateDimensions()
-
-// Функция для адаптивной установки размеров слайдов с учётом gap
+// Устанавливаем размеры и шаг
 function updateDimensions() {
   const containerWidth = sliderContainer.clientWidth;
-  const computedGap = parseFloat(getComputedStyle(slidesContainer).gap) || 0;
+  const gap = parseFloat(getComputedStyle(slidesContainer).gap) || 0;
+  const slideWidth = Math.round((containerWidth - gap * (visibleSlides - 1)) / visibleSlides);
 
-  // Вычитаем суммарный gap между слайдами
-  const availableWidth = containerWidth - computedGap * (visibleSlides - 1);
-
-  // Вычисляем ширину каждого слайда
-  const slideWidth = Math.round(availableWidth / visibleSlides);
-
-  allSlides.forEach((slide) => {
+  document.querySelectorAll(".slide").forEach(slide => {
     slide.style.flex = `0 0 ${slideWidth}px`;
     slide.style.height = "244px";
   });
 
-  // Шаг смещения: ширина слайда плюс gap
-  slideStep = slideWidth + computedGap;
+  slideStep = slideWidth + gap;
   updateSlider();
 }
 
-// Функция обновления смещения слайдов
+// Смещение слайдера
 function updateSlider() {
-  slidesContainer.style.transform = `translateX(-${
-    currentIndex * slideStep
-  }px)`;
+  slidesContainer.style.transform = `translateX(-${currentIndex * slideStep}px)`;
 }
 
-// Обработчики для кнопок переключения
-document.querySelector(".next").addEventListener("click", () => {
+// Кнопки
+btnNext.addEventListener("click", () => {
   currentIndex++;
   slidesContainer.style.transition = "transform 0.5s ease-in-out";
   updateSlider();
 });
 
-document.querySelector(".prev").addEventListener("click", () => {
+btnPrev.addEventListener("click", () => {
   currentIndex--;
   slidesContainer.style.transition = "transform 0.5s ease-in-out";
   updateSlider();
 });
 
-// После завершения перехода проверяем, не в зоне клонов
+// Циклический эффект
 slidesContainer.addEventListener("transitionend", () => {
-  // Если движемся вправо и достигли правой клонированной области
   if (currentIndex >= totalOriginal + visibleSlides) {
     slidesContainer.style.transition = "none";
     currentIndex = visibleSlides;
     updateSlider();
-    setTimeout(() => {
-      slidesContainer.style.transition = "transform 0.5s ease-in-out";
-    }, 0);
   }
 
-  // Если движемся влево и оказались в левой клонированной области
   if (currentIndex < visibleSlides) {
     slidesContainer.style.transition = "none";
     currentIndex = totalOriginal + currentIndex;
     updateSlider();
-    setTimeout(() => {
-      slidesContainer.style.transition = "transform 0.5s ease-in-out";
-    }, 0);
   }
+
+  // Включаем обратно анимацию
+  setTimeout(() => {
+    slidesContainer.style.transition = "transform 0.5s ease-in-out";
+  }, 0);
 });
 
+// При изменении размера
+window.addEventListener("resize", () => {
+  initSlider();
+});
+
+// Запуск
+initSlider();
+
+//burger
 // Обновляем размеры слайдов при изменении размера окна
-window.addEventListener("resize", updateDimensions);
-updateDimensions();
-const burger = document.querySelector('.optionBut');
-    const nav = document.querySelector('nav');
+const toggle = document.querySelector(".burger-toggle");
+const menu = document.querySelector(".burger-menu");
 
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('active');
-         });
-
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
