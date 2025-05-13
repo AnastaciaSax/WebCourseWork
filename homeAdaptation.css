@@ -2,7 +2,7 @@
 
     html,
     body {
-        width: 738px;
+        width: 768px;
         height: auto;
         background-size: cover;
     }
@@ -13,7 +13,8 @@
     }
 
     .header-container {
-        margin: 30px 0;
+        width: 95%;
+        margin: 30px auto;
         justify-content: space-between;
         padding: 0 20px;
     }
@@ -48,6 +49,7 @@
     .burger-toggle img {
         width: 32px;
         height: auto;
+        opacity: 70%;
     }
 
     .burger-menu {
@@ -72,7 +74,8 @@
 
     /* banner */
     .banner {
-        width: 95%;
+        margin: 0 auto;
+        width: 90%;
         height: auto;
         padding: 120px 30px 60px;
         border-radius: 40px;
@@ -104,7 +107,7 @@
 
     /* slider */
     .slider {
-        width: 95%;
+        width: 90%;
         margin: 150px auto;
         padding-bottom: 10px;
     }
@@ -138,7 +141,7 @@
     }
 
     .wanna-content {
-        width: 100%;
+        width: 90%;
         max-width: 472px;
         align-items: flex-start;
         gap: 30px;
@@ -173,8 +176,121 @@
         height: 350px;
         border-radius: 20px;
     }
+
     /* Testimonial */
-    
+    .testimonial {
+        flex-direction: column;
+        width: 90%;
+        margin: 150px auto;
+        border-radius: 40px;
+        padding: 40px 0;
+        height: auto;
+    }
+
+    .testimonial-content {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .content-head {
+        width: 100%;
+    }
+
+    .content-head h2 {
+        font-size: 36px;
+    }
+
+    .content-comment {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .comment {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .person {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .person-info h3 {
+        font-size: 20px;
+    }
+
+    .person-info span {
+        font-size: 16px;
+    }
+
+    .comment-text {
+        width: 100%;
+    }
+
+    .comment-text p {
+        font-size: 18px;
+    }
+
+    /* client logo */
+    .client-logo {
+        width: 95%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .client-logo img {
+        transform: scale(0.9);
+        height: auto;
+    }
+
+    .client-logo img:last-of-type {
+        Display: none;
+    }
+
+    /* counter */
+    .counter {
+        width: 100%;
+        margin: 150px auto;
+        /* Уменьшаем отступ сверху */
+        padding-left: 20px;
+        /* Уменьшаем отступ слева */
+    }
+
+    .counter-digit {
+        width: 80%;
+        /* Увеличиваем ширину контейнера с цифрами для лучшего выравнивания */
+        gap: 25px;
+        /* Уменьшаем промежуток между цифрами */
+    }
+
+    .digit {
+        width: 20%;
+        /* Увеличиваем ширину каждого блока с цифрой */
+    }
+
+    .digit h3 {
+        font-size: 60px;
+        /* Уменьшаем размер шрифта */
+        letter-spacing: 1px;
+        /* Меньше межбуквенное расстояние */
+    }
+
+    .digit span {
+        font-size: 18px;
+    }
+
+    .counter-line {
+        height: 60%;
+        /* Уменьшаем высоту линии */
+    }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {}
