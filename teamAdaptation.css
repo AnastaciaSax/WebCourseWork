@@ -1,4 +1,5 @@
 @media (min-width: 768px) and (max-width: 1024px) {
+
     html,
     body {
         width: 768px;
@@ -71,5 +72,266 @@
         display: flex;
     }
 
+    /* banner */
+    .banner {
+        height: auto;
+        padding-top: 250px;
+        /* высота баннера вместо фиксированного процента */
+        background-position: center left;
+    }
+
+    .intro {
+        width: 50%;
+        padding: 32px 48px;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .into-title {
+        width: 100%;
+    }
+
+    .intro h2 {
+        font-size: 36px;
+    }
+
+    .intro span {
+        font-size: 18px;
+    }
+
+    /* team */
+    .team {
+        width: 90%;
+        margin: 150px auto;
+    }
+
+    .team-part {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 карточки в ряд */
+        gap: 32px;
+        overflow-x: hidden;
+    }
+
+    /* foot */
+    .interno {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        overflow-x: hidden;
+    }
+
+    .interno-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .interno-info-text {
+        align-items: center;
+    }
+
+    .interno-info-media {
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .interno-page,
+    .interno-service,
+    .interno-contact {
+        display: none;
+    }
+
 }
-@media (min-width: 320px) and (max-width: 767px) {}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    html,
+    body {
+        width: 320px;
+        height: auto;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .container {
+        margin: 0 auto;
+        align-items: stretch;
+    }
+
+    .header-container {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        margin-left: 75%;
+    }
+
+    .burger-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .burger-toggle img {
+        width: 28px;
+        height: auto;
+        opacity: 0.7;
+    }
+
+    .burger-menu {
+        width: 120px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: white;
+        padding: 16px;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+
+    .burger-menu.active {
+        display: flex;
+    }
+
+    /* banner */
+    .banner {
+        width: 100%;
+        height: auto;
+        padding-top: 190px;
+        background-position: center bottom;
+    }
+
+    .intro {
+        width: 80%;
+        padding: 20px;
+        border-radius: 25px 25px 0 0;
+    }
+
+    .into-title {
+        width: 100%;
+    }
+
+    .intro h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .intro span {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* team */
+    .team {
+    margin: 60px 0;
+    width: 100%;
+    align-items: center;
+  }
+
+  .team-part {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 колонка */
+    gap: 15px; /* уменьшены промежутки между элементами */
+  }
+
+  .person {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 85%;
+  }
+
+  .person-info-text h3 {
+    font-size: 18px; /* уменьшен размер заголовка */
+  }
+
+  .person-info-text span {
+    font-size: 14px; /* уменьшен размер текста */
+  }
+
+  .person-img img {
+    max-width: 100%; 
+    height: auto; /* изображение будет адаптироваться по размеру контейнера */
+  }
+
+  .person-info-media {
+    gap: 20px; /* уменьшено расстояние между иконками */
+  }
+  /* foot */
+    footer {
+    gap: 60px;
+  }
+
+  .interno {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 40px;
+  }
+
+  .interno-info {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .interno-info-text {
+    align-items: center;
+    width: 100%;
+  }
+
+  .interno-info-text p {
+    font-size: 16px;
+  }
+
+  .interno-info-media {
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .interno-info-media img {
+    width: auto;
+    height: 23px;
+  }
+
+  .interno-page,
+  .interno-service,
+  .interno-contact {
+    display: none;
+  }
+
+  .copyright {
+    height: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .copyright span {
+    font-size: 14px;
+    text-align: center;
+  }
+}
