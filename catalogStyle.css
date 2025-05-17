@@ -42,6 +42,38 @@ a {
     color: inherit;
 }
 
+button {
+    color: #292F36;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    /* 22.5px */
+    letter-spacing: 0.36px;
+
+    /* Убираем стандартную обводку и фон */
+    border: none;
+    outline: none;
+    background: none;
+
+    /* Дополнительные стили для кроссбраузерного сброса стандартного вида кнопки */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+    flex-shrink: 0;
+
+    display: flex;
+    padding: 26px 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 18px;
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -81,7 +113,7 @@ header {
     display: none;
 }
 
-nav {
+header nav {
     display: flex;
     justify-content: center;
     gap: 46px;
@@ -89,7 +121,7 @@ nav {
     margin-left: 33.4%;
 }
 
-nav a {
+header nav a {
     font-size: 20px;
 }
 
@@ -136,4 +168,122 @@ nav a {
 
 .intro span {
     font-size: 22px;
+}
+
+/* project */
+.project {
+    margin: 200px 0;
+    display: flex;
+    width: 62.55%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 41px;
+}
+
+.filt {
+    display: flex;
+    width: 88.5%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 18px;
+    border: 1px solid #CDA274;
+}
+
+.filt-content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 61px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.search-input {
+    width: 302px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 2px solid #CDA274;
+    background: #F1F1F1;
+}
+
+.search-input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+      padding: 0 10px;    
+
+    /* Текстовые стили */
+    color: #4D5053;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.22px;
+}
+.sort {
+  position: relative;             /* чтобы потом можно было позиционировать стрелку внутри */
+  width: 193px;
+  height: 28px;
+  flex-shrink: 0;
+  background: #F1F1F1;
+  border: 2px solid #CDA274;
+  border-radius: 5px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  padding-right: 6px;            /* резервируем место справа для изображения стрелки */
+}
+
+.sort-select {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;                /* запас от краёв, можно регулировать */
+  border: none;
+  outline: none;
+  background: transparent;        /* фон выбирается у контейнера */
+  /* Убираем стандартный вид select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.22px;
+  color: #4D5053;
+}
+.cart-butt{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.cart-butt a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+.cart-butt span{
+    color: #292F36;
+text-align: center;
+font-size: 24px;
+font-weight: 600;
+line-height: 125%; /* 30px */
+letter-spacing: 0.48px;
 }

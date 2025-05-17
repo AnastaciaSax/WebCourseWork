@@ -58,16 +58,42 @@
         </main>
         <div class="project">
             <div class="filt">
-
+                <div class="filt-content">
+                    <button data-category="Bathroom">Bathroom</button>
+                    <button data-category="Bedroom">Bedroom</button>
+                    <button data-category="Kitchen">Kitchen</button>
+                    <button data-category="Living Room">Living Room</button>
+                    <button data-category="Dining Hall">Dining Hall</button>
+                </div>
             </div>
             <div class="field">
-
+                <div class="search">
+                    <img src="./Assets/catalogSearch.svg" alt="magnifying glass">
+                    <div class="search-input">
+                        <input type="text" placeholder="Search by title/category">
+                    </div>
+                </div>
+                <div class="sort">
+                    <select id="sort" name="sort" class="sort-select">
+                        <option value="" disabled selected hidden>Sort by</option>
+                        <option value="price">By price</option>
+                        <option value="title">By title</option>
+                        <option value="category">By category</option>
+                    </select>
+                    <img src="./Assets/catalogSort.svg" alt="Sort Arrow" class="select-arrow">
+                </div>
+                <div class="cart-butt">
+                    <a href="#">
+                        <img src="./Assets/cart.png" alt="Cart">
+                        <span>Cart</span>
+                    </a>
+                </div>
             </div>
-            <div class="project">
-
-            </div>
+            <div class="project"></div>
             <div class="pagination">
-
+                <img src="./Assets/catalogArrowPagin.png" alt="Back">
+                <div class="page"></div>
+                <img src="./Assets/catalogArrowPagin.png" alt="Next">
             </div>
         </div>
     </div>
