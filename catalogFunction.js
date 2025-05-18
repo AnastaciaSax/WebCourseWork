@@ -4,12 +4,6 @@ const paginationContainer = document.querySelector(".page");
 const prevButton = document.querySelector(".prev-page");
 const nextButton = document.querySelector(".next-page");
 
-const items = document.querySelectorAll(".service-item");
-items.forEach((item) => item.classList.remove("first", "last")); // очистка
-
-if (items.length > 0) items[0].classList.add("first");
-if (items.length > 1) items[items.length - 1].classList.add("last");
-
 let currentPage = 1;
 const servicesPerPage = 4;
 let services = [];
@@ -23,7 +17,7 @@ async function fetchServices() {
     renderPagination();
     renderServices(currentPage);
   } catch (error) {
-    console.error("Ошибка загрузки данных:", error);
+    console.error("Sorry, loading data ERROR", error);
   }
 }
 
@@ -48,12 +42,18 @@ function renderServices(page) {
       </div>
       <p class="price">$ ${service.price}</p>
       <button class="add-to-cart">
-        <img src="./Assets/cart.png" alt="Add to cart">
+        <img src="./Assets/cart.svg" alt="Add to cart">
       </button>
       </div>
     `;
     serviceContainer.appendChild(card);
   });
+
+  const items = document.querySelectorAll(".service-item");
+items.forEach((item) => item.classList.remove("first", "last")); // очистка
+
+if (items.length > 0) items[0].classList.add("first");
+if (items.length > 1) items[items.length - 1].classList.add("last");
 }
 
 function renderPagination() {
