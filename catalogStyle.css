@@ -293,6 +293,10 @@ header nav a {
     /* 30px */
     letter-spacing: 0.48px;
 }
+.filt-content button.active {
+  background-color: #CDA274;
+  color: white;
+}
 
 /* service-card */
 .service-card {
