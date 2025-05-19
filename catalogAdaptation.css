@@ -1,10 +1,10 @@
 @media (min-width: 768px) and (max-width: 1024px) {
     button {
-    font-size: 16px;
-    padding: 16px 25px;
-    gap: 8px;
-    border-radius: 12px;
-  }
+        font-size: 16px;
+        padding: 16px 25px;
+        gap: 8px;
+        border-radius: 12px;
+    }
 
     html,
     body {
@@ -20,7 +20,7 @@
 
     .header-container {
         width: 95%;
-        margin: 10px auto;
+        margin: 30px auto;
         justify-content: space-between;
         padding: 0 20px;
     }
@@ -47,6 +47,7 @@
     }
 
     .burger-toggle {
+        padding: 0;
         background: none;
         border: none;
         cursor: pointer;
@@ -107,113 +108,117 @@
 
     /* project */
     .project {
-    width: 90%;
-    margin: 150px auto;
-    gap: 32px;
-  }
+        width: 90%;
+        margin: 150px auto;
+        gap: 32px;
+    }
 
-  .filt {
-    width: 97%;
-    border-radius: 12px;
-  }
+    .filt {
+        width: 97%;
+        border-radius: 12px;
+    }
 
-  .filt-content {
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 10px;
-  }
+    .filt-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
 
-  .filt-content button {
-    padding: 12px 25.25px;
-    font-size: 16px;
-    border-radius: 12px;
-  }
+    .filt-content button {
+        padding: 12px 25.25px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
 
-  .field {
-    flex-wrap: wrap; 
-    justify-content: center;
-    gap: 20px;
-  }
+    .field {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
 
-  .search {
-    width: 100%;
-    gap: 6px;
-    justify-content: center;
-  }
+    .search {
+        width: 100%;
+        gap: 6px;
+        justify-content: center;
+    }
 
-  .search-input {
-    width: 100%;
-    height: 36px;
-  }
+    .search-input {
+        width: 100%;
+        height: 36px;
+    }
 
-  .sort {
-    width: 45%;
-    height: 36px;
-  }
+    .sort {
+        width: 45%;
+        height: 36px;
+    }
 
-  .cart-butt span {
-    font-size: 18px;
-  }
+    .cart-butt span {
+        font-size: 18px;
+    }
 
-  .cart-butt a {
-    margin-left: 20px;
-    gap: 6px;
-  }
-  /* service-card */
-  .service-card {
-    column-count: 1; /* ✅ Убираем колонки на мобилке */
-    column-gap: 0;
-    max-height: none;
-  }
+    .cart-butt a {
+        margin-left: 20px;
+        gap: 6px;
+    }
 
-  .service-item {
-    margin-bottom: 24px;
-    gap: 16px;
-  }
+    /* service-card */
+    .service-card {
+        column-count: 1;
+        /* ✅ Убираем колонки на мобилке */
+        column-gap: 0;
+        max-height: none;
+    }
 
-  .service-pic {
-    height: auto; /* Адаптивная высота */
-    max-height: 400px;
-  }
+    .service-item {
+        margin-bottom: 24px;
+        gap: 16px;
+    }
 
-  .service-item.first .service-pic,
-  .service-item.last .service-pic {
-    height: auto;
-    max-height: 500px;
-  }
+    .service-pic {
+        height: auto;
+        /* Адаптивная высота */
+        max-height: 400px;
+    }
 
-  .service-info {
-    align-items: flex-start;
-    gap: 8px;
-  }
+    .service-item.first .service-pic,
+    .service-item.last .service-pic {
+        height: auto;
+        max-height: 500px;
+    }
 
-  .service-title h3 {
-    font-size: 20px;
-    white-space: normal;
-  }
+    .service-info {
+        align-items: flex-start;
+        gap: 8px;
+    }
 
-  .service-title p {
-    font-size: 18px;
-  }
+    .service-title h3 {
+        font-size: 20px;
+        white-space: normal;
+    }
 
-  .price {
-    font-size: 24px;
-    white-space: normal;
-  }
+    .service-title p {
+        font-size: 18px;
+    }
 
-  .add-to-cart {
-    width: 50px;
-    height: auto;
-  }
+    .price {
+        font-size: 24px;
+        white-space: normal;
+    }
 
-  .add-to-cart img {
-    width: 46px;
-  }
-  /* foot */
+    .add-to-cart {
+        width: 50px;
+        height: auto;
+    }
+
+    .add-to-cart img {
+        width: 46px;
+    }
+
+    /* foot */
     footer {
-         margin-bottom: 0;
+        margin-bottom: 0;
         gap: 60px;
-        max-height:none;
+        max-height: none;
     }
 
     .interno {
@@ -266,8 +271,13 @@
         font-size: 14px;
         text-align: center;
     }
+
     /* message */
-    
+    .not-found-message {
+        font-size: 16px;
+        padding: 24px 10px;
+        line-height: 140%;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {}
