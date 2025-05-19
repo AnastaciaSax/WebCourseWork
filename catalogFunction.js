@@ -63,7 +63,8 @@ function renderServices(page) {
   if (filteredServices.length === 0) {
     const notFound = document.createElement("div");
     notFound.classList.add("not-found-message");
-    notFound.textContent = "Sorry, no services found for what you're looking for.";
+    notFound.textContent =
+      "Sorry, no services found for what you're looking for.";
     serviceContainer.appendChild(notFound);
     return;
   }
@@ -95,7 +96,6 @@ function renderServices(page) {
   if (items.length > 0) items[0].classList.add("first");
   if (items.length > 1) items[items.length - 1].classList.add("last");
 }
-
 
 function renderPagination() {
   paginationContainer.innerHTML = "";
@@ -210,4 +210,12 @@ searchInput.addEventListener("input", () => {
 });
 
 fetchServices();
-/* */
+
+//burger
+// Обновляем размеры слайдов при изменении размера окна
+const toggle = document.querySelector(".burger-toggle");
+const menu = document.querySelector(".burger-menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
