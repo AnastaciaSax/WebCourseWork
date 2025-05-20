@@ -33,282 +33,276 @@
       "photoURL": "./Assets/bed4.png"
     },
     {
-    "id": 5,
-    "title": "Soft Ambience",
-    "category": "Lighting",
-    "place": "Bedroom",
-    "price": 340,
-    "photoURL": "./Assets/bed5.jpg"
-  },
-  {
-    "id": 6,
-    "title": "Classic Comfort",
-    "category": "Decor",
-    "place": "Bedroom",
-    "price": 890,
-    "photoURL": "./Assets/bed6.jpg"
-  },
-
-  {
-    "id": 7,
-    "title": "Urban Lounge",
-    "category": "Architecture",
-    "place": "Living Room",
-    "price": 1350,
-    "photoURL": "./Assets/living1.jpg"
-  },
-  {
-    "id": 8,
-    "title": "Rustic Charm",
-    "category": "Decor",
-    "place": "Living Room",
-    "price": 720,
-    "photoURL": "./Assets/living2.jpg"
-  },
-  {
-    "id": 9,
-    "title": "Contemporary Flow",
-    "category": "Architecture",
-    "place": "Living Room",
-    "price": 980,
-    "photoURL": "./Assets/living3.jpg"
-  },
-  {
-    "id": 10,
-    "title": "Modern Vibes",
-    "category": "Decor",
-    "place": "Living Room",
-    "price": 650,
-    "photoURL": "./Assets/living4.jpg"
-  },
-  {
-    "id": 11,
-    "title": "Lux Lounge",
-    "category": "Lighting",
-    "place": "Living Room",
-    "price": 410,
-    "photoURL": "./Assets/living5.jpg"
-  },
-  {
-    "id": 12,
-    "title": "Scandinavian Light",
-    "category": "Decor",
-    "place": "Living Room",
-    "price": 540,
-    "photoURL": "./Assets/living6.jpg"
-  },
-
-  {
-    "id": 13,
-    "title": "Royal Dining",
-    "category": "Architecture",
-    "place": "Dining Hall",
-    "price": 1600,
-    "photoURL": "./Assets/dining1.jpg"
-  },
-  {
-    "id": 14,
-    "title": "Rustic Tabletop",
-    "category": "Decor",
-    "place": "Dining Hall",
-    "price": 370,
-    "photoURL": "./Assets/dining2.jpg"
-  },
-  {
-    "id": 15,
-    "title": "Minimalist Meals",
-    "category": "Decor",
-    "place": "Dining Hall",
-    "price": 540,
-    "photoURL": "./Assets/dining3.jpg"
-  },
-  {
-    "id": 16,
-    "title": "Glass Elegance",
-    "category": "Lighting",
-    "place": "Dining Hall",
-    "price": 800,
-    "photoURL": "./Assets/dining4.jpg"
-  },
-  {
-    "id": 17,
-    "title": "Warm Gatherings",
-    "category": "Decor",
-    "place": "Dining Hall",
-    "price": 430,
-    "photoURL": "./Assets/dining5.jpg"
-  },
-  {
-    "id": 18,
-    "title": "Golden Hour",
-    "category": "Lighting",
-    "place": "Dining Hall",
-    "price": 610,
-    "photoURL": "./Assets/dining6.jpg"
-  },
-
-  {
-    "id": 19,
-    "title": "Spa Calm",
-    "category": "Architecture",
-    "place": "Bathroom",
-    "price": 1450,
-    "photoURL": "./Assets/bath1.jpg"
-  },
-  {
-    "id": 20,
-    "title": "Soft Light",
-    "category": "Lighting",
-    "place": "Bathroom",
-    "price": 370,
-    "photoURL": "./Assets/bath2.jpg"
-  },
-  {
-    "id": 21,
-    "title": "Marble Touch",
-    "category": "Architecture",
-    "place": "Bathroom",
-    "price": 1890,
-    "photoURL": "./Assets/bath3.jpg"
-  },
-  {
-    "id": 22,
-    "title": "Minimal Mirror",
-    "category": "Decor",
-    "place": "Bathroom",
-    "price": 210,
-    "photoURL": "./Assets/bath4.jpg"
-  },
-  {
-    "id": 23,
-    "title": "Natural Texture",
-    "category": "Decor",
-    "place": "Bathroom",
-    "price": 480,
-    "photoURL": "./Assets/bath5.jpg"
-  },
-  {
-    "id": 24,
-    "title": "Elegant Fixtures",
-    "category": "Lighting",
-    "place": "Bathroom",
-    "price": 760,
-    "photoURL": "./Assets/bath6.jpg"
-  },
-
-  {
-    "id": 25,
-    "title": "Chef's Corner",
-    "category": "Architecture",
-    "place": "Kitchen",
-    "price": 2200,
-    "photoURL": "./Assets/kitchen1.jpg"
-  },
-  {
-    "id": 26,
-    "title": "Wooden Warmth",
-    "category": "Decor",
-    "place": "Kitchen",
-    "price": 510,
-    "photoURL": "./Assets/kitchen2.jpg"
-  },
-  {
-    "id": 27,
-    "title": "Modern Tiles",
-    "category": "Architecture",
-    "place": "Kitchen",
-    "price": 900,
-    "photoURL": "./Assets/kitchen3.jpg"
-  },
-  {
-    "id": 28,
-    "title": "Open Shelving",
-    "category": "Decor",
-    "place": "Kitchen",
-    "price": 370,
-    "photoURL": "./Assets/kitchen4.jpg"
-  },
-  {
-    "id": 29,
-    "title": "Bright Breakfast",
-    "category": "Lighting",
-    "place": "Kitchen",
-    "price": 620,
-    "photoURL": "./Assets/kitchen5.jpg"
-  },
-  {
-    "id": 30,
-    "title": "Rustic Island",
-    "category": "Architecture",
-    "place": "Kitchen",
-    "price": 1300,
-    "photoURL": "./Assets/kitchen6.jpg"
-  }
+      "id": 5,
+      "title": "Soft Ambience",
+      "category": "Lighting",
+      "place": "Bedroom",
+      "price": 340,
+      "photoURL": "./Assets/bed5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Classic Comfort",
+      "category": "Decor",
+      "place": "Bedroom",
+      "price": 890,
+      "photoURL": "./Assets/bed6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Urban Lounge",
+      "category": "Architecture",
+      "place": "Living Room",
+      "price": 1350,
+      "photoURL": "./Assets/living1.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Rustic Charm",
+      "category": "Decor",
+      "place": "Living Room",
+      "price": 720,
+      "photoURL": "./Assets/living2.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Contemporary Flow",
+      "category": "Architecture",
+      "place": "Living Room",
+      "price": 980,
+      "photoURL": "./Assets/living3.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Modern Vibes",
+      "category": "Decor",
+      "place": "Living Room",
+      "price": 650,
+      "photoURL": "./Assets/living4.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Lux Lounge",
+      "category": "Lighting",
+      "place": "Living Room",
+      "price": 410,
+      "photoURL": "./Assets/living5.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Scandinavian Light",
+      "category": "Decor",
+      "place": "Living Room",
+      "price": 540,
+      "photoURL": "./Assets/living6.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Royal Dining",
+      "category": "Architecture",
+      "place": "Dining Hall",
+      "price": 1600,
+      "photoURL": "./Assets/dining1.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Rustic Tabletop",
+      "category": "Decor",
+      "place": "Dining Hall",
+      "price": 370,
+      "photoURL": "./Assets/dining2.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Minimalist Meals",
+      "category": "Decor",
+      "place": "Dining Hall",
+      "price": 540,
+      "photoURL": "./Assets/dining3.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Glass Elegance",
+      "category": "Lighting",
+      "place": "Dining Hall",
+      "price": 800,
+      "photoURL": "./Assets/dining4.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Warm Gatherings",
+      "category": "Decor",
+      "place": "Dining Hall",
+      "price": 430,
+      "photoURL": "./Assets/dining5.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Golden Hour",
+      "category": "Lighting",
+      "place": "Dining Hall",
+      "price": 610,
+      "photoURL": "./Assets/dining6.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Spa Calm",
+      "category": "Architecture",
+      "place": "Bathroom",
+      "price": 1450,
+      "photoURL": "./Assets/bath1.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Soft Light",
+      "category": "Lighting",
+      "place": "Bathroom",
+      "price": 370,
+      "photoURL": "./Assets/bath2.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Marble Touch",
+      "category": "Architecture",
+      "place": "Bathroom",
+      "price": 1890,
+      "photoURL": "./Assets/bath3.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Minimal Mirror",
+      "category": "Decor",
+      "place": "Bathroom",
+      "price": 210,
+      "photoURL": "./Assets/bath4.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Natural Texture",
+      "category": "Decor",
+      "place": "Bathroom",
+      "price": 480,
+      "photoURL": "./Assets/bath5.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Elegant Fixtures",
+      "category": "Lighting",
+      "place": "Bathroom",
+      "price": 760,
+      "photoURL": "./Assets/bath6.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Chef's Corner",
+      "category": "Architecture",
+      "place": "Kitchen",
+      "price": 2200,
+      "photoURL": "./Assets/kitchen1.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Wooden Warmth",
+      "category": "Decor",
+      "place": "Kitchen",
+      "price": 510,
+      "photoURL": "./Assets/kitchen2.jpg"
+    },
+    {
+      "id": 27,
+      "title": "Modern Tiles",
+      "category": "Architecture",
+      "place": "Kitchen",
+      "price": 900,
+      "photoURL": "./Assets/kitchen3.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Open Shelving",
+      "category": "Decor",
+      "place": "Kitchen",
+      "price": 370,
+      "photoURL": "./Assets/kitchen4.jpg"
+    },
+    {
+      "id": 29,
+      "title": "Bright Breakfast",
+      "category": "Lighting",
+      "place": "Kitchen",
+      "price": 620,
+      "photoURL": "./Assets/kitchen5.jpg"
+    },
+    {
+      "id": 30,
+      "title": "Rustic Island",
+      "category": "Architecture",
+      "place": "Kitchen",
+      "price": 1300,
+      "photoURL": "./Assets/kitchen6.jpg"
+    }
   ],
-
   "users": [
-  {
-    "id": 1,
-    "name": "Nicole",
-    "email": "alice@example.com",
-    "role": "admin"
-  },
-  {
-    "id": 2,
-    "name": "Bob",
-    "email": "bob@example.com",
-    "role": "user"
-  },
-  {
-    "id": 3,
-    "name": "Charlie",
-    "email": "charlie@example.com",
-    "role": "user"
-  },
-  {
-    "id": 4,
-    "name": "Diana",
-    "email": "diana@example.com",
-    "role": "user"
-  },
-  {
-    "id": 5,
-    "name": "Ethan",
-    "email": "ethan@example.com",
-    "role": "user"
-  },
-  {
-    "id": 6,
-    "name": "Fiona",
-    "email": "fiona@example.com",
-    "role": "user"
-  },
-  {
-    "id": 7,
-    "name": "George",
-    "email": "george@example.com",
-    "role": "user"
-  },
-  {
-    "id": 8,
-    "name": "Hannah",
-    "email": "hannah@example.com",
-    "role": "user"
-  },
-  {
-    "id": 9,
-    "name": "Isaac",
-    "email": "isaac@example.com",
-    "role": "user"
-  },
-  {
-    "id": 10,
-    "name": "Julia",
-    "email": "julia@example.com",
-    "role": "user"
-  }
-],
-
+    {
+      "id": 1,
+      "name": "Nicole",
+      "email": "alice@example.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "Diana",
+      "email": "diana@example.com",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "name": "Ethan",
+      "email": "ethan@example.com",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "name": "Fiona",
+      "email": "fiona@example.com",
+      "role": "user"
+    },
+    {
+      "id": 7,
+      "name": "George",
+      "email": "george@example.com",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "name": "Hannah",
+      "email": "hannah@example.com",
+      "role": "user"
+    },
+    {
+      "id": 9,
+      "name": "Isaac",
+      "email": "isaac@example.com",
+      "role": "user"
+    },
+    {
+      "id": 10,
+      "name": "Julia",
+      "email": "julia@example.com",
+      "role": "user"
+    }
+  ],
   "cart": [
     {
       "id": 1,
@@ -335,7 +329,6 @@
       "userId": 2,
       "serviceId": 9
     },
-
     {
       "id": 6,
       "userId": 3,
@@ -361,7 +354,6 @@
       "userId": 3,
       "serviceId": 10
     },
-
     {
       "id": 11,
       "userId": 4,
