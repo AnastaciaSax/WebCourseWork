@@ -1,0 +1,6 @@
+.page-button.active {
+    font-weight: bold;
+    color: #CDA274;
+    background-color: #F4F0EC;
+    border: none;
+}
