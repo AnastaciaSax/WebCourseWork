@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 1920px;
+    height: auto;
+    margin: 0 auto;
+    background: url('./Assets/catalogBackground.jpg') no-repeat center center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    color: #292F36;
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 81.25px */
+}
+
+p,
+a,
+span {
+    color: #4D5053;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 33px */
+    letter-spacing: 0.22px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    color: #292F36;
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 125%;
+    /* 22.5px */
+    letter-spacing: 0.36px;
+
+    /* Убираем стандартную обводку и фон */
+    border: none;
+    outline: none;
+    background: none;
+
+    /* Дополнительные стили для кроссбраузерного сброса стандартного вида кнопки */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+    flex-shrink: 0;
+
+    display: flex;
+    padding: 26px 64px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 18px;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* header */
+.header-container {
+    margin: 55px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header {
+    width: 62.4%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 40px;
+}
+
+.burger {
+    display: none;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 46px;
+    align-items: center;
+    margin-left: 33.4%;
+    flex-shrink: 0;
+}
+
+header nav a {
+    font-size: 20px;
+}
+
+.optionBut {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: -10px;
+    padding: 0;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    padding-top: 182px;
+    background: url('./Assets/cartBanner.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.intro {
+    display: flex;
+    width: 26.2%;
+    padding: 41px 68px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 37px 37px 0px 0px;
+    background: #FFF;
+}
+
+.into-title {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro h2 {
+    font-size: 50px;
+}
+
+.intro span {
+    font-size: 22px;
+}
