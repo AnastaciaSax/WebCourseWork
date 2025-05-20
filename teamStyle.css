@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 1920px;
+    height: 2690px;
+    margin: 0 auto;
+    background: url('./Assets/background.png') no-repeat center center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    color: #292F36;
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 81.25px */
+}
+
+p,
+a,
+span {
+    color: #4D5053;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 33px */
+    letter-spacing: 0.22px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* header */
+.header-container {
+    margin: 56px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header {
+    width: 62.4%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 46px;
+    align-items: center;
+    margin-left: 33.4%;
+}
+
+nav a {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.optionBut {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: -14px;
+}
+.burger{
+    display: none;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    height: 13.38%;
+    flex-shrink: 0;
+    background: url('./Assets/bannerGirl.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.intro {
+    display: flex;
+    width: 26.2%;
+    padding: 41px 68px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 37px 37px 0px 0px;
+    background: #FFF;
+}
+
+.into-title {
+    display: flex;
+    width: 72.92%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro h2 {
+    font-size: 50px;
+}
+
+.intro span {
+    font-size: 22px;
+}
+
+/* team */
+
+.team {
+    margin: 200px 0;
+    display: flex;
+    width: 62.55%;
+    flex-direction: column;
+    align-items: center;
+    gap: 45px;
+}
+
+.team-part {
+    display: grid;
+    gap: 22px;
+    /* Вычитаем 3 промежутка по 22px из полной ширины и делим оставшееся пространство на 4 столбца */
+    grid-template-columns: repeat(4, calc((100% - 66px) / 4));
+}
+
+.person {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.person-img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 30px;
+}
+
+.person-info {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.person-info-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person-info-text h3 {
+    text-align: center;
+    font-size: 25px;
+    line-height: 150%;
+    /* 37.5px */
+    letter-spacing: 0.25px;
+}
+
+.person-info-text span {
+    margin-top: -5px;
+    font-size: 18px;
+    letter-spacing: 0.18px;
+}
+
+.person-info-media {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 37px;
+}
+
+/* foot */
+
+footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+}
+
+.interno {
+    display: flex;
+    width: 62.55%;
+    align-items: flex-start;
+    gap: 101px;
+}
+
+.interno-info {
+    display: flex;
+    width: 32.78%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.interno-info-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.interno-info-text p {
+    font-size: 22px;
+}
+
+.interno-info-media {
+    display: flex;
+    width: 57.25%;
+    align-items: center;
+    gap: 54px;
+}
+
+.interno-page {
+    display: flex;
+    width: 10.42%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.interno-page h3,
+.interno-service h3,
+.interno-contact h3 {
+    font-size: 25px;
+}
+
+.interno-page a,
+.interno-service a {
+    font-size: 22px;
+    line-height: 265%;
+}
+
+.interno-service {
+    display: flex;
+    width: 10.01%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.interno-contact {
+    display: flex;
+    width: 21.52%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    flex-shrink: 0;
+}
+
+.interno-contact-data {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex-shrink: 0;
+}
+
+.interno-contact-data span {
+    font-size: 22px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 113px;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.copyright-line {
+    width: 100%;
+    height: 1px;
+    background: #E5E5E5;
+}
+
+.copyright span {
+    font-size: 22px;
+}

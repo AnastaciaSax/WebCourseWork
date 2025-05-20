@@ -1,0 +1,819 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    html,
+    body {
+        width: 768px;
+        height: auto;
+        background-size: cover;
+    }
+
+    .container {
+        align-items: stretch;
+        /* растягиваем содержимое по ширине */
+    }
+
+    .header-container {
+        width: 95%;
+        margin: 30px auto;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        margin-left: auto;
+    }
+
+    .burger-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .burger-toggle img {
+        width: 32px;
+        height: auto;
+        opacity: 70%;
+    }
+
+    .burger-menu {
+        width: 120px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+
+    .burger-menu.active {
+        display: flex;
+    }
+
+    /* banner */
+    .banner {
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        padding: 120px 30px 60px;
+        border-radius: 40px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .banner-intro {
+        width: 100%;
+        gap: 16px;
+    }
+
+    .banner-intro-text h2 {
+        font-size: 45px;
+    }
+
+    .banner-intro-text p {
+        font-size: 18px;
+    }
+
+    .banner-but {
+        padding: 18px 32px;
+        border-radius: 12px;
+    }
+
+    .get-started span {
+        font-size: 16px;
+    }
+
+    /* slider */
+    .slider {
+        width: 90%;
+        margin: 150px auto;
+        padding-bottom: 10px;
+    }
+
+    .slider h2 {
+        font-size: 42px;
+    }
+
+    .slide {
+        height: 220px;
+    }
+
+    .slider-but {
+        width: 200px;
+    }
+
+    .prev,
+    .next {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* wanna contact */
+    .wanna-contact {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+
+    .wanna-content {
+        width: 90%;
+        max-width: 472px;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .content-text h2 {
+        font-size: 36px;
+    }
+
+    .content-text p {
+        font-size: 18px;
+    }
+
+    .content-contact {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .contact span {
+        font-size: 20px;
+    }
+
+    .map-container {
+        width: 100%;
+        justify-content: center;
+        height: auto;
+    }
+
+    #map {
+        width: 100%;
+        max-width: 670px;
+        height: 350px;
+        border-radius: 20px;
+    }
+
+    /* Testimonial */
+    .testimonial {
+        flex-direction: column;
+        width: 90%;
+        margin: 150px auto;
+        border-radius: 40px;
+        padding: 40px 0;
+        height: auto;
+    }
+
+    .testimonial-content {
+        width: 100%;
+        gap: 30px;
+    }
+
+    .content-head {
+        width: 100%;
+    }
+
+    .content-head h2 {
+        font-size: 36px;
+    }
+
+    .content-comment {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .comment {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .person {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    .person-info h3 {
+        font-size: 20px;
+    }
+
+    .person-info span {
+        font-size: 16px;
+    }
+
+    .comment-text {
+        width: 100%;
+    }
+
+    .comment-text p {
+        font-size: 18px;
+    }
+
+    /* client logo */
+    .client-logo {
+        width: 95%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .client-logo img {
+        transform: scale(0.9);
+        height: auto;
+    }
+
+    .client-logo img:last-of-type {
+        Display: none;
+    }
+
+    /* counter */
+    .counter {
+        width: 100%;
+        margin: 150px auto;
+        /* Уменьшаем отступ сверху */
+        padding-left: 20px;
+        /* Уменьшаем отступ слева */
+    }
+
+    .counter-digit {
+        width: 80%;
+        /* Увеличиваем ширину контейнера с цифрами для лучшего выравнивания */
+        gap: 25px;
+        /* Уменьшаем промежуток между цифрами */
+    }
+
+    .digit {
+        width: 20%;
+        /* Увеличиваем ширину каждого блока с цифрой */
+    }
+
+    .digit h3 {
+        font-size: 60px;
+        /* Уменьшаем размер шрифта */
+        letter-spacing: 1px;
+        /* Меньше межбуквенное расстояние */
+    }
+
+    .digit span {
+        font-size: 18px;
+    }
+
+    .counter-line {
+        height: 60%;
+        /* Уменьшаем высоту линии */
+    }
+
+    /* Wanna join */
+    .wanna-join {
+        margin: 0 auto;
+        width: 95%;
+        padding: 50px 20px;
+        border-radius: 40px;
+    }
+
+    .wanna-join-content {
+        width: 95%;
+        gap: 28px;
+    }
+
+    .wanna-join-content-head h2 {
+        font-size: 36px;
+        white-space: normal;
+        /* Разрешаем перенос */
+    }
+
+    .wanna-join-content-head p {
+        font-size: 18px;
+        margin: 0 5%;
+    }
+
+    .wanna-join-content-but {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .content-but {
+        width: auto;
+        padding: 16px 30px;
+        height: auto;
+    }
+
+    .but-text a {
+        font-size: 16px;
+    }
+
+    /* foot */
+    footer {
+        margin-top: 150px;
+        gap: 64px;
+    }
+
+    .interno {
+        flex-direction: row;
+        width: 90%;
+        gap: 18px;
+        align-items: center;
+    }
+
+    .interno-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .interno-info-text {
+        align-items: center;
+    }
+
+    .interno-info-media {
+        justify-content: center;
+        width: 100%;
+        gap: 30px;
+    }
+
+    .interno-page,
+    .interno-service,
+    .interno-contact {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .interno-contact-data {
+        align-items: center;
+    }
+
+    .interno-page a,
+    .interno-service a,
+    .interno-contact-data span {
+        font-size: 18px;
+    }
+
+    .interno-page h3,
+    .interno-service h3,
+    .interno-contact h3 {
+        font-size: 22px;
+    }
+
+    .copyright {
+        height: auto;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .copyright span {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    html,
+    body {
+        width: 320px;
+        height: auto;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .container {
+        margin: 0 auto;
+        align-items: stretch;
+    }
+
+    .header-container {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        margin-left: 75%;
+    }
+
+    .burger-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .burger-toggle img {
+        width: 28px;
+        height: auto;
+        opacity: 0.7;
+    }
+
+    .burger-menu {
+        width: 120px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: white;
+        padding: 16px;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+
+    .burger-menu.active {
+        display: flex;
+    }
+
+    /* banner */
+    .banner {
+        width: 90%;
+        padding: 80px 16px;
+        margin: 0 auto;
+        border-radius: 32px;
+        background: url('./Assets/banner.png') no-repeat center center / cover;
+    }
+
+    .banner-intro {
+        width: 100%;
+        gap: 16px;
+    }
+
+    .banner-intro-text {
+        gap: 12px;
+    }
+
+    .banner-intro-text h2 {
+        font-size: 35px;
+        line-height: 120%;
+    }
+
+    .banner-intro-text p {
+        font-size: 16px;
+        line-height: 140%;
+    }
+
+    .banner-but {
+        padding: 18px 24px;
+        border-radius: 12px;
+    }
+
+    .get-started span {
+        font-size: 16px;
+    }
+
+    .get-started img {
+        width: 20px;
+        height: auto;
+    }
+
+    /* slider */
+    .slider {
+        margin: 60px auto;
+        width: 90%;
+        gap: 16px;
+    }
+
+    .slider h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .slides {
+        gap: 12px;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .slide {
+        height: 180px;
+        border-radius: 20px;
+        scroll-snap-align: center;
+    }
+
+    .slider-but {
+        width: 100%;
+        justify-content: space-evenly;
+        margin-top: 10px;
+    }
+
+    .prev,
+    .next {
+        width: 44px;
+        height: auto;
+    }
+
+    /* wanna contact */
+    .wanna-contact {
+        margin: 0 auto;
+        width: 90%;
+        flex-direction: column;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .wanna-content {
+        margin: 0 auto;
+        width: 90%;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .content-text h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .content-text p {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .content-contact {
+        width: 100%;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .contact span {
+        font-size: 18px;
+    }
+
+    .map-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #map {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+    }
+
+    /* Testimonial */
+    .testimonial {
+        margin: 60px auto;
+        width: 90%;
+        padding: 20px 0;
+        border-radius: 20px;
+        background-color: #F4F0EC;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonial-content {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .content-head {
+        width: 100%;
+    }
+
+    .content-head h2 {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+        line-height: 1.2;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .content-comment {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .comment {
+        height: auto;
+        width: 100%;
+        background-color: #FFF;
+        border-radius: 16px;
+        padding: 16px;
+        gap: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .person {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .person img {
+        width: 70px;
+        height: auto;
+        border-radius: 50%;
+    }
+
+    .person-info h3 {
+        font-size: 18px;
+        letter-spacing: 0.2px;
+    }
+
+    .person-info span {
+        font-size: 14px;
+        letter-spacing: 0.16px;
+    }
+
+    .comment-text {
+        width: 100%;
+    }
+
+    .comment-text p {
+        font-size: 16px;
+        letter-spacing: 0.18px;
+        line-height: 1.4;
+    }
+
+    /* client logo */
+    .client-logo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+        width: 100%;
+    }
+
+    .client-logo img {
+        padding-bottom: 3%;
+        width: 70px;
+    }
+
+    /* counter */
+    .counter {
+        padding-left: 0;
+        flex-direction: column;
+        height: auto;
+        margin: 60px auto;
+        padding: 40px 20px;
+    }
+
+    .counter-digit {
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .digit {
+        width: 100%;
+        gap: 8px;
+    }
+
+    .digit h3 {
+        font-size: 42px;
+    }
+
+    .digit span {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .counter-line {
+        display: none;
+    }
+    /* Wanna join */
+     .wanna-join {
+        margin: 0 auto;
+    width: 90%;
+    padding: 40px 20px;
+    border-radius: 40px;
+  }
+
+  .wanna-join-content {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .wanna-join-content-head h2 {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  .wanna-join-content-head p {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .wanna-join-content-but {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .content-but {
+    width: 80%;
+    max-width: 260px;
+    height: auto;
+    padding: 16px;
+  }
+
+  .but-text a {
+    font-size: 16px;
+  }
+
+  .but-text img {
+    width: 16px;
+    height: auto;
+  }
+  /* foot */
+  footer {
+    margin-top: 60px;
+    gap: 60px;
+  }
+
+  .interno {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    gap: 40px;
+  }
+
+  .interno-info {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .interno-info-text {
+    align-items: center;
+    width: 100%;
+  }
+
+  .interno-info-text p {
+    font-size: 16px;
+  }
+
+  .interno-info-media {
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .interno-info-media img {
+    width: auto;
+    height: 23px;
+  }
+
+  .interno-page,
+  .interno-service,
+  .interno-contact {
+    display: none;
+  }
+
+  .copyright {
+    height: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+
+  .copyright span {
+    font-size: 14px;
+    text-align: center;
+  }
+}
