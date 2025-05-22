@@ -260,4 +260,310 @@
     }
 }
 
-@media (min-width: 320px) and (max-width: 767px) {}
+@media (min-width: 320px) and (max-width: 767px) {
+    button {
+        font-size: 14px;
+        padding: 12px 18px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    html,
+    body {
+        width: 320px;
+        height: auto;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .container {
+        margin: 0 auto;
+        align-items: stretch;
+    }
+
+    .header-container {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 25px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .burger {
+        padding: 0;
+        display: block;
+        position: relative;
+        margin-left: 75%;
+    }
+
+    .burger-toggle {
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .burger-toggle img {
+        width: 28px;
+        height: auto;
+        opacity: 0.7;
+    }
+
+    .burger-menu {
+        width: 120px;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background: white;
+        padding: 16px;
+        border: 1px solid #ddd;
+        border-radius: 16px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+
+    .burger-menu.active {
+        display: flex;
+    }
+
+    /* banner */
+    .banner {
+        padding-top: 50px;
+        background-position: center top;
+        background-size: cover;
+    }
+
+    .intro {
+        width: 75%;
+        padding: 20px;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .intro h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .intro span {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    /* project */
+    .project {
+        width: 90%;
+        margin: 40px auto;
+        gap: 23px;
+    }
+
+    .field {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-num span,
+    .price-num span,
+    .catalog-butt span {
+        font-size: 18px;
+        line-height: 120%;
+    }
+
+    .catalog-butt a {
+        gap: 4px;
+    }
+
+    .catalog-butt img {
+        width: 32px;
+        height: auto;
+    }
+
+    /* card */
+    .cart-card {
+        column-count: 1;
+        column-gap: 0;
+        max-height: none;
+        width: 100%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        margin-bottom: 20px;
+    }
+
+    .cart-pic {
+        height: 220px;
+    }
+
+    .cart-item.first .cart-pic,
+    .cart-item.last .cart-pic {
+        height: 280px;
+    }
+
+    .cart-pic img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .cart-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .cart-title {
+        align-items: center;
+        gap: 4px;
+    }
+
+    .cart-title h3 {
+        font-size: 18px;
+        white-space: normal;
+    }
+
+    .cart-title p {
+        font-size: 16px;
+    }
+
+    .cart-price {
+        font-size: 20px;
+        white-space: normal;
+    }
+
+    .remove-from-cart {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+
+    .remove-from-cart img {
+        width: 40px;
+        height: auto;
+    }
+
+    /* pagination */
+    .pagination {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 10px 0;
+        flex-wrap: wrap;
+        /* добавлено для переноса кнопок */
+    }
+
+    .page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        /* адаптивность */
+    }
+
+    .pagination button {
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 500px;
+        border: 1px solid #CDA274;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .next-page {
+        transform: rotate(180deg);
+    }
+
+    .page-button {
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        cursor: pointer;
+        color: #000;
+        /* по желанию */
+    }
+
+    .prev-page img,
+    .next-page img {
+        width: 10px;
+        height: auto;
+    }
+
+    /* foot */
+    footer {
+        gap: 60px;
+        max-height: none;
+    }
+
+    .interno {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        gap: 40px;
+    }
+
+    .interno-info {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .interno-info-text {
+        align-items: center;
+        width: 100%;
+    }
+
+    .interno-info-text p {
+        font-size: 16px;
+    }
+
+    .interno-info-media {
+        justify-content: center;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .interno-info-media img {
+        width: auto;
+        height: 23px;
+    }
+
+    .interno-page,
+    .interno-service,
+    .interno-contact {
+        display: none;
+    }
+
+    .copyright {
+        height: auto;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .copyright span {
+        font-size: 14px;
+        text-align: center;
+    }
+}
