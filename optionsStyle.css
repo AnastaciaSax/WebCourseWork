@@ -7,7 +7,6 @@
 body,
 html {
     width: 1920px;
-    height: auto;
     margin: 0 auto;
     background: url('./Assets/optionsBg.png') no-repeat center center;
     background-size: cover;
@@ -16,7 +15,8 @@ html {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     color: #292F36;
     font-family: "DM Serif Display", serif;
     font-style: normal;
@@ -169,4 +169,183 @@ header nav a {
 
 .intro span {
     font-size: 22px;
+}
+
+/* purblind */
+
+.purblind {
+    margin: 200px 0 100px;
+    display: flex;
+    width: 62.55%;
+    padding: 40px 63px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    border-radius: 70px;
+    background: #F6F6F6;
+}
+
+.title {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.title h3 {
+    font-size: 55px;
+    font-weight: 400;
+    line-height: 125%;
+    /* 68.75px */
+}
+
+/*check box */
+.checkbox {
+    display: inline-block;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkbox span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Assets/checkBox.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: background-image 0.2s ease;
+}
+
+.checkbox input:checked+span {
+    background-image: url('./Assets/ckeckBoxChecked.svg');
+}
+
+/*check box end*/
+.purblind-content {
+    display: flex;
+    width: 89.34%;
+    justify-content: center;
+}
+
+.color-scheme {
+   display: flex;
+justify-content: center;
+align-items: center;
+gap: 132px;
+flex: 1 0 0;
+}
+
+.color-scheme-head {
+    display: flex;
+    width: 310px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #52402D;
+}
+
+.color-scheme-head h4 {
+    font-size: 50px;
+}
+
+.color-scheme-head p {
+    font-size: 22px;
+}
+
+.color-scheme-color-pick {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 210px;
+}
+
+/* color check box */
+.color-scheme-color-pick .checkbox {
+    width: 40px;
+    height: 40px;
+}
+
+.color-scheme-color-pick .checkbox span {
+    width: 100%;
+    height: 100%;
+}
+
+/* color check box end */
+.color-scheme-color {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.color-section-field {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.color-section-field-half {
+    display: flex;
+    width: 171px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-section-field-half div {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    stroke-width: 1px;
+    stroke: #000;
+    border-radius: 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-section-field-half div:first-of-type,
+.color-section-field-half div:last-of-type {
+    fill: #FFF;
+}
+
+.color-section-field-half.sec div,
+.color-section-field-half.five div {
+    background: #292F36;
+}
+
+.color-section-field-half.third div {
+    background: #F4F0EC;
+}
+
+.color-section-field-half.four div {
+    background: #52402D;
+}
+
+.color-section-field-half p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.purblind-image {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.purblind-image span {
+    font-family: "DM Serif Display", serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 62.5px */
+    letter-spacing: 0;
 }
