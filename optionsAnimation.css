@@ -1,0 +1,8 @@
+.checkbox input:checked+span {
+    background-image: url('./Assets/ckeckBoxChecked.svg');
+}
+
+.theme-switch input:checked+label {
+    background: url('./Assets/switchNight.png') no-repeat center center;
+    background-size: contain;
+}
