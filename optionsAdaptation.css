@@ -1,0 +1,200 @@
+@media (min-width: 768px) and (max-width: 1024px) {
+    button {
+        font-size: 16px;
+        padding: 16px 25px;
+        gap: 8px;
+        border-radius: 12px;
+    }
+
+    html,
+    body {
+        width: 768px;
+        height: auto;
+        background-size: cover;
+    }
+
+    .container {
+        align-items: stretch;
+        /* растягиваем содержимое по ширине */
+    }
+
+    .header-container {
+        width: 95%;
+        margin: 30px auto;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        margin-left: auto;
+    }
+
+    .burger-toggle {
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .burger-toggle img {
+        width: 32px;
+        height: auto;
+        opacity: 70%;
+    }
+
+    .burger-menu {
+        width: 120px;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: white;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        z-index: 100;
+    }
+
+    .burger-menu.active {
+        display: flex;
+    }
+
+    /* banner */
+    .banner {
+        padding-top: 50px;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .intro {
+        width: 45%;
+        padding: 32px 24px;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .into-title {
+        width: 100%;
+    }
+
+    .intro h2 {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .intro span {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* purblind */
+    .purblind {
+        width: 90%;
+        padding: 30px 20px;
+        gap: 30px;
+        margin: 100px auto;
+        border-radius: 40px;
+    }
+
+    .title {
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .title h3 {
+        font-size: 36px;
+        line-height: 120%;
+    }
+
+    .color-scheme-color {
+        display: flex;
+        gap: 20px;
+    }
+
+    .color-scheme-head {
+        display: none;
+    }
+
+    .color-section-field {
+        display: flex;
+        gap: 10px;
+    }
+
+    .color-section-field-half {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .checkbox {
+        width: 40px;
+        height: 40px;
+    }
+
+    .purblind-content {
+        width: 100%;
+    }
+
+    .color-scheme {
+        align-items: flex-start;
+        gap: 50px;
+    }
+
+    .color-scheme-color-pick {
+        gap: 150px;
+        margin-top: 40px;
+    }
+
+    .color-scheme-color {
+        gap: 15px;
+    }
+
+    .color-section-field {
+        gap: 10px;
+    }
+
+    .color-section-field-half {
+        gap: 8px;
+    }
+
+    .purblind-image {
+        gap: 20px;
+    }
+
+    .purblind-image span {
+        font-size: 26px;
+    }
+
+    .color-section-field-half div {
+        width: 80%;
+        border-radius: 15px;
+    }
+
+    .color-section-field-half p {
+        font-size: 16px;
+    }
+
+    /* typo */
+
+}
+
+@media (min-width: 320px) and (max-width: 767px) {}
