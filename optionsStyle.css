@@ -617,3 +617,59 @@ header nav a {
 }
 
 /*check box end*/
+/* reset */
+.reset-container {
+    margin:100px 0 200px;
+    display: flex;
+    width: 13.07%;
+    justify-content: center;
+    align-items: center;
+}
+
+.reset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 23px;
+    flex: 1 0 0;
+}
+
+.reset p {
+    align-self: stretch;
+    text-align: center;
+    font-size: 22px;
+}
+
+.reset-but {
+    border-radius: 18px;
+    background: #CDA274;
+    box-shadow: 0px 10px 20px 0px #1F2022;
+    display: flex;
+    padding: 26px 37px;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 56.97%;
+    border: none;
+    cursor: pointer;
+}
+
+.reset-but span {
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 125%;
+    /* 22.5px */
+    letter-spacing: 0.36px;
+}
+
+.reset-but-text {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
