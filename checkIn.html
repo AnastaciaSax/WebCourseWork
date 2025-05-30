@@ -66,28 +66,49 @@
                 <div class="form">
                     <div class="form-content">
                         <div class="content-field">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Surname">
+                            <div class="field-wrapper">
+                                <input type="text" id="name" placeholder="Name" required>
+                            </div>
+                            <div class="field-wrapper">
+                                <input type="text" id="surname" placeholder="Surname" required>
+                            </div>
                         </div>
                         <div class="content-field">
-                            <input type="text" placeholder="Email">
-                            <input type="text" placeholder="+375">
+                            <div class="field-wrapper">
+                                <input type="text" id="email" placeholder="Email" required>
+                            </div>
+                            <div class="field-wrapper">
+                                <input type="text" id="phone" placeholder="+375" pattern="\+375[0-9]{9}" required>
+                            </div>
                         </div>
                         <div class="content-field">
-                            <input type="text" placeholder="Birthdate">
-                            <input type="text" placeholder="Nickname">
+                            <div class="field-wrapper">
+<input type="text" id="birthdate" placeholder="Birthdate" required>
+                            </div>
+                            <div class="field-wrapper">
+ <input type="text" id="nickname" placeholder="Nickname" required>
+                            </div> 
                         </div>
                         <div class="content-field">
-                            <input type="text" placeholder="Password">
+                            <div class="field-wrapper">
+ <input type="text" id="password" placeholder="Password" required>
+                            </div>
+                            <div class="field-wrapper">
+ <input type="text" id="repeatPassword" placeholder="Repeat password" required>
+                            </div>
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="autoGeneratePassword">
+                                <span class="custom-checkbox"></span>
+                                <span class="checkbox-label">Auto</span>
+                            </label>
                         </div>
                     </div>
                     <div class="form-down">
-                        <div class="down-but">
-                            <div class="check-in-but">
-                                <a href="#">Create Account</a>
-                                <img src="./Assets/signInButArrow.svg" alt="arrow">
-                            </div>
-                        </div>
+                        <button type="button" id="generateNickname">Generate Nick</button>
+                        <button type="button" class="create-account">
+                            <span>Create Account</span>
+                            <img src="./Assets/signInButArrow.svg" alt="arrow">
+                        </button>
                     </div>
                 </div>
             </div>
