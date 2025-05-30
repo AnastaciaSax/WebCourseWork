@@ -96,6 +96,9 @@ nav a {
     background: transparent;
     margin-left: -14px;
 }
+.burger{
+    display: none;
+}
 
 /* banner */
 .banner {

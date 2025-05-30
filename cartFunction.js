@@ -1,4 +1,4 @@
-const userId = 3; // текущий пользователь (можно адаптировать под авторизацию)
+const userId = 2; // текущий пользователь (можно адаптировать под авторизацию)
 const cartContainer = document.querySelector(".cart-card");
 const paginationContainer = document.querySelector(".page");
 const prevButton = document.querySelector(".prev-page");

@@ -77,6 +77,10 @@ header {
     font-size: 40px;
 }
 
+.burger {
+    display: none;
+}
+
 nav {
     display: flex;
     justify-content: center;
@@ -148,7 +152,7 @@ nav a {
     gap: 10px;
 }
 
-.get-started span {
+.get-started a {
     color: #FFF;
     text-align: center;
     font-size: 18px;
@@ -164,12 +168,13 @@ nav a {
     display: flex;
     width: 62.5%;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     overflow: hidden;
 }
 
 .slider h2 {
+    margin: 0 auto;
     font-size: 50px;
 }
 
@@ -195,6 +200,7 @@ nav a {
 }
 
 .slider-but {
+    margin: 0 auto;
     display: flex;
     width: 230px;
     justify-content: space-between;
@@ -282,6 +288,12 @@ nav a {
     background: #C4C4C4;
     flex-shrink: 0;
     overflow: hidden;
+}
+
+.map-embed {
+    border: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Testimonial */
@@ -528,6 +540,13 @@ footer {
     flex-shrink: 0;
 }
 
+.interno-bottom-row {
+    display: flex;
+    flex-direction: row;
+    gap: 101px;
+    flex-shrink: 0;
+}
+
 .interno-info-text {
     display: flex;
     width: 100%;
@@ -615,6 +634,7 @@ footer {
     height: 1px;
     background: #E5E5E5;
 }
-.copyright span{
+
+.copyright span {
     font-size: 22px;
 }

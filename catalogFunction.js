@@ -219,3 +219,28 @@ const menu = document.querySelector(".burger-menu");
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
+
+// footer opening
+
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  if (category) {
+    applyCategoryFilter(category);
+  }
+});
+
+// пример функции фильтрации
+function applyCategoryFilter(category) {
+  const buttons = document.querySelectorAll(".filt-content button");
+  
+  buttons.forEach(btn => {
+    if (btn.dataset.place === category) {
+      btn.classList.add("active"); // можешь добавить визуальное выделение
+      btn.click(); // вызываем клик по нужной кнопке
+    } else {
+      btn.classList.remove("active");
+    }
+  });
+}

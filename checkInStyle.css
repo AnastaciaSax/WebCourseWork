@@ -1,0 +1,366 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 1920px;
+    height: 2221px;
+    margin: 0 auto;
+    background: url('./Assets/checkInBackground.jpg') no-repeat center center;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    color: #292F36;
+    font-family: "DM Serif Display", serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 81.25px */
+}
+
+p,
+a,
+span {
+    color: #4D5053;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 33px */
+    letter-spacing: 0.22px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* header */
+.header-container {
+    margin: 56px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header {
+    width: 62.4%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 46px;
+    align-items: center;
+    margin-left: 33.4%;
+}
+
+nav a {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.optionBut {
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-left: -14px;
+}
+
+.burger {
+    display: none;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    height: 16.02%;
+    flex-shrink: 0;
+    background: url('./Assets/signInBannerBackg.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.intro {
+    display: flex;
+    padding: 41px 134px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 37px 37px 0px 0px;
+    background: #FFF;
+}
+
+.into-title {
+    display: flex;
+    width: 236px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro h2 {
+    font-size: 50px;
+}
+
+.intro span {
+    font-size: 22px;
+}
+
+/* inter info */
+
+.inter-info-form {
+    padding-top: 10px;
+    margin: 200px 0;
+    display: flex;
+    width: 62.55%;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.inter-info-form-title {
+    margin-top: -10px;
+    width: 56.9%;
+    text-align: center;
+}
+
+.inter-info-form h2 {
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 0.5px;
+    line-height: 150%;
+}
+
+.contact-form {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 55px;
+}
+
+.form {
+    display: flex;
+    width: 66.4%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 58px;
+    flex-shrink: 0;
+}
+
+.form-content {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.content-field {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    height: 45px;
+    flex-shrink: 0;
+    gap: 39px;
+}
+
+.content-field input {
+    width: 47%;
+    height: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 0 0 12px 0;
+    font-size: 16px;
+    font-family: "Jost", sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-field:last-of-type input {
+    width: 100%;
+}
+
+.form-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 176px;
+}
+
+.down-but {
+    display: flex;
+    padding: 26px 54px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+    background: #292F36;
+    box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+}
+
+.check-in-but {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+
+.check-in-but a {
+    color: #FFF;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 125%;
+    /* 22.5px */
+    letter-spacing: 0.36px;
+}
+
+/* foot */
+
+footer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+}
+
+.interno {
+    display: flex;
+    width: 62.55%;
+    align-items: flex-start;
+    gap: 101px;
+}
+
+.interno-info {
+    display: flex;
+    width: 32.78%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.interno-info-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.interno-info-text p {
+    font-size: 22px;
+}
+
+.interno-info-media {
+    display: flex;
+    width: 57.25%;
+    align-items: center;
+    gap: 54px;
+}
+
+.interno-page {
+    display: flex;
+    width: 10.42%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.interno-page h3,
+.interno-service h3,
+.interno-contact h3 {
+    font-size: 25px;
+}
+
+.interno-page a,
+.interno-service a {
+    font-size: 22px;
+    line-height: 265%;
+}
+
+.interno-service {
+    display: flex;
+    width: 10.01%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.interno-contact {
+    display: flex;
+    width: 21.52%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    flex-shrink: 0;
+}
+
+.interno-contact-data {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex-shrink: 0;
+}
+
+.interno-contact-data span {
+    font-size: 22px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 113px;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.copyright-line {
+    width: 100%;
+    height: 1px;
+    background: #E5E5E5;
+}
+
+.copyright span {
+    font-size: 22px;
+}

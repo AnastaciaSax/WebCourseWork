@@ -483,6 +483,7 @@ header nav a {
     flex-shrink: 0;
     border-radius: 70px;
     background: #F6F6F6;
+     height: 519px;
 }
 
 .lang {
@@ -560,6 +561,7 @@ header nav a {
     flex-shrink: 0;
     border-radius: 70px;
     background: #F6F6F6;
+    height: 519px;
 }
 
 .theme {
@@ -672,4 +674,130 @@ header nav a {
     align-items: center;
     gap: 5px;
     flex-shrink: 0;
+}
+/* foot */
+
+footer {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 130px;
+    max-height: 578px;
+}
+
+.interno {
+    display: flex;
+    width: 62.55%;
+    align-items: flex-start;
+    gap: 101px;
+}
+
+.interno-info {
+    display: flex;
+    width: 32.78%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.interno-bottom-row {
+    display: flex;
+    flex-direction: row;
+    gap: 101px;
+    flex-shrink: 0;
+}
+
+.interno-info-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.interno-info-text p {
+    font-size: 22px;
+}
+
+.interno-info-media {
+    display: flex;
+    width: 57.25%;
+    align-items: center;
+    gap: 54px;
+}
+
+.interno-page {
+    display: flex;
+    width: 10.42%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.interno-page h3,
+.interno-service h3,
+.interno-contact h3 {
+    font-size: 25px;
+}
+
+.interno-page a,
+.interno-service a {
+    font-size: 22px;
+    line-height: 265%;
+}
+
+.interno-service {
+    display: flex;
+    width: 10.01%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    flex-shrink: 0;
+}
+
+.interno-contact {
+    display: flex;
+    width: 21.52%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    flex-shrink: 0;
+}
+
+.interno-contact-data {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    flex-shrink: 0;
+}
+
+.interno-contact-data span {
+    font-size: 22px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 113px;
+    gap: 40px;
+    flex-direction: column;
+}
+
+.copyright-line {
+    width: 100%;
+    height: 1px;
+    background: #E5E5E5;
+}
+
+.copyright span {
+    font-size: 22px;
 }
