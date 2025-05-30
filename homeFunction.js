@@ -1,103 +1,72 @@
-// SLIDER
-
-// Определяем, сколько слайдов показывать
+// slider
 const visibleSlidesByScreen = () => {
   const w = window.innerWidth;
-  if (w <= 767) return 1;      // для экранов до 767px — 1 слайд
-  if (w <= 1024) return 2;     // для 768–1024px — 2 слайда
-  return 3;                    // для шире 1024px — 3 слайда
+  if (w <= 767) return 1;
+  if (w <= 1024) return 2;
+  return 3;
 };
 
 const sliderContainer = document.querySelector(".slider");
 const slidesContainer = document.querySelector(".slides");
 const btnPrev = document.querySelector(".prev");
 const btnNext = document.querySelector(".next");
+const slides = document.querySelectorAll(".slide");
 
+// В начальном состоянии currentIndex = 0, чтобы первый слайд был полностью виден
 let currentIndex = 0;
 let visibleSlides = visibleSlidesByScreen();
-let slideStep = 0;
-let totalOriginal = 0;
+let slideStep = 0; // Шаг прокрутки – ширина одного слайда плюс gap
+
+// Функция для пересчёта размеров слайдов и шага прокрутки
+function updateDimensions() {
+  const containerWidth = sliderContainer.clientWidth;
+  // Получаем gap из CSS (если не задан – по умолчанию 27px)
+  const computedGap = parseFloat(getComputedStyle(slidesContainer).gap) || 27;
+  // Ширина каждого слайда рассчитывается так, чтобы ровно visibleSlides умещались в контейнере с учётом gap
+  const slideWidth = (containerWidth - computedGap * (visibleSlides - 1)) / visibleSlides;
+  
+  slides.forEach(slide => {
+    slide.style.flex = `0 0 ${slideWidth}px`;
+  });
+  
+  // Шаг прокрутки – совокупная ширина слайда и промежутка
+  slideStep = slideWidth + computedGap;
+}
+
+// Функция для обновления прокрутки слайдера с плавной анимацией
+function updateSlider() {
+  slidesContainer.style.transform = `translateX(-${currentIndex * slideStep}px)`;
+  
+  // Если currentIndex равен нулю – левый край, отключаем кнопку «prev»
+  btnPrev.disabled = (currentIndex <= 0);
+  // Правая граница: последний видимый набор слайдов соответствует currentIndex = slides.length - visibleSlides
+  btnNext.disabled = (currentIndex >= (slides.length - visibleSlides));
+}
 
 // Инициализация слайдера
 function initSlider() {
-  visibleSlides = visibleSlidesByScreen(); // Пересчитываем видимые слайды
-  const original = Array.from(document.querySelectorAll(".slide:not(.clone)"));
-  totalOriginal = original.length;
-
-  slidesContainer.innerHTML = "";
-
-  // Клонируем слайды для бесконечного цикла
-  const clonesBefore = original.slice(-visibleSlides).map(cloneSlide);
-  const clonesAfter  = original.slice(0, visibleSlides).map(cloneSlide);
-
-  clonesBefore.forEach(s => slidesContainer.appendChild(s));
-  original.forEach    (s => slidesContainer.appendChild(s));
-  clonesAfter .forEach(s => slidesContainer.appendChild(s));
-
-  currentIndex = visibleSlides;
+  visibleSlides = visibleSlidesByScreen();
   updateDimensions();
-}
-
-// Функция клонирования одного слайда
-function cloneSlide(slide) {
-  const clone = slide.cloneNode(true);
-  clone.classList.add("clone");
-  return clone;
-}
-
-// Обновление размеров слайдов и расчёт шага
-function updateDimensions() {
-  const containerWidth = sliderContainer.clientWidth;
-  const gap = parseFloat(getComputedStyle(slidesContainer).gap) || 0;
-  const slideWidth = Math.round((containerWidth - gap * (visibleSlides - 1)) / visibleSlides);
-  const slideHeight = window.innerWidth <= 480 ? "180px" : "244px";
-
-  document.querySelectorAll(".slide").forEach(slide => {
-    slide.style.flex   = `0 0 ${slideWidth}px`;
-    slide.style.height = slideHeight;
-  });
-
-  slideStep = slideWidth + gap;
   updateSlider();
 }
 
-// Смещение карусели
-function updateSlider() {
-  slidesContainer.style.transform = `translateX(-${currentIndex * slideStep}px)`;
-}
-
-// Обработчики кнопок
+// Обработчик клика по кнопке "следующий"
 btnNext.addEventListener("click", () => {
-  currentIndex++;
-  slidesContainer.style.transition = "transform 0.5s ease-in-out";
-  updateSlider();
+  if (currentIndex < (slides.length - visibleSlides)) {
+    currentIndex += 0.5; // прокручиваем на полслайда
+    updateSlider();
+  }
 });
 
+// Обработчик клика по кнопке "предыдущий"
 btnPrev.addEventListener("click", () => {
-  currentIndex--;
-  slidesContainer.style.transition = "transform 0.5s ease-in-out";
-  updateSlider();
-});
-
-// Зацикливание при переходе через клоны
-slidesContainer.addEventListener("transitionend", () => {
-  if (currentIndex >= totalOriginal + visibleSlides) {
-    slidesContainer.style.transition = "none";
-    currentIndex = visibleSlides;
+  if (currentIndex > 0) {
+    currentIndex -= 0.5;
     updateSlider();
   }
-  if (currentIndex < visibleSlides) {
-    slidesContainer.style.transition = "none";
-    currentIndex = totalOriginal + currentIndex;
-    updateSlider();
-  }
-  // Возвращаем плавность анимации
-  setTimeout(() => {
-    slidesContainer.style.transition = "transform 0.5s ease-in-out";
-  }, 0);
 });
 
-// Свайп-жесты для мобильных
+// Поддержка свайпа (touch)
 let startX = 0;
 slidesContainer.addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
@@ -112,19 +81,18 @@ slidesContainer.addEventListener("touchend", e => {
   }
 });
 
-// При изменении размера экрана пересоздаём слайды
+// Пересчитываем размеры при изменении окна
 window.addEventListener("resize", () => {
   initSlider();
 });
 
-// Запуск
+// Инициализация слайдера при загрузке страницы
 initSlider();
-
 //burger
 // Обновляем размеры слайдов при изменении размера окна
 const toggle = document.querySelector(".burger-toggle");
 const menu = document.querySelector(".burger-menu");
 
 toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
+  menu.classList.toggle("active");
 });
