@@ -118,10 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,20}$/;
     if (!pattern.test(value)) {
-      showError(
-        passwordInput,
-        "8–20 chars, a lower & upper case letter, digit & symbol"
-      );
+      showError(passwordInput, "8–20 chars, a lower & upper case letter, digit & symbol");
       return false;
     }
     if (topPasswords.has(value.toLowerCase())) {
@@ -190,24 +187,13 @@ document.addEventListener("DOMContentLoaded", () => {
     valid &= validateBirth();
     valid &= validatePassword();
 
-    valid = Boolean(valid);
-    registerBtn.disabled = !valid;
-    return valid;
+    return Boolean(valid);
   };
 
-  // ИЗНАЧАЛЬНО КНОПКА ВЫКЛЮЧЕНА
-  registerBtn.disabled = true;
+  // Кнопка доступна, валидация только по клику
+  registerBtn.disabled = false;
 
-  // Проверка при любом изменении
-  inputs.forEach((input) => {
-    input.addEventListener("input", validateForm);
-  });
-
-  autoPasswordCheckbox.addEventListener("change", () => {
-    toggleRepeatPassword();
-    validateForm();
-  });
-
+  autoPasswordCheckbox.addEventListener("change", toggleRepeatPassword);
   generateNickBtn.addEventListener("click", generateNickname);
 
   registerBtn.addEventListener("click", (e) => {
@@ -220,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
         phone: phoneInput.value.trim(),
         birthdate: birthInput.value.trim(),
         nickname: nicknameInput.value.trim(),
-        password: passwordInput.value, // В реальности лучше хэшировать!
+        password: passwordInput.value,
         role: "user"
       };
 
@@ -246,5 +232,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       console.log("Form is invalid.");
     }
+  });
+   inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      removeError(input);
+    });
   });
 });
