@@ -64,10 +64,17 @@
                 <div class="form">
                     <div class="form-content">
                         <div class="content-field">
-                            <input type="text" placeholder="Name">
+                            <div class="field-wrapper">
+                                <input type="text" id="signin-name" placeholder="Name" required>
+                            </div>
+                            <div class="field-wrapper">
+                                <input type="text" id="signin-email" placeholder="Email" required>
+                            </div>
                         </div>
                         <div class="content-field">
-                            <input type="text" placeholder="Email">
+                            <div class="field-wrapper" style="width: 100%;">
+                                <input type="password" id="signin-password" placeholder="Password" required>
+                            </div>
                         </div>
                     </div>
                     <div class="form-down">

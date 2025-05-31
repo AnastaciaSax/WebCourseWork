@@ -96,7 +96,8 @@ nav a {
     background: transparent;
     margin-left: -14px;
 }
-.burger{
+
+.burger {
     display: none;
 }
 
@@ -182,10 +183,11 @@ nav a {
 
 .content-field {
     display: flex;
-    width: 47.42%;
+    width: 100%;
     align-items: flex-start;
     height: 45px;
     flex-shrink: 0;
+    gap: 39px;
 }
 
 .content-field input {
@@ -243,6 +245,26 @@ nav a {
     line-height: 125%;
     /* 22.5px */
     letter-spacing: 0.36px;
+}
+
+.field-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    position: relative;
+}
+
+.input-error-field {
+    border-bottom: 2px solid red !important;
+    box-shadow: 0 1px 0 red;
+}
+
+.input-error {
+    white-space: nowrap;
+    margin-top: 4px;
+    font-size: 14px;
+    color: red;
+    font-family: "Jost", sans-serif;
 }
 
 /* foot */
