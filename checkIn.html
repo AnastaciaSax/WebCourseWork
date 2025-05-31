@@ -7,7 +7,7 @@
     <title>Check in</title>
     <link rel="stylesheet" href="checkInStyle.css">
     <link rel="stylesheet" href="checkInAdaptation.css">
-    <link rel="stylesheet" href="signInStyleAnimation.css">
+    <link rel="stylesheet" href="checkInAnimation.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -83,18 +83,18 @@
                         </div>
                         <div class="content-field">
                             <div class="field-wrapper">
-<input type="text" id="birthdate" placeholder="Birthdate" required>
+                                <input type="text" id="birthdate" placeholder="Birthdate" required>
                             </div>
                             <div class="field-wrapper">
- <input type="text" id="nickname" placeholder="Nickname" required>
-                            </div> 
+                                <input type="text" id="nickname" placeholder="Nickname" required>
+                            </div>
                         </div>
                         <div class="content-field">
                             <div class="field-wrapper">
- <input type="text" id="password" placeholder="Password" required>
+                                <input type="text" id="password" placeholder="Password" required>
                             </div>
                             <div class="field-wrapper">
- <input type="text" id="repeatPassword" placeholder="Repeat password" required>
+                                <input type="text" id="repeatPassword" placeholder="Repeat password" required>
                             </div>
                             <label class="checkbox-container">
                                 <input type="checkbox" id="autoGeneratePassword">
@@ -161,6 +161,20 @@
                 <span>Copyright © Interno | Designed by Anastacia Sax</span>
             </div>
         </footer>
+    </div>
+     <div id="termsModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>User Agreement</h2>
+            <p>Consent is required to complete your check-in. Please review the terms.</p>
+            <label>
+                <input type="checkbox" id="agreeTerms" />
+                I accept the User Agreement
+            </label>
+            <div class="modal-buttons">
+                <button id="confirmRegister" disabled>Confirm</button>
+                <button id="cancelModal">Cancel</button>
+            </div>
+        </div>
     </div>
     <script src="checkInFunction.js"></script>
 </body>

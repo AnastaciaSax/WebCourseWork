@@ -1,0 +1,8 @@
+.modal-buttons button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.modal-buttons button:hover:not(:disabled) {
+  background: #1e2329;
+}

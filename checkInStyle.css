@@ -440,3 +440,85 @@ footer {
 .copyright span {
     font-size: 22px;
 }
+/* modal form */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 47, 54, 0.6); /* основной цвет сайта с прозрачностью */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 520px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-family: "Jost", sans-serif;
+  color: #4D5053;
+  text-align: center;
+}
+
+.modal-content h2 {
+  font-family: "DM Serif Display", serif;
+  color: #292F36;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.modal-content label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  font-size: 16px;
+  color: #292F36;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.modal-content input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #292F36;
+  cursor: pointer;
+}
+
+/* Кнопки */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.modal-buttons button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 14px;
+  background: #292F36;
+  color: #FFF;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Jost", sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
