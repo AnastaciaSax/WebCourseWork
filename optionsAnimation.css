@@ -6,3 +6,10 @@
     background: url('./Assets/switchNight.png') no-repeat center center;
     background-size: contain;
 }
+.dark-theme .checkbox input:checked+span {
+   filter: invert(0);
+}
+
+.dark-theme .theme-switch input:checked+label {
+   filter: invert(0);
+}
