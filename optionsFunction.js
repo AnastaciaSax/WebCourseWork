@@ -9,13 +9,17 @@ toggle.addEventListener("click", () => {
 //options
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
-  const themeSwitch = document.querySelector(
-    '.theme-switch input[type="checkbox"]'
-  );
+  const themeSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
   const resetButton = document.querySelector(".reset-but");
-  const purblindCheckbox = document.querySelector(
-    '.purblind .checkbox input[type="checkbox"]'
-  );
+  const purblindCheckbox = document.querySelector('.purblind .checkbox input[type="checkbox"]');
+
+  const colorCheckboxes = document.querySelectorAll('.color-scheme-color-pick .checkbox input[type="checkbox"]');
+  const colorBlocks = document.querySelectorAll('.color-scheme-color .color-section-field');
+
+  const typoCheckboxes = document.querySelectorAll('.typo-pick .checkbox input[type="checkbox"]');
+  const typoBlocks = document.querySelectorAll(".typo-content > .typo-content");
+
+  const langCheckboxes = document.querySelectorAll('.lang-pick .checkbox input[type="checkbox"]');
 
   const updatePurblindDependentVisibility = () => {
     const isPurblindActive = purblindCheckbox.checked;
@@ -31,28 +35,40 @@ document.addEventListener("DOMContentLoaded", () => {
       const checkboxes = section.querySelectorAll('input[type="checkbox"]');
       checkboxes.forEach((cb) => {
         cb.disabled = !isPurblindActive;
-        if (!isPurblindActive) cb.checked = false; // снимаем чекбоксы
+        if (!isPurblindActive) cb.checked = false;
       });
     });
 
-    // При отключении purblind удаляем связанные настройки из localStorage
-    if (!isPurblindActive) {
+    if (isPurblindActive) {
+      // Typography: включаем "medium" (index = 1) если ничего не выбрано
+      if (![...typoCheckboxes].some(cb => cb.checked)) {
+        const defaultIndex = 1;
+        typoCheckboxes[defaultIndex].checked = true;
+        localStorage.setItem("typoStyle", defaultIndex.toString());
+        typoBlocks.forEach((block, i) =>
+          block.classList.toggle("active", i === defaultIndex)
+        );
+      }
+
+      // Color: включаем первую (index = 0) если ничего не выбрано
+      if (![...colorCheckboxes].some(cb => cb.checked)) {
+        const defaultIndex = 0;
+        colorCheckboxes[defaultIndex].checked = true;
+        localStorage.setItem("colorScheme", defaultIndex.toString());
+        colorBlocks.forEach((block, i) =>
+          block.classList.toggle("active", i === defaultIndex)
+        );
+      }
+    } else {
       localStorage.removeItem("colorScheme");
       localStorage.removeItem("typoStyle");
 
-      // Также можно убрать визуальное выделение блоков
-      const colorBlocks = document.querySelectorAll(
-        ".color-scheme-color .color-section-field"
-      );
-      const typoBlocks = document.querySelectorAll(
-        ".typo-content > .typo-content"
-      );
       colorBlocks.forEach((b) => b.classList.remove("active"));
       typoBlocks.forEach((b) => b.classList.remove("active"));
     }
   };
 
-  // --- Тема ---
+  // --- Theme ---
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     body.classList.add("dark-theme");
@@ -67,26 +83,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Язык ---
-  const langCheckboxes = document.querySelectorAll(
-    '.lang-pick .checkbox input[type="checkbox"]'
-  );
+  // --- Language ---
+  const savedLangIndex = localStorage.getItem("langIndex");
+  if (savedLangIndex !== null) {
+    langCheckboxes.forEach((cb, i) => (cb.checked = i === parseInt(savedLangIndex)));
+  } else if (langCheckboxes.length > 0) {
+    langCheckboxes[0].checked = true;
+    localStorage.setItem("langIndex", "0");
+  }
+
   langCheckboxes.forEach((checkbox, index) => {
     checkbox.addEventListener("change", () => {
-      langCheckboxes.forEach((cb, i) => (cb.checked = i === index));
-      localStorage.setItem("langIndex", index.toString());
+      if (checkbox.checked) {
+        langCheckboxes.forEach((cb, i) => (cb.checked = i === index));
+        localStorage.setItem("langIndex", index.toString());
+      } else {
+        const checkedCount = Array.from(langCheckboxes).filter(cb => cb.checked).length;
+        if (checkedCount === 0) {
+          checkbox.checked = true; // запрещаем отжатие последней
+        }
+      }
     });
   });
 
-  // Восстановление выбранного языка
-  const savedLangIndex = localStorage.getItem("langIndex");
-  if (savedLangIndex !== null) {
-    langCheckboxes.forEach(
-      (cb, i) => (cb.checked = i === parseInt(savedLangIndex))
-    );
-  }
-
-  // --- Purblind ---
+  // --- Purblind Mode ---
   const savedPurblind = localStorage.getItem("purblind") === "true";
   purblindCheckbox.checked = savedPurblind;
   updatePurblindDependentVisibility();
@@ -96,49 +116,35 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePurblindDependentVisibility();
   });
 
-  // --- Универсальный обработчик выделения для группы чекбоксов ---
+  // --- Универсальный обработчик чекбоксов ---
   const handleExclusiveSelection = (checkboxes, blocks, groupKey) => {
     const savedIndex = localStorage.getItem(groupKey);
     if (savedIndex !== null && checkboxes[savedIndex]) {
       checkboxes[savedIndex].checked = true;
-      blocks.forEach((block, i) => {
-        block.classList.toggle("active", i === parseInt(savedIndex));
-      });
+      blocks.forEach((block, i) =>
+        block.classList.toggle("active", i === parseInt(savedIndex))
+      );
     }
 
     checkboxes.forEach((checkbox, index) => {
       checkbox.addEventListener("change", () => {
         if (checkbox.checked) {
           checkboxes.forEach((cb, i) => (cb.checked = i === index));
-          blocks.forEach((block, i) => {
-            block.classList.toggle("active", i === index);
-          });
+          blocks.forEach((block, i) =>
+            block.classList.toggle("active", i === index)
+          );
           localStorage.setItem(groupKey, index.toString());
         } else {
-          const anyChecked = Array.from(checkboxes).some((cb) => cb.checked);
+          const anyChecked = Array.from(checkboxes).some(cb => cb.checked);
           if (!anyChecked) {
-            blocks.forEach((block) => block.classList.remove("active"));
-            localStorage.removeItem(groupKey);
+            checkbox.checked = true; // запрещаем отжатие последней
           }
         }
       });
     });
   };
 
-  // --- Color Scheme ---
-  const colorCheckboxes = document.querySelectorAll(
-    '.color-scheme-color-pick .checkbox input[type="checkbox"]'
-  );
-  const colorBlocks = document.querySelectorAll(
-    ".color-scheme-color .color-section-field"
-  );
   handleExclusiveSelection(colorCheckboxes, colorBlocks, "colorScheme");
-
-  // --- Typography ---
-  const typoCheckboxes = document.querySelectorAll(
-    '.typo-pick .checkbox input[type="checkbox"]'
-  );
-  const typoBlocks = document.querySelectorAll(".typo-content > .typo-content");
   handleExclusiveSelection(typoCheckboxes, typoBlocks, "typoStyle");
 
   // --- Reset ---
@@ -148,15 +154,13 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("theme", "light");
       if (themeSwitch) themeSwitch.checked = false;
 
-      if (langCheckboxes.length >= 2) {
-        langCheckboxes[0].checked = true;
-        langCheckboxes[1].checked = false;
+      // Язык: выставить первый
+      if (langCheckboxes.length >= 1) {
+        langCheckboxes.forEach((cb, i) => cb.checked = i === 0);
         localStorage.setItem("langIndex", "0");
       }
 
-      const allCheckboxes = document.querySelectorAll(
-        '.checkbox input[type="checkbox"]'
-      );
+      const allCheckboxes = document.querySelectorAll('.checkbox input[type="checkbox"]');
       allCheckboxes.forEach((cb) => {
         const isTheme = cb === themeSwitch;
         const isLang = cb.closest(".lang-pick");
@@ -167,7 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("purblind", "false");
       updatePurblindDependentVisibility();
 
-      // Сбросить выделения
       colorBlocks.forEach((b) => b.classList.remove("active"));
       typoBlocks.forEach((b) => b.classList.remove("active"));
       localStorage.removeItem("colorScheme");
