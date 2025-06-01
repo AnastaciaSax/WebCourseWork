@@ -485,15 +485,10 @@ html.dark-theme {
     background-size: cover;
     color: #ccc;
 }
-body.dark-theme .remove-from-cart button {
+body.dark-theme .remove-from-cart {
      background-color: transparent;
 }
-body.dark-theme .cart-item {
-    background: #222;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    border-radius: 15px;
-    padding: 20px;
-}
+
 body.dark-theme header nav a,
 body.dark-theme .interno-page a,
 body.dark-theme .interno-service a {

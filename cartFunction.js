@@ -1,4 +1,3 @@
-const userId = 2; // текущий пользователь (можно адаптировать под авторизацию)
 const cartContainer = document.querySelector(".cart-card");
 const paginationContainer = document.querySelector(".page");
 const prevButton = document.querySelector(".prev-page");
@@ -12,6 +11,16 @@ let services = [];
 let currentPage = 1;
 const itemsPerPage = 4;
 
+/* 🔐 Check Authorization */
+const userId = localStorage.getItem("userId");
+
+if (!userId) {
+  alert("You need to sign in to access your cart.");
+  window.location.href = "signIn.html";
+} else {
+  fetchData(); // only if authorized
+}
+
 /* fetch cart */
 async function fetchData() {
   try {
@@ -23,8 +32,8 @@ async function fetchData() {
     const cartData = await cartRes.json();
     services = await serviceRes.json();
 
-    // for this user
-    cartItems = cartData.filter((item) => item.userId === userId);
+    // only for this user
+    cartItems = cartData.filter((item) => item.userId == userId);
     renderPagination();
     renderCart(currentPage);
     updateSummary();
@@ -50,30 +59,30 @@ function renderCart(page) {
   }
 
   currentCartItems.forEach((item) => {
-    const service = services.find((s) => s.id === item.serviceId);
+    const service = services.find((s) => s.id == item.serviceId);
     if (!service) return;
 
     const card = document.createElement("div");
     card.classList.add("cart-item");
     card.innerHTML = `
-  <div class="cart-pic">
-    <img src="${service.photoURL}" alt="${service.title}">
-  </div>
-  <div class="cart-info">
-    <div class="cart-title">
-      <h3>${service.title}</h3>
-      <p>${service.category}</p>
-    </div>
-    <p class="cart-price">$ ${service.price}</p>
-    <button class="remove-from-cart" data-id="${item.id}">
-      <img src="./Assets/bin.svg" alt="Delete">
-    </button>
-  </div>
-`;
+      <div class="cart-pic">
+        <img src="${service.photoURL}" alt="${service.title}">
+      </div>
+      <div class="cart-info">
+        <div class="cart-title">
+          <h3>${service.title}</h3>
+          <p>${service.category}</p>
+        </div>
+        <p class="cart-price">$ ${service.price}</p>
+        <button class="remove-from-cart" data-id="${item.id}">
+          <img src="./Assets/bin.svg" alt="Delete">
+        </button>
+      </div>
+    `;
     cartContainer.appendChild(card);
   });
 
-  // 1st & last for css
+  // 1st & last for CSS
   const items = document.querySelectorAll(".cart-item");
   items.forEach((item) => item.classList.remove("first", "last"));
   if (items.length > 0) items[0].classList.add("first");
@@ -91,7 +100,7 @@ function renderCart(page) {
     });
   });
 }
-//pagin
+
 function renderPagination() {
   paginationContainer.innerHTML = "";
   const totalPages = Math.ceil(cartItems.length / itemsPerPage);
@@ -131,15 +140,13 @@ nextButton.addEventListener("click", () => {
 
 function updateSummary() {
   const total = cartItems.reduce((sum, item) => {
-    const service = services.find((s) => s.id === item.serviceId);
+    const service = services.find((s) => s.id == item.serviceId);
     return sum + (service ? service.price : 0);
   }, 0);
 
   serviceCountElem.textContent = `Services: ${cartItems.length}`;
   totalPriceElem.textContent = `Total: $ ${total}`;
 }
-
-fetchData();
 
 //burger
 // Обновляем размеры слайдов при изменении размера окна
