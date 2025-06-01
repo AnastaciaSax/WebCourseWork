@@ -557,3 +557,95 @@ footer {
     /* 33px */
     letter-spacing: 0.22px;
 }
+
+/* dark mode */
+
+body.dark-theme,
+html.dark-theme {
+    background: url('./Assets/darkBg.png') no-repeat center center;
+    background-size: cover;
+    color: #ccc;
+}
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5 {
+    color: #ddd;
+}
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme span {
+    color: #aaa;
+}
+body.dark-theme button {
+    color: #eee;
+    background-color: #444; /* Темный фон кнопок */
+    box-shadow: 0;
+}
+body.dark-theme .add-to-cart {
+   background-color: transparent;
+}
+
+/* Интро секция */
+body.dark-theme .intro {
+    background: #000000;
+}
+
+body.dark-theme .intro h2,
+body.dark-theme .intro span {
+    color: #ddd;
+}
+
+/* Фильтр, сортировка, поиск */
+body.dark-theme .filt {
+    border-color: #555;
+}
+
+body.dark-theme .search-input,
+body.dark-theme .sort {
+    background: #2a2a2a;
+    border-color: #666;
+}
+
+body.dark-theme .search-input input,
+body.dark-theme .sort-select {
+    color: #ccc;
+}
+
+/* Текстовые элементы в карточках */
+body.dark-theme .service-title h3,
+body.dark-theme .service-title p,
+body.dark-theme .price {
+    color: #eee;
+}
+ body.dark-theme .pagination button img,.dark-theme .optionBut img,
+.dark-theme .burger-toggle img, .dark-theme .interno-info-media img {
+    filter: invert(1);
+}
+
+/* Footer */
+
+body.dark-theme .interno-info-text p,
+body.dark-theme .interno-contact-data span,
+body.dark-theme .interno-page a,
+body.dark-theme .interno-service a {
+    color: #aaa;
+}
+
+body.dark-theme .interno-page h3,
+body.dark-theme .interno-service h3,
+body.dark-theme .interno-contact h3 {
+    color: #ddd;
+}
+
+body.dark-theme .copyright-line {
+    background: #444;
+}
+
+body.dark-theme .copyright span {
+    color: #999;
+}
+body.dark-theme .not-found-message {
+    color: #aaa; 
+}

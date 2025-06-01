@@ -20,122 +20,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const generateNickBtn = document.getElementById("generateNickname");
   const registerBtn = document.querySelector(".create-account");
   const inputs = document.querySelectorAll("input[required]");
+  const modal = document.getElementById("termsModal");
+  const agreeCheckbox = document.getElementById("agreeTerms");
+  const confirmBtn = document.getElementById("confirmRegister");
+  const cancelBtn = document.getElementById("cancelModal");
   let nickTries = 0;
+  let newUser = null;
 
   const topPasswords = new Set([
-    "123456",
-    "password",
-    "123456789",
-    "12345678",
-    "12345",
-    "qwerty",
-    "abc123",
-    "password1",
-    "1234567",
-    "123123",
-    "admin",
-    "letmein",
-    "welcome",
-    "monkey",
-    "1234",
-    "1q2w3e4r",
-    "123",
-    "111111",
-    "qwerty123",
-    "iloveyou",
-    "password123",
-    "000000",
-    "zxcvbnm",
-    "asdfghjkl",
-    "sunshine",
-    "121212",
-    "dragon",
-    "princess",
-    "qwertyuiop",
-    "987654321",
-    "football",
-    "baseball",
-    "starwars",
-    "123qwe",
-    "shadow",
-    "superman",
-    "696969",
-    "qazwsx",
-    "michael",
-    "football1",
-    "159753",
-    "batman",
-    "access",
-    "master",
-    "jessica",
-    "7777777",
-    "hunter",
-    "123abc",
-    "andrew",
-    "tigger",
-    "test",
-    "thomas",
-    "love",
-    "soccer",
-    "computer",
-    "whatever",
-    "harley",
-    "buster",
-    "george",
-    "222222",
-    "jordan",
-    "ashley",
-    "fuckyou",
-    "baseball1",
-    "666666",
-    "charlie",
-    "robert",
-    "pepper",
-    "maggie",
-    "cookie",
-    "dakota",
-    "mickey",
-    "232323",
-    "summer",
-    "snoopy",
-    "ginger",
-    "joseph",
-    "chelsea",
-    "orange",
-    "maverick",
-    "nicole",
-    "daniel",
-    "babygirl",
-    "lovely",
-    "jasmine",
-    "brandon",
-    "112233",
-    "anthony",
-    "peanut",
-    "bubbles",
-    "angel",
-    "william",
-    "cricket",
-    "hello",
-    "scooby",
-    "rainbow",
-    "102030",
-    "justin",
-    "flower",
-    "fish",
-    "cheese",
-    "amanda",
-    "michelle",
+    "123456", "password", "123456789", "12345678", "12345", "qwerty", "abc123", "password1",
+    "1234567", "123123", "admin", "letmein", "welcome", "monkey", "1234", "1q2w3e4r", "123",
+    "111111", "qwerty123", "iloveyou", "password123", "000000", "zxcvbnm", "asdfghjkl", "sunshine",
+    "121212", "dragon", "princess", "qwertyuiop", "987654321", "football", "baseball", "starwars",
+    "123qwe", "shadow", "superman", "696969", "qazwsx", "michael", "football1", "159753", "batman",
+    "access", "master", "jessica", "7777777", "hunter", "123abc", "andrew", "tigger", "test",
+    "thomas", "love", "soccer", "computer", "whatever", "harley", "buster", "george", "222222",
+    "jordan", "ashley", "fuckyou", "baseball1", "666666", "charlie", "robert", "pepper", "maggie",
+    "cookie", "dakota", "mickey", "232323", "summer", "snoopy", "ginger", "joseph", "chelsea",
+    "orange", "maverick", "nicole", "daniel", "babygirl", "lovely", "jasmine", "brandon", "112233",
+    "anthony", "peanut", "bubbles", "angel", "william", "cricket", "hello", "scooby", "rainbow",
+    "102030", "justin", "flower", "fish", "cheese", "amanda", "michelle"
   ]);
 
   const showError = (input, message) => {
     removeError(input);
     input.classList.add("input-error-field");
-
     const error = document.createElement("div");
     error.className = "input-error";
     error.textContent = message;
-
     const wrapper = input.closest(".field-wrapper");
     if (wrapper) {
       wrapper.appendChild(error);
@@ -246,37 +158,11 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const generateNickname = () => {
-    const nouns = [
-      "fox",
-      "owl",
-      "lion",
-      "wolf",
-      "cat",
-      "bear",
-      "eagle",
-      "whale",
-      "shark",
-      "lynx",
-    ];
-    const adjectives = [
-      "quick",
-      "brave",
-      "smart",
-      "cool",
-      "sneaky",
-      "bright",
-      "bold",
-      "calm",
-      "swift",
-      "strong",
-    ];
+    const nouns = ["fox", "owl", "lion", "wolf", "cat", "bear", "eagle", "whale", "shark", "lynx"];
+    const adjectives = ["quick", "brave", "smart", "cool", "sneaky", "bright", "bold", "calm", "swift", "strong"];
 
     if (nickTries < 5) {
-      const nick = `${
-        adjectives[Math.floor(Math.random() * adjectives.length)]
-      }_${nouns[Math.floor(Math.random() * nouns.length)]}${Math.floor(
-        Math.random() * 1000
-      )}`;
+      const nick = `${adjectives[Math.floor(Math.random() * adjectives.length)]}_${nouns[Math.floor(Math.random() * nouns.length)]}${Math.floor(Math.random() * 1000)}`;
       nicknameInput.value = nick;
       nickTries++;
     } else {
@@ -301,10 +187,44 @@ document.addEventListener("DOMContentLoaded", () => {
     return Boolean(valid);
   };
 
-  // Кнопка доступна, валидация только по клику
-  registerBtn.disabled = false;
+  const checkFormValidity = () => {
+    const allFilled = [...inputs].every((input) => input.value.trim() !== "");
+    const isNameValid = nameInput.value[0] === nameInput.value[0]?.toUpperCase();
+    const isSurnameValid = surnameInput.value[0] === surnameInput.value[0]?.toUpperCase();
+    const isEmailValid = /^[\w.-]+@[\w.-]+\.\w+$/.test(emailInput.value.trim());
+    const isPhoneValid = /^\+375\d{9}$/.test(phoneInput.value.trim());
 
-  autoPasswordCheckbox.addEventListener("change", toggleRepeatPassword);
+    let isBirthValid = false;
+    const birthValue = birthInput.value.trim();
+    const birthDate = new Date(birthValue);
+    const now = new Date();
+    const age = now.getFullYear() - birthDate.getFullYear();
+    isBirthValid = !isNaN(birthDate) && (age > 16 || (age === 16 && now >= new Date(birthDate.setFullYear(birthDate.getFullYear() + 16))));
+
+    let isPasswordValid = true;
+    if (!autoPasswordCheckbox.checked) {
+      const passwordValue = passwordInput.value;
+      const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!]).{8,20}$/;
+      isPasswordValid =
+        pattern.test(passwordValue) &&
+        !topPasswords.has(passwordValue.toLowerCase()) &&
+        passwordValue === repeatPasswordInput.value;
+    }
+
+    const formIsValid = allFilled && isNameValid && isSurnameValid && isEmailValid && isPhoneValid && isBirthValid && isPasswordValid;
+
+    registerBtn.disabled = !formIsValid;
+    registerBtn.classList.toggle("disabled-btn", !formIsValid);
+  };
+
+  registerBtn.classList.add("disabled-btn");
+  registerBtn.disabled = true;
+
+  autoPasswordCheckbox.addEventListener("change", () => {
+    toggleRepeatPassword();
+    checkFormValidity();
+  });
+
   generateNickBtn.addEventListener("click", generateNickname);
 
   registerBtn.addEventListener("click", (e) => {
@@ -320,24 +240,18 @@ document.addEventListener("DOMContentLoaded", () => {
         password: passwordInput.value,
         role: "user",
       };
-
-      // Показать модальное окно
       modal.classList.remove("hidden");
     } else {
       console.log("Form is invalid.");
     }
   });
+
   inputs.forEach((input) => {
     input.addEventListener("input", () => {
       removeError(input);
+      checkFormValidity();
     });
   });
-  const modal = document.getElementById("termsModal");
-  const agreeCheckbox = document.getElementById("agreeTerms");
-  const confirmBtn = document.getElementById("confirmRegister");
-  const cancelBtn = document.getElementById("cancelModal");
-
-  let newUser = null; // временно храним данные
 
   agreeCheckbox.addEventListener("change", () => {
     confirmBtn.disabled = !agreeCheckbox.checked;
@@ -374,6 +288,6 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Failed to create account");
       });
 
-    newUser = null; // очистить временные данные
+    newUser = null;
   });
 });

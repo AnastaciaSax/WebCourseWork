@@ -95,6 +95,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function checkFormValidity() {
+    const isFilled = inputs.every((input) => input.value.trim() !== "");
+    const nameValid = !validateName(nameInput.value.trim());
+    const emailValid = !validateEmail(emailInput.value.trim());
+
+    if (isFilled && nameValid && emailValid) {
+      signInButton.disabled = false;
+      signInButton.classList.remove("disabled-btn");
+    } else {
+      signInButton.disabled = true;
+      signInButton.classList.add("disabled-btn");
+    }
+  }
+
   signInButton.addEventListener("click", async (e) => {
     attemptedSubmit = true;
 
@@ -120,8 +134,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   inputs.forEach((input) => {
     input.addEventListener("input", () => {
-      if (!attemptedSubmit) return;
-      validateSingle(input);
+      if (attemptedSubmit) validateSingle(input);
+      checkFormValidity();
     });
   });
+
+  // Изначальная проверка при загрузке страницы
+  checkFormValidity();
 });

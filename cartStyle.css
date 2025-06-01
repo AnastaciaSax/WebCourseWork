@@ -476,3 +476,60 @@ footer {
     /* 33px */
     letter-spacing: 0.22px;
 }
+
+/* dark mode */
+
+body.dark-theme,
+html.dark-theme {
+    background: url('./Assets/darkBg.png') no-repeat center center;
+    background-size: cover;
+    color: #ccc;
+}
+body.dark-theme .remove-from-cart button {
+     background-color: transparent;
+}
+body.dark-theme .cart-item {
+    background: #222;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    border-radius: 15px;
+    padding: 20px;
+}
+body.dark-theme header nav a,
+body.dark-theme .interno-page a,
+body.dark-theme .interno-service a {
+    color: #ccc;
+}
+body.dark-theme button {
+    color: #eee;
+    background-color: #444; /* Темный фон кнопок */
+    box-shadow: 0;
+}
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5 {
+    color: #ddd;
+}
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme span {
+    color: #aaa;
+}
+body.dark-theme .intro {
+    background: #000000;
+}
+
+body.dark-theme .intro h2,
+body.dark-theme .intro span {
+    color: #ddd;
+}
+body.dark-theme .service-title h3,
+body.dark-theme .service-title p,
+body.dark-theme .price {
+    color: #eee;
+}
+ body.dark-theme .pagination button img,.dark-theme .optionBut img,
+.dark-theme .burger-toggle img, .dark-theme .interno-info-media img {
+    filter: invert(1);
+}

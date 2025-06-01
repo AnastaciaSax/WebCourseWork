@@ -501,7 +501,6 @@ footer {
   cursor: pointer;
 }
 
-/* Кнопки */
 .modal-buttons {
   display: flex;
   justify-content: center;
@@ -521,4 +520,9 @@ footer {
   letter-spacing: 0.3px;
   cursor: pointer;
   transition: background 0.3s ease;
+}
+/* extra button fx */
+.disabled-btn {
+  opacity: 0.5;
+  pointer-events: none;
 }

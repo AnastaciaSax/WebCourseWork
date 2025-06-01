@@ -1,7 +1,7 @@
 {
   "services": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Cozy Retreat",
       "category": "Decor",
       "place": "Bedroom",
@@ -9,7 +9,7 @@
       "photoURL": "./Assets/bed1.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Modern Zen",
       "category": "Architecture",
       "place": "Bedroom",
@@ -17,7 +17,7 @@
       "photoURL": "./Assets/bed2.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Bohemian Dreams",
       "category": "Decor",
       "place": "Bedroom",
@@ -25,7 +25,7 @@
       "photoURL": "./Assets/bed3.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Elegant Nights",
       "category": "Architecture",
       "place": "Bedroom",
@@ -33,7 +33,7 @@
       "photoURL": "./Assets/bed4.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Soft Ambience",
       "category": "Lighting",
       "place": "Bedroom",
@@ -41,7 +41,7 @@
       "photoURL": "./Assets/bed5.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "Classic Comfort",
       "category": "Decor",
       "place": "Bedroom",
@@ -49,7 +49,7 @@
       "photoURL": "./Assets/bed6.jpg"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "Urban Lounge",
       "category": "Architecture",
       "place": "Living Room",
@@ -57,7 +57,7 @@
       "photoURL": "./Assets/living1.jpg"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "Rustic Charm",
       "category": "Decor",
       "place": "Living Room",
@@ -65,7 +65,7 @@
       "photoURL": "./Assets/living2.jpg"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "Contemporary Flow",
       "category": "Architecture",
       "place": "Living Room",
@@ -73,7 +73,7 @@
       "photoURL": "./Assets/living3.jpg"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "Modern Vibes",
       "category": "Decor",
       "place": "Living Room",
@@ -81,7 +81,7 @@
       "photoURL": "./Assets/living4.jpg"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "Lux Lounge",
       "category": "Lighting",
       "place": "Living Room",
@@ -89,7 +89,7 @@
       "photoURL": "./Assets/living5.jpg"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "Scandinavian Light",
       "category": "Decor",
       "place": "Living Room",
@@ -97,7 +97,7 @@
       "photoURL": "./Assets/living6.jpg"
     },
     {
-      "id": 13,
+      "id": "13",
       "title": "Royal Dining",
       "category": "Architecture",
       "place": "Dining Hall",
@@ -105,7 +105,7 @@
       "photoURL": "./Assets/dining1.jpg"
     },
     {
-      "id": 14,
+      "id": "14",
       "title": "Rustic Tabletop",
       "category": "Decor",
       "place": "Dining Hall",
@@ -113,7 +113,7 @@
       "photoURL": "./Assets/dining2.jpg"
     },
     {
-      "id": 15,
+      "id": "15",
       "title": "Minimalist Meals",
       "category": "Decor",
       "place": "Dining Hall",
@@ -121,7 +121,7 @@
       "photoURL": "./Assets/dining3.jpg"
     },
     {
-      "id": 16,
+      "id": "16",
       "title": "Glass Elegance",
       "category": "Lighting",
       "place": "Dining Hall",
@@ -129,7 +129,7 @@
       "photoURL": "./Assets/dining4.jpg"
     },
     {
-      "id": 17,
+      "id": "17",
       "title": "Warm Gatherings",
       "category": "Decor",
       "place": "Dining Hall",
@@ -137,7 +137,7 @@
       "photoURL": "./Assets/dining5.jpg"
     },
     {
-      "id": 18,
+      "id": "18",
       "title": "Golden Hour",
       "category": "Lighting",
       "place": "Dining Hall",
@@ -145,7 +145,7 @@
       "photoURL": "./Assets/dining6.jpg"
     },
     {
-      "id": 19,
+      "id": "19",
       "title": "Spa Calm",
       "category": "Architecture",
       "place": "Bathroom",
@@ -153,7 +153,7 @@
       "photoURL": "./Assets/bath1.jpg"
     },
     {
-      "id": 20,
+      "id": "20",
       "title": "Soft Light",
       "category": "Lighting",
       "place": "Bathroom",
@@ -161,7 +161,7 @@
       "photoURL": "./Assets/bath2.jpg"
     },
     {
-      "id": 21,
+      "id": "21",
       "title": "Marble Touch",
       "category": "Architecture",
       "place": "Bathroom",
@@ -169,7 +169,7 @@
       "photoURL": "./Assets/bath3.jpg"
     },
     {
-      "id": 22,
+      "id": "22",
       "title": "Minimal Mirror",
       "category": "Decor",
       "place": "Bathroom",
@@ -177,7 +177,7 @@
       "photoURL": "./Assets/bath4.jpg"
     },
     {
-      "id": 23,
+      "id": "23",
       "title": "Natural Texture",
       "category": "Decor",
       "place": "Bathroom",
@@ -185,7 +185,7 @@
       "photoURL": "./Assets/bath5.jpg"
     },
     {
-      "id": 24,
+      "id": "24",
       "title": "Elegant Fixtures",
       "category": "Lighting",
       "place": "Bathroom",
@@ -193,7 +193,7 @@
       "photoURL": "./Assets/bath6.jpg"
     },
     {
-      "id": 25,
+      "id": "25",
       "title": "Chef's Corner",
       "category": "Architecture",
       "place": "Kitchen",
@@ -201,7 +201,7 @@
       "photoURL": "./Assets/kitchen1.jpg"
     },
     {
-      "id": 26,
+      "id": "26",
       "title": "Wooden Warmth",
       "category": "Decor",
       "place": "Kitchen",
@@ -209,7 +209,7 @@
       "photoURL": "./Assets/kitchen2.jpg"
     },
     {
-      "id": 27,
+      "id": "27",
       "title": "Modern Tiles",
       "category": "Architecture",
       "place": "Kitchen",
@@ -217,7 +217,7 @@
       "photoURL": "./Assets/kitchen3.jpg"
     },
     {
-      "id": 28,
+      "id": "28",
       "title": "Open Shelving",
       "category": "Decor",
       "place": "Kitchen",
@@ -225,7 +225,7 @@
       "photoURL": "./Assets/kitchen4.jpg"
     },
     {
-      "id": 29,
+      "id": "29",
       "title": "Bright Breakfast",
       "category": "Lighting",
       "place": "Kitchen",
@@ -233,7 +233,7 @@
       "photoURL": "./Assets/kitchen5.jpg"
     },
     {
-      "id": 30,
+      "id": "30",
       "title": "Rustic Island",
       "category": "Architecture",
       "place": "Kitchen",
@@ -243,139 +243,189 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Nicole",
+      "surname": "Brown",
       "email": "alice@example.com",
+      "phone": "+375291112233",
+      "birthdate": "2000-01-01",
+      "nickname": "nicole2000",
+      "password": "Nicole123",
       "role": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Bob",
+      "surname": "Smith",
       "email": "bob@example.com",
+      "phone": "+375291234567",
+      "birthdate": "1999-05-15",
+      "nickname": "bob_the_builder",
+      "password": "Bob123",
       "role": "user"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Charlie",
+      "surname": "Davis",
       "email": "charlie@example.com",
+      "phone": "+375292345678",
+      "birthdate": "1990-03-10",
+      "nickname": "charlie_chap",
+      "password": "Charlie123",
       "role": "user"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Diana",
+      "surname": "Evans",
       "email": "diana@example.com",
+      "phone": "+375293456789",
+      "birthdate": "1995-07-20",
+      "nickname": "diana_designs",
+      "password": "Diana123",
       "role": "user"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Ethan",
+      "surname": "Foster",
       "email": "ethan@example.com",
+      "phone": "+375294567890",
+      "birthdate": "1988-02-14",
+      "nickname": "ethanx88",
+      "password": "Ethan123",
       "role": "user"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Fiona",
+      "surname": "Garcia",
       "email": "fiona@example.com",
+      "phone": "+375295678901",
+      "birthdate": "1996-11-22",
+      "nickname": "fiona_fox",
+      "password": "Fiona123",
       "role": "user"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "George",
+      "surname": "Hill",
       "email": "george@example.com",
+      "phone": "+375296789012",
+      "birthdate": "2001-09-09",
+      "nickname": "georgeh",
+      "password": "George123",
       "role": "user"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Hannah",
+      "surname": "Irwin",
       "email": "hannah@example.com",
+      "phone": "+375297890123",
+      "birthdate": "1992-12-01",
+      "nickname": "hannahbee",
+      "password": "Hannah123",
       "role": "user"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Isaac",
+      "surname": "Jones",
       "email": "isaac@example.com",
+      "phone": "+375298901234",
+      "birthdate": "1998-06-06",
+      "nickname": "isaac1998",
+      "password": "Isaac123",
       "role": "user"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Julia",
+      "surname": "King",
       "email": "julia@example.com",
+      "phone": "+375299012345",
+      "birthdate": "1997-04-30",
+      "nickname": "julzking",
+      "password": "Julia123",
       "role": "user"
     }
   ],
   "cart": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 2,
       "serviceId": 1
     },
     {
-      "id": 2,
+      "id": "2",
       "userId": 2,
       "serviceId": 3
     },
     {
-      "id": 3,
+      "id": "3",
       "userId": 2,
       "serviceId": 5
     },
     {
-      "id": 4,
+      "id": "4",
       "userId": 2,
       "serviceId": 7
     },
     {
-      "id": 5,
+      "id": "5",
       "userId": 2,
       "serviceId": 9
     },
     {
-      "id": 6,
+      "id": "6",
       "userId": 3,
       "serviceId": 2
     },
     {
-      "id": 7,
+      "id": "7",
       "userId": 3,
       "serviceId": 4
     },
     {
-      "id": 8,
+      "id": "8",
       "userId": 3,
       "serviceId": 6
     },
     {
-      "id": 9,
+      "id": "9",
       "userId": 3,
       "serviceId": 8
     },
     {
-      "id": 10,
+      "id": "10",
       "userId": 3,
       "serviceId": 10
     },
     {
-      "id": 11,
+      "id": "11",
       "userId": 4,
       "serviceId": 1
     },
     {
-      "id": 12,
+      "id": "12",
       "userId": 4,
       "serviceId": 2
     },
     {
-      "id": 13,
+      "id": "13",
       "userId": 4,
       "serviceId": 3
     },
     {
-      "id": 14,
+      "id": "14",
       "userId": 4,
       "serviceId": 4
     },
     {
-      "id": 15,
+      "id": "15",
       "userId": 4,
       "serviceId": 5
     }

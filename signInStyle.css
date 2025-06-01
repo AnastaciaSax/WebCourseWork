@@ -383,4 +383,9 @@ footer {
 
 .copyright span {
     font-size: 22px;
+} 
+/*button */
+.disabled-btn {
+  opacity: 0.5;
+  pointer-events: none;
 }

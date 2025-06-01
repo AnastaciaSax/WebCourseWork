@@ -638,3 +638,152 @@ footer {
 .copyright span {
     font-size: 22px;
 }
+
+/* dark mode */
+body.dark-theme,
+html.dark-theme {
+    background: url('./Assets/darkBg.png') no-repeat center center;
+    background-size: cover;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #ddd;
+}
+
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme span {
+    color: #aaa;
+}
+
+/* Header */
+body.dark-theme nav a {
+    color: #ccc;
+}
+
+/* Banner */
+
+body.dark-theme .banner-but {
+    background: #1c1c1c;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-theme .get-started a {
+    color: #fff;
+}
+.dark-theme main.banner h1,
+.dark-theme main.banner h2,
+.dark-theme main.banner h3,
+.dark-theme main.banner p,
+.dark-theme main.banner span {
+    color: #292F36 !important;
+    font-family: "DM Serif Display", serif; /* для h1-h3 */
+}
+
+/* Для p, a, span отдельно укажем нужный шрифт */
+.dark-theme main.banner p,
+.dark-theme main.banner span {
+    color: #4D5053 !important;
+    font-family: "Jost", sans-serif;
+}
+
+/* Slider */
+body.dark-theme .slider h2 {
+    color: #ddd;
+}
+
+body.dark-theme .slide img {
+    filter: brightness(0.8);
+}
+
+/* Wanna contact */
+body.dark-theme .content-text h2,
+body.dark-theme .content-text p,
+body.dark-theme .contact span {
+    color: #ccc;
+}
+
+body.dark-theme #map {
+    background: #555;
+}
+
+/* Testimonial */
+body.dark-theme .testimonial {
+    background-color: #1f1f1f;
+}
+
+body.dark-theme .comment {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme .person-info h3,
+body.dark-theme .person-info span,
+body.dark-theme .comment-text p {
+    color: #ccc;
+}
+
+/* Counter */
+body.dark-theme .counter {
+    background-color: #1f1f1f;
+}
+
+body.dark-theme .digit h3 {
+    color: #CDA274;
+}
+
+body.dark-theme .digit span {
+    color: #aaa;
+}
+
+body.dark-theme .counter-line {
+    background-color: #CDA274;
+}
+
+/* Wanna join */
+body.dark-theme .wanna-join {
+    background: #1c1c1c;
+}
+
+body.dark-theme .wanna-join-content-head h2,
+body.dark-theme .wanna-join-content-head p {
+    color: #fff;
+}
+
+body.dark-theme .content-but {
+    background: #CDA274;
+    box-shadow: 0px 10px 20px 0px #111;
+}
+
+body.dark-theme .but-text a {
+    color: #fff;
+}
+
+/* Footer */
+
+body.dark-theme .interno-info-text p,
+body.dark-theme .interno-contact-data span,
+body.dark-theme .interno-page a,
+body.dark-theme .interno-service a {
+    color: #aaa;
+}
+
+body.dark-theme .interno-page h3,
+body.dark-theme .interno-service h3,
+body.dark-theme .interno-contact h3 {
+    color: #ddd;
+}
+
+body.dark-theme .copyright-line {
+    background: #555;
+}
+
+body.dark-theme .copyright span {
+    color: #999;
+}
+.dark-theme .optionBut img,
+.dark-theme .burger-toggle img,.dark-theme .client-logo img,.dark-theme .interno-info-media img {
+    filter: invert(1);
+}
+
