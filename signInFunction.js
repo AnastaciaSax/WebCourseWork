@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
         showError(passwordInput, "Incorrect password");
       } else {
         localStorage.setItem("currentUser", JSON.stringify(user));
+        localStorage.setItem("userId", user.id); // вот эта строка
         window.location.href = "home.html";
       }
     }
