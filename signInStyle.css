@@ -389,3 +389,83 @@ footer {
   opacity: 0.5;
   pointer-events: none;
 }
+
+/* dark mode */
+body.dark-theme,
+html.dark-theme {
+    background: url('./Assets/darkBg.png') no-repeat center center;
+    background-size: cover;
+    color: #ccc;
+}
+
+/* Заголовки */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #ddd;
+}
+
+/* Текстовые элементы */
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme span {
+    color: #aaa;
+}
+
+/* Ссылки */
+body.dark-theme a {
+    color: #c9c9c9;
+}
+
+/* Интро-блок (под заголовком) */
+body.dark-theme .intro {
+    background: #000000;
+}
+body.dark-theme .form-down span a {
+    color: #C98740;
+}
+
+/* Форма */
+body.dark-theme .content-field input {
+    border-bottom: 1px solid #888;
+    background: transparent;
+    color: #eee;
+}
+body.dark-theme .content-field input:focus {
+    border-bottom-color: #ccc;
+    box-shadow: 0 1px 0 #ccc;
+}
+
+/* Кнопка Sign In */
+body.dark-theme .down-but {
+    background: #444;
+    box-shadow: 0px 10px 20px rgba(50, 50, 50, 0.5);
+}
+body.dark-theme .sign-in-but a {
+    color: #fff;
+}
+
+body.dark-theme .copyright-line {
+    background: #444;
+}
+body.dark-theme .copyright span {
+    color: #888;
+}
+
+/* Иконки и изображения */
+.dark-theme .optionBut img,
+.dark-theme .burger-toggle img,
+.dark-theme .checkbox span,
+.dark-theme .reset-but-text img,
+.dark-theme .interno-info-media img {
+    filter: invert(1);
+}
+
+/* Ошибки */
+body.dark-theme .input-error {
+    color: #ff7777;
+}
+body.dark-theme .input-error-field {
+    border-bottom: 2px solid #ff7777 !important;
+    box-shadow: 0 1px 0 #ff7777;
+}

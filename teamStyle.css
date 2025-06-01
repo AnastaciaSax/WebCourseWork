@@ -325,3 +325,40 @@ footer {
 .copyright span {
     font-size: 22px;
 }
+/* dark mode */
+
+body.dark-theme .intro {
+    background: #000000;
+}
+.dark-theme .optionBut img,
+.dark-theme .burger-toggle img,
+.dark-theme .person-info-media img,
+.dark-theme .interno-info-media img {
+    filter: invert(1);
+}
+body.dark-theme,
+html.dark-theme {
+    background: url('./Assets/darkBg.png') no-repeat center center;
+    background-size: cover;
+    color: #ccc; /* светлый текст */
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5 {
+    color: #ddd;
+}
+
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme span {
+    color: #aaa;
+}
+
+body.dark-theme button {
+    color: #eee;
+    background-color: #444; /* Темный фон кнопок */
+    box-shadow: 0 0 8px #222 inset;
+}

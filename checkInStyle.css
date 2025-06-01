@@ -526,3 +526,101 @@ footer {
   opacity: 0.5;
   pointer-events: none;
 }
+/* dark mode */ 
+body.dark-theme,
+html.dark-theme {
+    background: url('./Assets/darkBg.png') no-repeat center center;
+    background-size: cover;
+    color: #ccc;
+}
+/* Форма */
+body.dark-theme .content-field input {
+    border-bottom: 1px solid #888;
+    background: transparent;
+    color: #eee;
+}
+body.dark-theme .content-field input:focus {
+    border-bottom-color: #ccc;
+    box-shadow: 0 1px 0 #ccc;
+}
+
+/* Заголовки */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3 {
+    color: #ddd;
+}
+
+/* Текстовые элементы */
+body.dark-theme p,
+body.dark-theme a,
+body.dark-theme span {
+    color: #aaa;
+}
+
+/* Ссылки */
+body.dark-theme a {
+    color: #c9c9c9;
+}
+
+/* Интро-блок (под заголовком) */
+body.dark-theme .intro {
+    background: #000000;
+}
+body.dark-theme .form-down span a {
+    color: #C98740;
+}
+body.dark-theme .modal-content {
+    background-color: #1f1f1f;
+    color: #ddd;
+}
+
+body.dark-theme .modal-content h2 {
+    color: #fff;
+}
+
+body.dark-theme .modal-content p,
+body.dark-theme .modal-content label {
+    color: #ccc;
+}
+
+body.dark-theme .modal-content input[type="checkbox"] {
+    accent-color: #ccc;
+}
+
+body.dark-theme .modal-buttons button {
+    background: #444;
+    color: #eee;
+}
+body.dark-theme .create-account,
+body.dark-theme #generateNickname {
+    background: #444;
+    box-shadow: 0;
+}
+body.dark-theme .custom-checkbox {
+    border: 2px solid #aaa;
+}
+
+body.dark-theme .checkbox-container input[type="checkbox"]:checked + .custom-checkbox::after {
+    border-color: #fff;
+}
+
+
+body.dark-theme .create-account span,
+body.dark-theme #generateNickname {
+    color: #fff;
+}
+
+body.dark-theme .input-error {
+    color: #ff7777;
+}
+body.dark-theme .input-error-field {
+    border-bottom: 2px solid #ff7777 !important;
+    box-shadow: 0 1px 0 #ff7777;
+}
+.dark-theme .optionBut img,
+.dark-theme .burger-toggle img,
+.dark-theme .checkbox span,
+.dark-theme .interno-info-media img {
+    filter: invert(1);
+}
