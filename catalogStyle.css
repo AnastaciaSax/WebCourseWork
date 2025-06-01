@@ -275,6 +275,7 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .cart-butt a {
@@ -282,7 +283,28 @@ header nav a {
     justify-content: center;
     align-items: center;
     gap: 7px;
+    position: relative;
 }
+
+.cart-count {
+    background-color: #e66841;
+    color: white;
+    font-size: 6px;
+    font-weight: bold;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -14px;
+    left: -12px;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+}
+
 
 .cart-butt span {
     color: #292F36;
@@ -566,6 +588,7 @@ html.dark-theme {
     background-size: cover;
     color: #ccc;
 }
+
 body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,
@@ -573,18 +596,22 @@ body.dark-theme h4,
 body.dark-theme h5 {
     color: #ddd;
 }
+
 body.dark-theme p,
 body.dark-theme a,
 body.dark-theme span {
     color: #aaa;
 }
+
 body.dark-theme button {
     color: #eee;
-    background-color: #444; /* Темный фон кнопок */
+    background-color: #444;
+    /* Темный фон кнопок */
     box-shadow: 0;
 }
+
 body.dark-theme .add-to-cart {
-   background-color: transparent;
+    background-color: transparent;
 }
 
 /* Интро секция */
@@ -619,8 +646,11 @@ body.dark-theme .service-title p,
 body.dark-theme .price {
     color: #eee;
 }
- body.dark-theme .pagination button img,.dark-theme .optionBut img,
-.dark-theme .burger-toggle img, .dark-theme .interno-info-media img {
+
+body.dark-theme .pagination button img,
+.dark-theme .optionBut img,
+.dark-theme .burger-toggle img,
+.dark-theme .interno-info-media img {
     filter: invert(1);
 }
 
@@ -646,6 +676,7 @@ body.dark-theme .copyright-line {
 body.dark-theme .copyright span {
     color: #999;
 }
+
 body.dark-theme .not-found-message {
-    color: #aaa; 
+    color: #aaa;
 }

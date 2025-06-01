@@ -1,4 +1,3 @@
-/* pagin */
 const serviceContainer = document.querySelector(".service-card");
 const paginationContainer = document.querySelector(".page");
 const prevButton = document.querySelector(".prev-page");
@@ -11,7 +10,36 @@ let currentPlace = null;
 let currentSort = null;
 let currentSearch = "";
 
-/* server fetch */
+const cartButton = document.querySelector(".cart-butt a");
+const userId = localStorage.getItem("userId");
+
+async function fetchCartCount(userId) {
+  if (!userId) return 0;
+
+  try {
+    const res = await fetch(`http://localhost:3001/cart?userId=${userId}`);
+    const cartItems = await res.json();
+    return cartItems.length;
+  } catch (error) {
+    console.error("Error loading cart data:", error);
+    return 0;
+  }
+}
+
+async function updateCartCount() {
+  const count = await fetchCartCount(userId);
+
+  let oldCountSpan = cartButton.querySelector(".cart-count");
+  if (oldCountSpan) oldCountSpan.remove();
+
+  if (count > 0) {
+    const countSpan = document.createElement("span");
+    countSpan.classList.add("cart-count");
+    countSpan.textContent = count;
+    cartButton.appendChild(countSpan);
+  }
+}
+
 async function fetchServices() {
   try {
     const res = await fetch("http://localhost:3001/services");
@@ -26,7 +54,6 @@ async function fetchServices() {
 function renderServices(page) {
   serviceContainer.innerHTML = "";
 
-  // Базовая фильтрация
   let filteredServices = [...services];
 
   if (currentPlace) {
@@ -54,12 +81,10 @@ function renderServices(page) {
     });
   }
 
-  // Пагинация
   const start = (page - 1) * servicesPerPage;
   const end = start + servicesPerPage;
   const currentServices = filteredServices.slice(start, end);
 
-  // --- Проверка: если ничего не найдено ---
   if (filteredServices.length === 0) {
     const notFound = document.createElement("div");
     notFound.classList.add("not-found-message");
@@ -87,10 +112,48 @@ function renderServices(page) {
         </button>
       </div>
     `;
+
+    const addToCartButton = card.querySelector(".add-to-cart");
+    addToCartButton.addEventListener("click", async () => {
+  if (!userId) {
+    alert("Please sign in to add services to your cart.");
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `http://localhost:3001/cart?userId=${userId}&serviceId=${service.id}`
+    );
+    const existingItems = await res.json();
+
+    if (existingItems.length > 0) {
+      alert("This service is already in your cart.");
+      return;
+    }
+
+    await fetch("http://localhost:3001/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: userId,
+        serviceId: service.id,
+        title: service.title,
+        price: service.price,
+        category: service.category,
+        photoURL: service.photoURL
+      })
+    });
+
+    updateCartCount();
+    alert("Service added to cart!");
+  } catch (error) {
+    console.error("Failed to add service to cart:", error);
+  }
+});
+
     serviceContainer.appendChild(card);
   });
 
-  // first / last классы
   const items = document.querySelectorAll(".service-item");
   items.forEach((item) => item.classList.remove("first", "last"));
   if (items.length > 0) items[0].classList.add("first");
@@ -100,7 +163,6 @@ function renderServices(page) {
 function renderPagination() {
   paginationContainer.innerHTML = "";
 
-  // Та же логика фильтрации и поиска, что и в renderServices
   let filteredServices = [...services];
 
   if (currentPlace) {
@@ -170,7 +232,6 @@ nextButton.addEventListener("click", () => {
   }
 });
 
-/* фильтрация по place */
 const filterButtons = document.querySelectorAll(".filt-content button");
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -191,16 +252,14 @@ filterButtons.forEach((btn) => {
   });
 });
 
-/* сортировка */
 const sortSelect = document.querySelector("#sort");
 sortSelect.addEventListener("change", () => {
-  currentSort = sortSelect.value || null; // если "", то null (отключаем сортировку)
+  currentSort = sortSelect.value || null;
   currentPage = 1;
   renderServices(currentPage);
   renderPagination();
 });
 
-/* поиск */
 const searchInput = document.querySelector(".search-input input");
 searchInput.addEventListener("input", () => {
   currentSearch = searchInput.value;
@@ -210,9 +269,9 @@ searchInput.addEventListener("input", () => {
 });
 
 fetchServices();
+updateCartCount();
 
-//burger
-// Обновляем размеры слайдов при изменении размера окна
+// burger menu
 const toggle = document.querySelector(".burger-toggle");
 const menu = document.querySelector(".burger-menu");
 
@@ -220,8 +279,7 @@ toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
 
-// footer opening
-
+// автоприменение фильтра через URL
 window.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const category = params.get("category");
@@ -231,14 +289,13 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// пример функции фильтрации
 function applyCategoryFilter(category) {
   const buttons = document.querySelectorAll(".filt-content button");
-  
-  buttons.forEach(btn => {
+
+  buttons.forEach((btn) => {
     if (btn.dataset.place === category) {
-      btn.classList.add("active"); // можешь добавить визуальное выделение
-      btn.click(); // вызываем клик по нужной кнопке
+      btn.classList.add("active");
+      btn.click();
     } else {
       btn.classList.remove("active");
     }
