@@ -1,0 +1,31 @@
+.filt-content button.active {
+    background-color: #CDA274;
+    color: white;
+}
+
+.page-button.active {
+    font-weight: bold;
+    color: #CDA274;
+    background-color: #F4F0EC;
+    border: none;
+}
+.modal-buttons button:hover {
+  background-color: #444B52;
+}
+
+/* Светлая кнопка — отмена */
+.modal-buttons button#cancel-edit,
+.modal-buttons button#cancel-delete {
+  background-color: transparent;
+  color: #292F36;
+  border: 2px solid #292F36;
+}
+
+.modal-buttons button#cancel-edit:hover,
+.modal-buttons button#cancel-delete:hover {
+  background-color: #f0f0f0;
+}
+.modal-content input:focus {
+  border-color: #292F36;
+  background-color: #fff;
+}

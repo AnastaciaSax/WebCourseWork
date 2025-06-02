@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="adminStyle.css">
+    <link rel="stylesheet" href="adminAnimation.css">
+    <link rel="stylesheet" href="adminAdaptation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header-container">
+            <header>
+                <div class="logo">
+                    <img src="./Assets/Logo.png" alt="Logo Image">
+                    <h1>Interno</h1>
+                </div>
+                <nav>
+                    <a href="home.html">Home</a>
+                    <a href="team.html">Team</a>
+                    <a href="admin.html">Admin</a>
+                    <a href="checkIn.html">Check in</a>
+                    <a href="signIn.html">Sign in</a>
+                    <a href="options.html" class="optionBut">
+                        <img src="./Assets/optionsIcon.svg" alt="Options Image">
+                    </a>
+                    <a href="#" id="exit-button" class="exit-button">Sign Out</a>
+                </nav>
+                <div class="burger">
+                    <button class="burger-toggle">
+                        <img src="./Assets/hamburger.svg" alt="Menu">
+                    </button>
+                    <div class="burger-menu">
+                        <a href="home.html">Home</a>
+                        <a href="team.html">Team</a>
+                        <a href="admin.html">Admin</a>
+                        <a href="checkIn.html">Check in</a>
+                        <a href="signIn.html">Sign in</a>
+                        <a href="options.html">Options</a>
+                        <a href="#" id="exit-button-mobile" class="exit-button">SignOut</a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <main class="banner">
+            <div class="intro">
+                <div class="into-title">
+                    <h2>Admin Dashboard</h2>
+                    <span>Home / Admin</span>
+                </div>
+            </div>
+        </main>
+        <div class="project">
+            <div class="filt">
+                <div class="filt-content">
+                    <button data-place="Bathroom">Bathroom</button>
+                    <button data-place="Bedroom">Bedroom</button>
+                    <button data-place="Kitchen">Kitchen</button>
+                    <button data-place="Living Room">Living Room</button>
+                    <button data-place="Dining Hall">Dining Hall</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="search">
+                    <img src="./Assets/catalogSearch.svg" alt="magnifying glass">
+                    <div class="search-input">
+                        <input type="text" placeholder="Search by title/category">
+                    </div>
+                </div>
+                <div class="sort">
+                    <select id="sort" name="sort" class="sort-select">
+                        <option value="">Sort by</option>
+                        <option value="price">By price</option>
+                        <option value="title">By title</option>
+                        <option value="category">By category</option>
+                    </select>
+                    <img src="./Assets/catalogSort.svg" alt="Sort Arrow" class="select-arrow">
+                </div>
+                <div class="cart-butt">
+                    <button id="add-service-btn">+ New Service</button>
+                </div>
+            </div>
+            <div class="service-card" id="admin-service-list"></div>
+            <div class="pagination">
+                <button class="prev-page"><img src="./Assets/catalogArrowPagin.png" alt="Back"></button>
+                <div class="page"></div>
+                <button class="next-page"><img src="./Assets/catalogArrowPagin.png" alt="Next"></button>
+            </div>
+        </div>
+        <footer>
+            <div class="interno">
+                <div class="interno-info">
+                    <div class="interno-info-text">
+                        <div class="logo">
+                            <img src="./Assets/Logo.png" alt="Logo Image">
+                            <h1>Interno</h1>
+                        </div>
+                        <p>"Design Your Dream, Live Your Vision"<Br>We create interiors that are an extension of your
+                            unique story.</p>
+                    </div>
+                    <div class="interno-info-media">
+                        <img src="./Assets/media.png" alt="Media icon">
+                        <img src="./Assets/meadia1.png" alt="Media icon">
+                        <img src="./Assets/meadia2.png" alt="Media icon">
+                        <img src="./Assets/meadia3.png" alt="Media icon">
+                    </div>
+                </div>
+                <div class="interno-page">
+                    <h3>Pages</h3>
+                    <a href="home.html">Home</a>
+                    <a href="admin.html">Admin</a>
+                    <a href="cart.html">Cart</a>
+                    <a href="team.html">Team</a>
+                    <a href="options.html">Options</a>
+                </div>
+                <div class="interno-service">
+                    <h3>Services</h3>
+                    <a href="catalog.html?category=Kitchen">Kitchen</a>
+                    <a href="catalog.html?category=Living%20Room">Living Room</a>
+                    <a href="catalog.html?category=Bathroom">Bathroom</a>
+                    <a href="catalog.html?category=Dining%20Hall">Dining Hall</a>
+                    <a href="catalog.html?category=Bedroom">Bedroom</a>
+                </div>
+                <div class="interno-contact">
+                    <h3>Contact</h3>
+                    <div class="interno-contact-data">
+                        <span>55 East Birchwood Ave. Brooklyn, New York 11201</span>
+                        <span>interno@gmail.com</span>
+                        <span>(123) 456 - 7890</span>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="copyright-line"></div>
+                <span>Copyright © Interno | Designed by Anastacia Sax</span>
+            </div>
+        </footer>
+    </div>
+    <div class="modal hidden" id="edit-modal">
+        <div class="modal-content">
+            <h2>Edit Service</h2>
+            <form id="edit-form">
+                <input type="hidden" name="id">
+                <input type="text" name="title" placeholder="Title" required>
+                <input type="text" name="category" placeholder="Category" required>
+                <input type="text" name="place" placeholder="Place" required> <!-- добавлено -->
+                <input type="number" name="price" placeholder="Price" required>
+                <input type="text" name="photoURL" placeholder="Image URL" required>
+                <div class="modal-buttons">
+                    <button type="submit">Save</button>
+                    <button type="button" id="cancel-edit">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal hidden" id="delete-modal">
+        <div class="modal-content">
+            <h2>Confirm Delete</h2>
+            <p>Are you sure you want to delete this service?</p>
+            <div class="modal-buttons">
+                <button id="confirm-delete">Yes, Delete</button>
+                <button id="cancel-delete">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal hidden" id="new-service-modal">
+        <div class="modal-content">
+            <h2>New Service</h2>
+            <form id="new-service-form">
+                <input type="text" name="title" placeholder="Title" required>
+                <input type="text" name="category" placeholder="Category" required>
+                <input type="text" name="place" placeholder="Place" required> <!-- добавлено -->
+                <input type="number" name="price" placeholder="Price" required>
+                <input type="text" name="photoURL" placeholder="Image URL" required>
+                <div class="modal-buttons">
+                    <button type="submit">Add</button>
+                    <button type="button" id="cancel-new">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="adminFunction.js"></script>
+    <script src="settings.js" defer></script>
+</body>
+
+</html>
