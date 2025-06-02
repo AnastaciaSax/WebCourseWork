@@ -72,7 +72,7 @@
                 <div class="search">
                     <img src="./Assets/catalogSearch.svg" alt="magnifying glass">
                     <div class="search-input">
-                        <input type="text" placeholder="Search by title/category">
+                        <input id="search-input" type="text" placeholder="Search by title/category">
                     </div>
                 </div>
                 <div class="sort">
@@ -149,11 +149,36 @@
             <h2>Edit Service</h2>
             <form id="edit-form">
                 <input type="hidden" name="id">
-                <input type="text" name="title" placeholder="Title" required>
-                <input type="text" name="category" placeholder="Category" required>
-                <input type="text" name="place" placeholder="Place" required> <!-- добавлено -->
-                <input type="number" name="price" placeholder="Price" required>
-                <input type="text" name="photoURL" placeholder="Image URL" required>
+                <div class="field-wrapper">
+                    <input type="text" name="title" placeholder="Title" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <input type="text" name="category" placeholder="Category" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <input type="number" name="price" placeholder="Price" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <input type="text" name="photoURL" placeholder="Image URL" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <div class="place-list">
+                        <label for="place">Place</label>
+                        <select name="place" required>
+                            <option value="">Choose place</option>
+                            <option value="Bedroom">Bedroom</option>
+                            <option value="Kitchen">Kitchen</option>
+                            <option value="Living Room">Living Room</option>
+                            <option value="Dining Hall">Dining Hall</option>
+                            <option value="Bathroom">Bathroom</option>
+                        </select>
+                    </div>
+                    <div class="input-error"></div>
+                </div>
                 <div class="modal-buttons">
                     <button type="submit">Save</button>
                     <button type="button" id="cancel-edit">Cancel</button>
@@ -176,11 +201,36 @@
         <div class="modal-content">
             <h2>New Service</h2>
             <form id="new-service-form">
-                <input type="text" name="title" placeholder="Title" required>
-                <input type="text" name="category" placeholder="Category" required>
-                <input type="text" name="place" placeholder="Place" required> <!-- добавлено -->
-                <input type="number" name="price" placeholder="Price" required>
-                <input type="text" name="photoURL" placeholder="Image URL" required>
+                <div class="field-wrapper">
+                    <input type="text" name="title" placeholder="Title" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <input type="text" name="category" placeholder="Category" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <div class="place-list">
+                        <label for="place">Place</label>
+                        <select name="place" required>
+                            <option value="">Choose place</option>
+                            <option value="Bedroom">Bedroom</option>
+                            <option value="Kitchen">Kitchen</option>
+                            <option value="Living Room">Living Room</option>
+                            <option value="Dining Hall">Dining Hall</option>
+                            <option value="Bathroom">Bathroom</option>
+                        </select>
+                    </div>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <input type="number" name="price" placeholder="Price" required>
+                    <div class="input-error"></div>
+                </div>
+                <div class="field-wrapper">
+                    <input type="text" name="photoURL" placeholder="Image URL" required>
+                    <div class="input-error"></div>
+                </div>
                 <div class="modal-buttons">
                     <button type="submit">Add</button>
                     <button type="button" id="cancel-new">Cancel</button>

@@ -3,50 +3,109 @@ const paginationContainer = document.querySelector(".page");
 const prevButton = document.querySelector(".prev-page");
 const nextButton = document.querySelector(".next-page");
 
+// Модалки и формы
+const editModal = document.getElementById("edit-modal");
+const deleteModal = document.getElementById("delete-modal");
+const newServiceModal = document.getElementById("new-service-modal");
+
+const editForm = document.getElementById("edit-form");
+const newServiceForm = document.getElementById("new-service-form");
+
+const cancelEditBtn = document.getElementById("cancel-edit");
+const cancelDeleteBtn = document.getElementById("cancel-delete");
+const confirmDeleteBtn = document.getElementById("confirm-delete");
+const cancelNewBtn = document.getElementById("cancel-new");
+
 let currentPage = 1;
 const servicesPerPage = 4;
+
 let services = [];
 let currentPlace = null;
 let currentSort = null;
 let currentSearch = "";
 
-// Элементы модалок
-const editModal = document.getElementById("edit-modal");
-const deleteModal = document.getElementById("delete-modal");
-const editForm = document.getElementById("edit-form");
-const cancelEditBtn = document.getElementById("cancel-edit");
-const confirmDeleteBtn = document.getElementById("confirm-delete");
-const cancelDeleteBtn = document.getElementById("cancel-delete");
-
-const newServiceModal = document.getElementById("new-service-modal");
-const newServiceForm = document.getElementById("new-service-form");
-const cancelNewBtn = document.getElementById("cancel-new");
-
 let serviceToDeleteId = null;
 
-// Загрузка всех сервисов
-async function fetchServices() {
-  try {
-    const res = await fetch("http://localhost:3001/services");
-    services = await res.json();
-    renderPagination();
-    renderServices(currentPage);
-  } catch (error) {
-    console.error("Error loading services:", error);
-  }
+// --- Утилиты ---
+
+function capitalizeWords(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
 }
 
-// Отображение сервисов
-function renderServices(page) {
-  serviceContainer.innerHTML = "";
+// Валидация формы (с асинхронной проверкой картинки)
+function validateForm(form) {
+  let isValid = true;
+  const fields = form.querySelectorAll("input, select");
+  const promises = [];
 
+  fields.forEach((field) => {
+    const wrapper = field.closest(".field-wrapper");
+    if (!wrapper) return;
+
+    let errorElem = Array.from(wrapper.children).find((child) =>
+      child.classList?.contains("input-error")
+    );
+
+    if (!errorElem) return;
+
+    field.classList.remove("input-error-field");
+    errorElem.textContent = "";
+
+    const name = field.name;
+    const value = field.value.trim();
+
+    if (!value) {
+      errorElem.textContent = "This field is required";
+      field.classList.add("input-error-field");
+      isValid = false;
+    } else if (name === "price" && (+value <= 0 || isNaN(+value))) {
+      errorElem.textContent = "Price must be greater than 0";
+      field.classList.add("input-error-field");
+      isValid = false;
+    } else if (name === "photoURL") {
+      if (!value.startsWith("./Assets/")) {
+        errorElem.textContent = 'Must start with "./Assets/"';
+        field.classList.add("input-error-field");
+        isValid = false;
+      } else {
+        const imgCheck = new Promise((resolve) => {
+          const img = new Image();
+          img.onload = () => resolve(true);
+          img.onerror = () => {
+            errorElem.textContent = "Image not found at specified path";
+            field.classList.add("input-error-field");
+            resolve(false);
+          };
+          img.src = value;
+        });
+        promises.push(imgCheck);
+      }
+    }
+  });
+
+  if (promises.length > 0) {
+    return Promise.all(promises).then((results) => {
+      return isValid && results.every(Boolean);
+    });
+  }
+
+  return Promise.resolve(isValid);
+}
+
+// --- Фильтрация, сортировка ---
+
+function getFilteredServices() {
   let filtered = [...services];
 
   if (currentPlace) {
     filtered = filtered.filter((s) => s.place === currentPlace);
   }
 
-  if (currentSearch.trim()) {
+  if (currentSearch.trim() !== "") {
     const term = currentSearch.toLowerCase();
     filtered = filtered.filter(
       (s) =>
@@ -56,12 +115,20 @@ function renderServices(page) {
   }
 
   if (currentSort) {
-    filtered.sort((a, b) =>
-      currentSort === "price"
-        ? a.price - b.price
-        : a[currentSort].localeCompare(b[currentSort])
-    );
+    filtered.sort((a, b) => {
+      if (currentSort === "price") return a.price - b.price;
+      else return a[currentSort].localeCompare(b[currentSort]);
+    });
   }
+
+  return filtered;
+}
+
+// --- Рендеринг услуг и пагинации ---
+
+function renderServices(page) {
+  serviceContainer.innerHTML = "";
+  const filtered = getFilteredServices();
 
   const start = (page - 1) * servicesPerPage;
   const current = filtered.slice(start, start + servicesPerPage);
@@ -95,23 +162,41 @@ function renderServices(page) {
       </div>
     `;
 
-    const deleteBtn = card.querySelector(".delete-btn");
-    deleteBtn.addEventListener("click", () => deleteService(service.id));
-
-    const editBtn = card.querySelector(".edit-btn");
-    editBtn.addEventListener("click", () => editService(service));
+    card.querySelector(".delete-btn").addEventListener("click", () => deleteService(service.id));
+    card.querySelector(".edit-btn").addEventListener("click", () => editService(service));
 
     serviceContainer.appendChild(card);
   });
 }
 
-// Удаление с модалкой
+function renderPagination() {
+  paginationContainer.innerHTML = "";
+  const filtered = getFilteredServices();
+  const totalPages = Math.ceil(filtered.length / servicesPerPage);
+
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement("button");
+    btn.textContent = i < 10 ? `0${i}` : i;
+    btn.classList.add("page-button");
+    if (i === currentPage) btn.classList.add("active");
+
+    btn.addEventListener("click", () => {
+      currentPage = i;
+      renderServices(currentPage);
+      renderPagination();
+    });
+
+    paginationContainer.appendChild(btn);
+  }
+}
+
+// --- CRUD ---
+
 function deleteService(id) {
   serviceToDeleteId = id;
   deleteModal.classList.remove("hidden");
 }
 
-// Подтверждение удаления
 confirmDeleteBtn.addEventListener("click", async () => {
   try {
     await fetch(`http://localhost:3001/services/${serviceToDeleteId}`, {
@@ -119,116 +204,102 @@ confirmDeleteBtn.addEventListener("click", async () => {
     });
     deleteModal.classList.add("hidden");
     serviceToDeleteId = null;
-    fetchServices();
+    await fetchServices();
   } catch (error) {
-    console.error("Error deleting service:", error);
+    console.error(error);
   }
 });
 
-// Отмена удаления
 cancelDeleteBtn.addEventListener("click", () => {
   deleteModal.classList.add("hidden");
   serviceToDeleteId = null;
 });
 
-// Редактирование
 function editService(service) {
-  editForm.id.value = service.id;
-  editForm.title.value = service.title;
-  editForm.category.value = service.category;
-  editForm.place.value = service.place; // добавлено
-  editForm.price.value = service.price;
-  editForm.photoURL.value = service.photoURL;
+  editForm.elements["id"].value = service.id;
+  editForm.elements["title"].value = service.title;
+  editForm.elements["category"].value = service.category;
+  editForm.elements["place"].value = service.place;
+  editForm.elements["price"].value = service.price;
+  editForm.elements["photoURL"].value = service.photoURL;
 
   editModal.classList.remove("hidden");
 }
 
 editForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const isValid = await validateForm(editForm);
+  if (!isValid) return;
+
   const formData = new FormData(editForm);
   const updated = Object.fromEntries(formData.entries());
+
+  updated.title = capitalizeWords(updated.title.trim());
+  updated.category = capitalizeWords(updated.category.trim());
   updated.price = Number(updated.price);
   updated.place = updated.place.trim();
 
   try {
-    await fetch(`http://localhost:3001/services/${updated.id}`, {
+    const response = await fetch(`http://localhost:3001/services/${updated.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(updated)
+      body: JSON.stringify(updated),
     });
+
+    if (!response.ok) throw new Error("Update failed");
+
     editModal.classList.add("hidden");
-    fetchServices();
+    await fetchServices();
   } catch (error) {
-    console.error("Error updating service:", error);
+    console.error(error);
   }
 });
 
-// Отмена редактирования
 cancelEditBtn.addEventListener("click", () => {
   editModal.classList.add("hidden");
 });
-// Открытие модалки
+
 document.getElementById("add-service-btn").addEventListener("click", () => {
   newServiceModal.classList.remove("hidden");
 });
-// Отправка новой услуги
+
 newServiceForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  const isValid = await validateForm(newServiceForm);
+  if (!isValid) return;
+
   const formData = new FormData(newServiceForm);
   const newService = Object.fromEntries(formData.entries());
+
+  newService.title = capitalizeWords(newService.title.trim());
+  newService.category = capitalizeWords(newService.category.trim());
   newService.price = Number(newService.price);
   newService.place = newService.place.trim();
 
   try {
-    await fetch("http://localhost:3001/services", {
+    const response = await fetch("http://localhost:3001/services", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newService)
+      body: JSON.stringify(newService),
     });
+
+    if (!response.ok) throw new Error("Create failed");
+
     newServiceModal.classList.add("hidden");
     newServiceForm.reset();
-    fetchServices();
+    await fetchServices();
   } catch (error) {
-    console.error("Error adding new service:", error);
+    console.error(error);
   }
 });
 
-// Отмена создания
 cancelNewBtn.addEventListener("click", () => {
   newServiceModal.classList.add("hidden");
   newServiceForm.reset();
 });
 
-// Пагинация
-function renderPagination() {
-  paginationContainer.innerHTML = "";
-  const filtered = services.filter((service) => {
-    if (currentPlace && service.place !== currentPlace) return false;
-    if (
-      currentSearch &&
-      !(
-        service.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
-        service.category.toLowerCase().includes(currentSearch.toLowerCase())
-      )
-    )
-      return false;
-    return true;
-  });
-
-  const totalPages = Math.ceil(filtered.length / servicesPerPage);
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i < 10 ? `0${i}` : i;
-    btn.classList.add("page-button");
-    if (i === currentPage) btn.classList.add("active");
-    btn.addEventListener("click", () => {
-      currentPage = i;
-      renderServices(currentPage);
-      renderPagination();
-    });
-    paginationContainer.appendChild(btn);
-  }
-}
+// --- Пагинация кнопки ---
 
 prevButton.addEventListener("click", () => {
   if (currentPage > 1) {
@@ -239,20 +310,9 @@ prevButton.addEventListener("click", () => {
 });
 
 nextButton.addEventListener("click", () => {
-  const filteredCount = services.filter((service) => {
-    if (currentPlace && service.place !== currentPlace) return false;
-    if (
-      currentSearch &&
-      !(
-        service.title.toLowerCase().includes(currentSearch.toLowerCase()) ||
-        service.category.toLowerCase().includes(currentSearch.toLowerCase())
-      )
-    )
-      return false;
-    return true;
-  }).length;
+  const filtered = getFilteredServices();
+  const totalPages = Math.ceil(filtered.length / servicesPerPage);
 
-  const totalPages = Math.ceil(filteredCount / servicesPerPage);
   if (currentPage < totalPages) {
     currentPage++;
     renderServices(currentPage);
@@ -260,16 +320,30 @@ nextButton.addEventListener("click", () => {
   }
 });
 
-// Фильтрация
-document.querySelectorAll(".filt-content button").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const selected = btn.dataset.place;
-    currentPlace = currentPlace === selected ? null : selected;
+// --- Фильтры и поиск ---
 
-    document
-      .querySelectorAll(".filt-content button")
-      .forEach((b) => b.classList.remove("active"));
-    if (currentPlace) btn.classList.add("active");
+document.getElementById("search-input")?.addEventListener("input", (e) => {
+  currentSearch = e.target.value.trim();
+  currentPage = 1;
+  renderServices(currentPage);
+  renderPagination();
+});
+
+// Фильтр по кнопкам выбора места (если есть)
+document.querySelectorAll(".filt-content button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const isActive = button.classList.contains("active");
+
+    document.querySelectorAll(".filt-content button").forEach((btn) =>
+      btn.classList.remove("active")
+    );
+
+    if (isActive) {
+      currentPlace = null;
+    } else {
+      button.classList.add("active");
+      currentPlace = button.dataset.place;
+    }
 
     currentPage = 1;
     renderServices(currentPage);
@@ -278,26 +352,28 @@ document.querySelectorAll(".filt-content button").forEach((btn) => {
 });
 
 // Сортировка
-document.querySelector("#sort").addEventListener("change", (e) => {
+document.getElementById("sort")?.addEventListener("change", (e) => {
   currentSort = e.target.value || null;
   currentPage = 1;
   renderServices(currentPage);
   renderPagination();
 });
 
-// Поиск
-document.querySelector(".search-input input").addEventListener("input", (e) => {
-  currentSearch = e.target.value;
-  currentPage = 1;
-  renderServices(currentPage);
-  renderPagination();
-});
+// --- Загрузка данных с сервера ---
+async function fetchServices() {
+  try {
+    const res = await fetch("http://localhost:3001/services");
+    services = await res.json();
+    renderPagination();
+    renderServices(currentPage);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-// Кнопка добавления
-document.getElementById("add-service-btn").addEventListener("click", () => {
-});
-
+// --- Инициализация ---
 fetchServices();
+
 
 // burger menu
 const toggle = document.querySelector(".burger-toggle");

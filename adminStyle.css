@@ -759,6 +759,35 @@ body.dark-theme .not-found-message {
   cursor: pointer;
   transition: background 0.3s ease;
 }
+.input-error-field {
+    border-bottom: 2px solid red !important;
+    box-shadow: 0 1px 0 red;
+}
+
+.input-error {
+    white-space: nowrap;
+    margin-top: 4px;
+    font-size: 14px;
+    color: red;
+    font-family: "Jost", sans-serif;
+}
+.field-wrapper {
+    margin: 0 auto;
+    align-items:center;
+  display: flex;
+  flex-direction: column;
+  width: 47%; /* или нужная ширина */
+  position: relative;
+}
+.place-list select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
 
 
 

@@ -26,6 +26,10 @@
   background-color: #f0f0f0;
 }
 .modal-content input:focus {
-  border-color: #292F36;
+  border-color: #f09f44;
   background-color: #fff;
+}
+.place-list select:focus {
+  border-color: #f09f44;
+  outline: none;
 }
