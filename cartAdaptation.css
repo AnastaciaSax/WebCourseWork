@@ -258,6 +258,19 @@
         padding: 24px 10px;
         line-height: 140%;
     }
+       nav .exit-button {
+        display: none; /* Скрываем в nav */
+    }
+
+    #exit-button-mobile {
+        display: block;
+         font-size: 16px;
+    display: flex;
+    padding: 7px 15px;
+     border-radius: 15px;
+     align-items:center;
+     justify-content: center;
+    }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -565,5 +578,18 @@
     .copyright span {
         font-size: 14px;
         text-align: center;
+    }
+       nav .exit-button {
+        display: none; /* Скрываем в nav */
+    }
+
+    #exit-button-mobile {
+        display: block;
+         font-size: 15px;
+    display: flex;
+    padding: 5px 12px;
+     border-radius: 12px;
+     align-items:center;
+     justify-content: center;
     }
 }

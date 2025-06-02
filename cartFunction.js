@@ -147,6 +147,18 @@ function updateSummary() {
   serviceCountElem.textContent = `Services: ${cartItems.length}`;
   totalPriceElem.textContent = `Total: $ ${total}`;
 }
+const signOutBtn = document.querySelector(".exit-button");
+
+if (signOutBtn) {
+  signOutBtn.addEventListener("click", () => {
+    // Очистка данных авторизации, если это не делает общий скрипт (иначе можно убрать)
+    localStorage.removeItem("userId");
+    localStorage.removeItem("currentUser");
+
+    alert("You need to sign in to access your cart.");
+    window.location.href = "signIn.html";
+  });
+}
 
 //burger
 // Обновляем размеры слайдов при изменении размера окна

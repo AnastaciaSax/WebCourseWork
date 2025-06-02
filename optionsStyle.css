@@ -849,3 +849,17 @@ body.dark-theme .intro{
 .dark-theme .interno-info-media img {
     filter: invert(1);
 }
+
+/* sign out but */
+.exit-button {
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    padding: 10px 20px;
+    background-color: #C98740;
+    border-radius: 18px;
+}
+
+#exit-button-mobile {
+    display: none;
+}

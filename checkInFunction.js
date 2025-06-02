@@ -8,6 +8,10 @@ toggle.addEventListener("click", () => {
 });
 // check valid
 document.addEventListener("DOMContentLoaded", () => {
+  // Сбрасываем авторизацию при заходе на страницу регистрации
+  localStorage.removeItem("userId");
+  localStorage.removeItem("currentUser");
+
   const nameInput = document.getElementById("name");
   const surnameInput = document.getElementById("surname");
   const emailInput = document.getElementById("email");
@@ -282,6 +286,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         console.log("User added:", data);
         alert("Account created successfully!");
+
+        // Авто вход — сохраняем ID нового пользователя
+        localStorage.setItem("userId", data.id);
+        localStorage.setItem("currentUser", JSON.stringify(data));
       })
       .catch((error) => {
         console.error("Error:", error);
