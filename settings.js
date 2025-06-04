@@ -37,4 +37,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (exitButton) exitButton.addEventListener("click", handleExit);
   if (exitButtonMobile) exitButtonMobile.addEventListener("click", handleExit);
+
+    let user = null;
+  try {
+    user = JSON.parse(currentUser);
+  } catch {
+    user = currentUser;
+  }
+
+  if (user && (user === "admin" || user.role === "admin" || user.username === "admin")) {
+    // Header nav links
+    document.querySelectorAll('nav a[href="catalog.html"]').forEach(link => {
+      link.textContent = "Admin";
+      link.setAttribute("href", "admin.html");
+    });
+
+    // Burger menu links
+    document.querySelectorAll('.burger-menu a[href="catalog.html"]').forEach(link => {
+      link.textContent = "Admin";
+      link.setAttribute("href", "admin.html");
+    });
+
+    // Footer links
+    document.querySelectorAll('footer a[href="catalog.html"]').forEach(link => {
+      link.textContent = "Admin";
+      link.setAttribute("href", "admin.html");
+    });
+
+    // Footer service links
+    document.querySelectorAll('footer a[href^="catalog.html?category="]').forEach(link => {
+      const url = new URL(link.href);
+      url.pathname = "admin.html";
+      link.setAttribute("href", url.pathname + url.search);
+    });
+  }
 });
