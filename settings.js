@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const langIndex = localStorage.getItem("langIndex");
   if (langIndex !== null) {
-    document.querySelectorAll('.lang-pick .checkbox input[type="checkbox"]').forEach((cb, i) => {
-      cb.checked = i === parseInt(langIndex);
-    });
+    document
+      .querySelectorAll('.lang-pick .checkbox input[type="checkbox"]')
+      .forEach((cb, i) => {
+        cb.checked = i === parseInt(langIndex);
+      });
   }
 
   // === Sign Out Logic ===
@@ -38,37 +40,64 @@ document.addEventListener("DOMContentLoaded", function () {
   if (exitButton) exitButton.addEventListener("click", handleExit);
   if (exitButtonMobile) exitButtonMobile.addEventListener("click", handleExit);
 
-    let user = null;
+  let user = null;
   try {
     user = JSON.parse(currentUser);
   } catch {
     user = currentUser;
   }
 
-  if (user && (user === "admin" || user.role === "admin" || user.username === "admin")) {
+  if (
+    user &&
+    (user === "admin" || user.role === "admin" || user.username === "admin")
+  ) {
     // Header nav links
-    document.querySelectorAll('nav a[href="catalog.html"]').forEach(link => {
+    document.querySelectorAll('nav a[href="catalog.html"]').forEach((link) => {
       link.textContent = "Admin";
       link.setAttribute("href", "admin.html");
     });
 
     // Burger menu links
-    document.querySelectorAll('.burger-menu a[href="catalog.html"]').forEach(link => {
-      link.textContent = "Admin";
-      link.setAttribute("href", "admin.html");
-    });
+    document
+      .querySelectorAll('.burger-menu a[href="catalog.html"]')
+      .forEach((link) => {
+        link.textContent = "Admin";
+        link.setAttribute("href", "admin.html");
+      });
 
     // Footer links
-    document.querySelectorAll('footer a[href="catalog.html"]').forEach(link => {
-      link.textContent = "Admin";
-      link.setAttribute("href", "admin.html");
-    });
+    document
+      .querySelectorAll('footer a[href="catalog.html"]')
+      .forEach((link) => {
+        link.textContent = "Admin";
+        link.setAttribute("href", "admin.html");
+      });
 
     // Footer service links
-    document.querySelectorAll('footer a[href^="catalog.html?category="]').forEach(link => {
-      const url = new URL(link.href);
-      url.pathname = "admin.html";
-      link.setAttribute("href", url.pathname + url.search);
-    });
+    document
+      .querySelectorAll('footer a[href^="catalog.html?category="]')
+      .forEach((link) => {
+        const url = new URL(link.href);
+        url.pathname = "admin.html";
+        link.setAttribute("href", url.pathname + url.search);
+      });
   }
+ window.applyTranslations = function(langCode) {
+  const langData = translations[langCode];
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (langData[key]) el.textContent = langData[key];
+  });
+  }
+
+  const savedLangCode = localStorage.getItem("lang") || "en";
+  applyTranslations(savedLangCode);
+
+  document.querySelectorAll("[data-lang]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const selectedLang = btn.dataset.lang;
+      localStorage.setItem("lang", selectedLang);
+      applyTranslations(selectedLang);
+    });
+  });
 });

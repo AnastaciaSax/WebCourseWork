@@ -849,6 +849,11 @@ body.dark-theme .intro{
 .dark-theme .interno-info-media img {
     filter: invert(1);
 }
+body.dark-theme .exit-button {
+    color: #fff;                  /* Белый цвет текста */
+    background-color: #8B6A1E;   /* Более темный золотистый фон */
+
+}
 
 /* sign out but */
 .exit-button {
