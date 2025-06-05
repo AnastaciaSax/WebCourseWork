@@ -128,7 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         localStorage.setItem("currentUser", JSON.stringify(user));
         localStorage.setItem("userId", user.id); // вот эта строка
-        window.location.href = "home.html";
+        if (user.role === "admin") {
+          window.location.href = "admin.html";
+        } else {
+          window.location.href = "catalog.html";
+        }
       }
     }
   });

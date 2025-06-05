@@ -175,6 +175,16 @@ const translations = {
     menu: "Menu",
     options: "Options",
     arrow: "Arrow",
+    // Sign In page
+    signInTitle: "Sign in",
+    homeSignInBreadcrumb: "Home / Sign in",
+    signInHeadline: "Glad to see you back!",
+    placeholderName: "Name",
+    placeholderEmail: "Email",
+    placeholderPassword: "Password",
+    noAccountText: "No account?",
+    checkInLink: "Check in!",
+    signInButton: "Sign In",
   },
 
   de: {
@@ -332,8 +342,7 @@ const translations = {
     // Check In page
     checkInTitle: "Einchecken",
     homeCheckInBreadcrumb: "Startseite / Einchecken",
-    checkInHeadline:
-      "Wir freuen uns, zu helfen und neue Leute kennenzulernen.",
+    checkInHeadline: "Wir freuen uns, zu helfen und neue Leute kennenzulernen.",
     placeholderName: "Name",
     placeholderSurname: "Nachname",
     placeholderEmail: "E-Mail",
@@ -355,5 +364,15 @@ const translations = {
     menu: "Menü",
     options: "Einstellungen",
     arrow: "Pfeil",
+    // Sign In page
+    signInTitle: "Anmelden",
+    homeSignInBreadcrumb: "Startseite / Anmelden",
+    signInHeadline: "Schön, dich wiederzusehen!",
+    placeholderName: "Name",
+    placeholderEmail: "E-Mail",
+    placeholderPassword: "Passwort",
+    noAccountText: "Kein Konto?",
+    checkInLink: "Einchecken!",
+    signInButton: "Anmelden",
   },
 };
