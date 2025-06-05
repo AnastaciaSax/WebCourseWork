@@ -185,6 +185,12 @@ const translations = {
     noAccountText: "No account?",
     checkInLink: "Check in!",
     signInButton: "Sign In",
+     // Team page
+        teamTitle: "Professionals",
+        homeTeamBreadcrumb: "Home / Team",
+        positionLocation: "Design, Australia",
+        teamMemberPic: "team member's pic",
+        media: "media",
   },
 
   de: {
@@ -374,5 +380,11 @@ const translations = {
     noAccountText: "Kein Konto?",
     checkInLink: "Einchecken!",
     signInButton: "Anmelden",
+    // Team page
+        teamTitle: "Profis",
+        homeTeamBreadcrumb: "Startseite / Team",
+        positionLocation: "Design, Australien",
+        teamMemberPic: "Foto des Teammitglieds",
+        media: "Medien",
   },
 };
