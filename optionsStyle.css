@@ -483,7 +483,7 @@ header nav a {
     flex-shrink: 0;
     border-radius: 70px;
     background: #F6F6F6;
-     height: 519px;
+    height: 519px;
 }
 
 .lang {
@@ -621,7 +621,7 @@ header nav a {
 /*check box end*/
 /* reset */
 .reset-container {
-    margin:100px 0 200px;
+    margin: 100px 0 200px;
     display: flex;
     width: 13.07%;
     justify-content: center;
@@ -675,6 +675,7 @@ header nav a {
     gap: 5px;
     flex-shrink: 0;
 }
+
 /* foot */
 
 footer {
@@ -801,12 +802,14 @@ footer {
 .copyright span {
     font-size: 22px;
 }
+
 /* dark mode */
 body.dark-theme,
 html.dark-theme {
     background: url('./Assets/darkBg.png') no-repeat center center;
     background-size: cover;
-    color: #ccc; /* светлый текст */
+    color: #ccc;
+    /* светлый текст */
 }
 
 body.dark-theme h1,
@@ -825,7 +828,8 @@ body.dark-theme span {
 
 body.dark-theme button {
     color: #eee;
-    background-color: #444; /* Темный фон кнопок */
+    background-color: #444;
+    /* Темный фон кнопок */
     box-shadow: 0 0 8px #222 inset;
 }
 
@@ -836,12 +840,15 @@ body.dark-theme .theme-container {
     background: #2a2a2a;
     box-shadow: none;
 }
-body.dark-theme .line{
+
+body.dark-theme .line {
     background: #eee;
 }
-body.dark-theme .intro{
+
+body.dark-theme .intro {
     background: black;
 }
+
 .dark-theme .optionBut img,
 .dark-theme .burger-toggle img,
 .dark-theme .checkbox span,
@@ -849,9 +856,12 @@ body.dark-theme .intro{
 .dark-theme .interno-info-media img {
     filter: invert(1);
 }
+
 body.dark-theme .exit-button {
-    color: #fff;                  /* Белый цвет текста */
-    background-color: #8B6A1E;   /* Более темный золотистый фон */
+    color: #fff;
+    /* Белый цвет текста */
+    background-color: #8B6A1E;
+    /* Более темный золотистый фон */
 
 }
 
@@ -867,4 +877,93 @@ body.dark-theme .exit-button {
 
 #exit-button-mobile {
     display: none;
+}
+
+/* purblind */
+body.purblind-color-0 {
+    background: none !important;
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+body.purblind-color-1 {
+    background: none !important;
+    background-color: #222 !important;
+    color: #fff !important;
+}
+
+body.purblind-color-2 {
+    background: none !important;
+    background-color: #f5f5f5 !important;
+    color: #222 !important;
+}
+body.purblind-color-0 h1,
+body.purblind-color-0 h2,
+body.purblind-color-0 h3,
+body.purblind-color-0 h4,
+body.purblind-color-0 h5,
+body.purblind-color-0 p,
+body.purblind-color-0 a,
+body.purblind-color-0 span,
+body.purblind-color-0 button {
+    color: #000 !important;
+}
+
+body.purblind-color-1 h1,
+body.purblind-color-1 h2,
+body.purblind-color-1 h3,
+body.purblind-color-1 h4,
+body.purblind-color-1 h5,
+body.purblind-color-1 p,
+body.purblind-color-1 a,
+body.purblind-color-1 span,
+body.purblind-color-1 button {
+    color: #fff !important;
+}
+
+body.purblind-color-2 h1,
+body.purblind-color-2 h2,
+body.purblind-color-2 h3,
+body.purblind-color-2 h4,
+body.purblind-color-2 h5,
+body.purblind-color-2 p,
+body.purblind-color-2 a,
+body.purblind-color-2 span,
+body.purblind-color-2 button {
+    color: #222 !important;
+}
+body.purblind-typo-0 {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    font-family: Arial, sans-serif !important;
+}
+
+body.purblind-typo-1 {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    font-family: Verdana, sans-serif !important;
+}
+
+body.purblind-typo-2 {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    font-family: Georgia, serif !important;
+}
+body.purblind-hide-images img,
+body.purblind-hide-images .img-container,
+body.purblind-hide-images picture {
+    display: none !important;
+}
+.alt-replacement {
+    display: block;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #777;
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
 }

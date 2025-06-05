@@ -6,6 +6,7 @@ const menu = document.querySelector(".burger-menu");
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
+
 //options
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
@@ -32,6 +33,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const langCheckboxes = document.querySelectorAll(
     '.lang-pick .checkbox input[type="checkbox"]'
   );
+  const imageCheckbox = document.querySelector(
+    '.purblind-image .checkbox input[type="checkbox"]'
+  );
+
+  const applyPurblindStyles = () => {
+    // Сначала удалить все старые классы
+    body.classList.remove(
+      "purblind-color-0",
+      "purblind-color-1",
+      "purblind-color-2",
+      "purblind-typo-0",
+      "purblind-typo-1",
+      "purblind-typo-2",
+      "purblind-hide-images"
+    );
+
+    if (!purblindCheckbox.checked) return;
+
+    const colorIndex = localStorage.getItem("colorScheme");
+    const typoIndex = localStorage.getItem("typoStyle");
+    const showImages = localStorage.getItem("showImages") === "true";
+
+    if (colorIndex !== null) {
+      body.classList.add(`purblind-color-${colorIndex}`);
+    }
+
+    if (typoIndex !== null) {
+      body.classList.add(`purblind-typo-${typoIndex}`);
+    }
+
+    if (!showImages) {
+      body.classList.add("purblind-hide-images");
+    }
+  };
 
   const updatePurblindDependentVisibility = () => {
     const isPurblindActive = purblindCheckbox.checked;
@@ -52,8 +87,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (isPurblindActive) {
-      // Typography: включаем "medium" (index = 1) если ничего не выбрано
-      if (![...typoCheckboxes].some((cb) => cb.checked)) {
+      // --- Image Checkbox ---
+      const savedShowImages = localStorage.getItem("showImages");
+      if (savedShowImages !== null) {
+        imageCheckbox.checked = savedShowImages === "true";
+      } else {
+        imageCheckbox.checked = true; // по умолчанию включено
+        localStorage.setItem("showImages", "true");
+      }
+      // --- Typography ---
+      let savedTypoIndex = localStorage.getItem("typoStyle");
+      if (savedTypoIndex !== null && typoCheckboxes[savedTypoIndex]) {
+        typoCheckboxes.forEach((cb, i) => {
+          cb.checked = i === parseInt(savedTypoIndex);
+          typoBlocks[i].classList.toggle(
+            "active",
+            i === parseInt(savedTypoIndex)
+          );
+        });
+      } else {
         const defaultIndex = 1;
         typoCheckboxes[defaultIndex].checked = true;
         localStorage.setItem("typoStyle", defaultIndex.toString());
@@ -62,8 +114,17 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       }
 
-      // Color: включаем первую (index = 0) если ничего не выбрано
-      if (![...colorCheckboxes].some((cb) => cb.checked)) {
+      // --- Color Scheme ---
+      let savedColorIndex = localStorage.getItem("colorScheme");
+      if (savedColorIndex !== null && colorCheckboxes[savedColorIndex]) {
+        colorCheckboxes.forEach((cb, i) => {
+          cb.checked = i === parseInt(savedColorIndex);
+          colorBlocks[i].classList.toggle(
+            "active",
+            i === parseInt(savedColorIndex)
+          );
+        });
+      } else {
         const defaultIndex = 0;
         colorCheckboxes[defaultIndex].checked = true;
         localStorage.setItem("colorScheme", defaultIndex.toString());
@@ -77,6 +138,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       colorBlocks.forEach((b) => b.classList.remove("active"));
       typoBlocks.forEach((b) => b.classList.remove("active"));
+
+      imageCheckbox.checked = false;
+      localStorage.removeItem("showImages");
     }
   };
 
@@ -128,42 +192,117 @@ document.addEventListener("DOMContentLoaded", () => {
   const savedPurblind = localStorage.getItem("purblind") === "true";
   purblindCheckbox.checked = savedPurblind;
   updatePurblindDependentVisibility();
+  applyPurblindStyles();
 
   purblindCheckbox.addEventListener("change", () => {
     localStorage.setItem("purblind", purblindCheckbox.checked.toString());
     updatePurblindDependentVisibility();
+    applyPurblindStyles();
+
+    // Добавить сюда логику очистки/восстановления alt-замен и изображений
+  if (!purblindCheckbox.checked) {
+    // Восстанавливаем все изображения и удаляем alt-замены
+    document.querySelectorAll(".alt-replacement").forEach((el) => el.remove());
+    document.querySelectorAll("img").forEach((img) => {
+      img.style.display = "";
+    });
+    document.querySelectorAll("picture").forEach((pic) => {
+      pic.style.display = "";
+    });
+  } else {
+    // Если включили purblind, проверяем состояние showImages и при необходимости создаём alt-замены
+    const showImages = localStorage.getItem("showImages") === "true";
+    if (!showImages) {
+      const images = document.querySelectorAll("img");
+      images.forEach((img) => {
+        if (img.style.display === "none") return;
+        const altText = img.getAttribute("alt") || "Изображение скрыто";
+        const replacement = document.createElement("div");
+        replacement.className = "alt-replacement";
+        replacement.textContent = altText;
+        img.style.display = "none";
+        img.insertAdjacentElement("beforebegin", replacement);
+      });
+      document.querySelectorAll("picture").forEach((pic) => {
+        pic.style.display = "none";
+      });
+    }
+  }
   });
 
   // --- Универсальный обработчик чекбоксов ---
-  const handleExclusiveSelection = (checkboxes, blocks, groupKey) => {
-    const savedIndex = localStorage.getItem(groupKey);
-    if (savedIndex !== null && checkboxes[savedIndex]) {
-      checkboxes[savedIndex].checked = true;
-      blocks.forEach((block, i) =>
-        block.classList.toggle("active", i === parseInt(savedIndex))
-      );
-    }
+const handleExclusiveSelection = (checkboxes, blocks, groupKey) => {
+  const savedIndex = localStorage.getItem(groupKey);
+  if (savedIndex !== null && checkboxes[savedIndex]) {
+    checkboxes[savedIndex].checked = true;
+    blocks.forEach((block, i) =>
+      block.classList.toggle("active", i === parseInt(savedIndex))
+    );
+  }
 
-    checkboxes.forEach((checkbox, index) => {
-      checkbox.addEventListener("change", () => {
-        if (checkbox.checked) {
-          checkboxes.forEach((cb, i) => (cb.checked = i === index));
-          blocks.forEach((block, i) =>
-            block.classList.toggle("active", i === index)
-          );
-          localStorage.setItem(groupKey, index.toString());
-        } else {
-          const anyChecked = Array.from(checkboxes).some((cb) => cb.checked);
-          if (!anyChecked) {
-            checkbox.checked = true; // запрещаем отжатие последней
-          }
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        checkboxes.forEach((cb, i) => (cb.checked = i === index));
+        blocks.forEach((block, i) =>
+          block.classList.toggle("active", i === index)
+        );
+        localStorage.setItem(groupKey, index.toString());
+
+        // Вот здесь добавляем:
+        applyPurblindStyles();
+        updatePurblindDependentVisibility();
+      } else {
+        const anyChecked = Array.from(checkboxes).some((cb) => cb.checked);
+        if (!anyChecked) {
+          checkbox.checked = true; // запрещаем отжатие последней
         }
-      });
+      }
     });
-  };
+  });
+};
 
   handleExclusiveSelection(colorCheckboxes, colorBlocks, "colorScheme");
   handleExclusiveSelection(typoCheckboxes, typoBlocks, "typoStyle");
+
+  if (imageCheckbox) {
+    imageCheckbox.addEventListener("change", () => {
+      const show = imageCheckbox.checked;
+      localStorage.setItem("showImages", show.toString());
+      applyPurblindStyles();
+
+      // --- Добавляем alt-замену, если изображения отключены ---
+      if (!show && purblindCheckbox.checked) {
+        const images = document.querySelectorAll("img");
+        images.forEach((img) => {
+          if (img.style.display === "none") return; // уже обработан
+
+          const altText = img.getAttribute("alt") || "Изображение скрыто";
+          const replacement = document.createElement("div");
+          replacement.className = "alt-replacement";
+          replacement.textContent = altText;
+
+          img.style.display = "none";
+          img.insertAdjacentElement("beforebegin", replacement);
+        });
+
+        document.querySelectorAll("picture").forEach((pic) => {
+          pic.style.display = "none";
+        });
+      } else {
+        // Если включили изображения обратно — восстанавливаем
+        document
+          .querySelectorAll(".alt-replacement")
+          .forEach((el) => el.remove());
+        document.querySelectorAll("img").forEach((img) => {
+          img.style.display = "";
+        });
+        document.querySelectorAll("picture").forEach((pic) => {
+          pic.style.display = "";
+        });
+      }
+    });
+  }
 
   // --- Reset ---
   if (resetButton) {
@@ -190,6 +329,7 @@ document.addEventListener("DOMContentLoaded", () => {
       purblindCheckbox.checked = false;
       localStorage.setItem("purblind", "false");
       updatePurblindDependentVisibility();
+      applyPurblindStyles();
 
       colorBlocks.forEach((b) => b.classList.remove("active"));
       typoBlocks.forEach((b) => b.classList.remove("active"));

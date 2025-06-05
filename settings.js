@@ -53,42 +53,37 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
     // Header nav links
     document.querySelectorAll('nav a[href="catalog.html"]').forEach((link) => {
-      link.textContent = "Admin";
       link.setAttribute("href", "admin.html");
+      link.dataset.i18n = "admin";
     });
 
     // Burger menu links
     document
       .querySelectorAll('.burger-menu a[href="catalog.html"]')
       .forEach((link) => {
-        link.textContent = "Admin";
         link.setAttribute("href", "admin.html");
+        link.dataset.i18n = "admin";
       });
 
-    // Footer links
+    // Footer links (без категории)
     document
       .querySelectorAll('footer a[href="catalog.html"]')
       .forEach((link) => {
-        link.textContent = "Admin";
         link.setAttribute("href", "admin.html");
-      });
-
-    // Footer service links
-    document
-      .querySelectorAll('footer a[href^="catalog.html?category="]')
-      .forEach((link) => {
-        const url = new URL(link.href);
-        url.pathname = "admin.html";
-        link.setAttribute("href", url.pathname + url.search);
+        link.dataset.i18n = "admin";
       });
   }
- window.applyTranslations = function(langCode) {
-  const langData = translations[langCode];
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    if (langData[key]) el.textContent = langData[key];
-  });
-  }
+  window.applyTranslations = function (langCode) {
+    const langData = translations[langCode];
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.dataset.i18n;
+      if (langData[key]) el.textContent = langData[key];
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.dataset.i18nPlaceholder;
+      if (langData[key]) el.setAttribute("placeholder", langData[key]);
+    });
+  };
 
   const savedLangCode = localStorage.getItem("lang") || "en";
   applyTranslations(savedLangCode);
@@ -100,4 +95,90 @@ document.addEventListener("DOMContentLoaded", function () {
       applyTranslations(selectedLang);
     });
   });
+
+  // // === Unified Purblind Settings ===
+const purblindMode = localStorage.getItem("purblind") === "true";
+const colorScheme = localStorage.getItem("colorScheme"); // "0", "1", "2"
+const typoStyle = localStorage.getItem("typoStyle");     // "0", "1", "2"
+const showImages = localStorage.getItem("showImages") === "true"; // true = показывать
+
+if (purblindMode) {
+    body.classList.add("purblind-mode");
+
+    // Удаляем все purblind классы, чтобы потом добавить нужные
+    body.classList.remove(
+      "purblind-color-0", "purblind-color-1", "purblind-color-2",
+      "purblind-typo-0", "purblind-typo-1", "purblind-typo-2",
+      "purblind-hide-images"
+    );
+
+    if (colorScheme !== null) {
+      body.classList.add(`purblind-color-${colorScheme}`);
+    }
+
+    if (typoStyle !== null) {
+      body.classList.add(`purblind-typo-${typoStyle}`);
+    }
+
+    if (!showImages) {
+      body.classList.add("purblind-hide-images");
+    }
+  } else {
+    // Отключаем purblind
+    body.classList.remove("purblind-mode");
+    body.classList.remove(
+      "purblind-color-0", "purblind-color-1", "purblind-color-2",
+      "purblind-typo-0", "purblind-typo-1", "purblind-typo-2",
+      "purblind-hide-images"
+    );
+  }
+
+  // --- Работа с изображениями для purblind режима ---
+  if (purblindMode && !showImages) {
+    // Скрываем картинки, показываем alt-замены
+    document.querySelectorAll("img").forEach((img) => {
+      if (img.style.display === "none") return; // уже скрыт
+
+      const altText = img.getAttribute("alt") || "Изображение скрыто";
+      const replacement = document.createElement("div");
+      replacement.className = "alt-replacement";
+      replacement.textContent = altText;
+
+      img.style.display = "none";
+      img.insertAdjacentElement("beforebegin", replacement);
+    });
+
+    document.querySelectorAll("picture").forEach((pic) => {
+      pic.style.display = "none";
+    });
+  } else {
+    // Показываем все изображения, убираем alt-замены
+    document.querySelectorAll(".alt-replacement").forEach((el) => el.remove());
+    document.querySelectorAll("img").forEach((img) => {
+      img.style.display = "";
+    });
+    document.querySelectorAll("picture").forEach((pic) => {
+      pic.style.display = "";
+    });
+}
+ // --- Отмечаем чекбоксы в options странице (если там есть элементы) ---
+  const colorCheckboxes = document.querySelectorAll('.color-scheme-color-pick .checkbox input[type="checkbox"]');
+  const colorBlocks = document.querySelectorAll('.color-scheme-color .color-section-field');
+
+  const typoCheckboxes = document.querySelectorAll('.typo-pick .checkbox input[type="checkbox"]');
+  const typoBlocks = document.querySelectorAll('.typo-content > .typo-content');
+
+  if (colorCheckboxes.length && colorBlocks.length && colorScheme !== null) {
+    colorCheckboxes.forEach((cb, i) => {
+      cb.checked = i === parseInt(colorScheme);
+      colorBlocks[i].classList.toggle("active", i === parseInt(colorScheme));
+    });
+  }
+
+  if (typoCheckboxes.length && typoBlocks.length && typoStyle !== null) {
+    typoCheckboxes.forEach((cb, i) => {
+      cb.checked = i === parseInt(typoStyle);
+      typoBlocks[i].classList.toggle("active", i === parseInt(typoStyle));
+    });
+  }
 });
