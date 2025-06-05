@@ -144,8 +144,8 @@ function updateSummary() {
     return sum + (service ? service.price : 0);
   }, 0);
 
-  serviceCountElem.textContent = `Services: ${cartItems.length}`;
-  totalPriceElem.textContent = `Total: $ ${total}`;
+  document.getElementById("service-count").textContent = cartItems.length;
+  document.getElementById("total-price").textContent = `$ ${total}`;
 }
 const signOutBtn = document.querySelector(".exit-button");
 

@@ -138,6 +138,14 @@ const translations = {
         newServiceTitle: "New Service",
         addButton: "Add",
         searchPlaceholder: "Search by title/category",
+        // cart
+        cartTitle: "Cart",
+        homeCartBreadcrumb: "Home / Cart",
+        servicesLabel: "Services: ",
+        totalLabel: "Total: ",
+        catalogButton: "Catalog",
+        back: "Back",
+        next: "Next",
   },
 
   de: {
@@ -280,5 +288,13 @@ const translations = {
         newServiceTitle: "Neuer Service",
         addButton: "Hinzufügen",
         searchPlaceholder: "Suche nach Titel/Kategorie",
+        // cart
+           cartTitle: "Warenkorb",
+        homeCartBreadcrumb: "Startseite / Warenkorb",
+        servicesLabel: "Dienste: ",
+        totalLabel: "Summe: ",
+        catalogButton: "Katalog",
+        back: "Zurück",
+        next: "Weiter",
   },
 };
