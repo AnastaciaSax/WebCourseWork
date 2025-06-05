@@ -20,163 +20,189 @@
         <div class="header-container">
             <header>
                 <div class="logo">
-                    <img src="./Assets/Logo.png" alt="Logo Image">
-                    <h1>Interno</h1>
+                    <img src="./Assets/Logo.png" alt="Logo Image" />
+                    <h1 data-i18n="interno">Interno</h1>
                 </div>
                 <nav>
-                    <a href="home.html">Home</a>
-                    <a href="team.html">Team</a>
-                    <a href="catalog.html">Catalog</a>
-                    <a href="cart.html">Cart</a>
-                    <a href="checkIn.html">Check in</a>
-                    <a href="signIn.html">Sign in</a>
+                    <a href="home.html" data-i18n="home">Home</a>
+                    <a href="team.html" data-i18n="team">Team</a>
+                    <a href="catalog.html" data-i18n="catalog">Catalog</a>
+                    <a href="cart.html" data-i18n="cart">Cart</a>
+                    <a href="checkIn.html" data-i18n="checkIn">Check in</a>
+                    <a href="signIn.html" data-i18n="signIn">Sign in</a>
                     <a href="options.html" class="optionBut">
-                        <img src="./Assets/optionsIcon.svg" alt="Options Image">
+                        <img src="./Assets/optionsIcon.svg" alt="Options Image" data-i18n-alt="options" />
                     </a>
                 </nav>
                 <div class="burger">
                     <button class="burger-toggle">
-                        <img src="./Assets/hamburger.svg" alt="Menu">
+                        <img src="./Assets/hamburger.svg" alt="Menu" data-i18n-alt="menu" />
                     </button>
                     <div class="burger-menu">
-                        <a href="home.html">Home</a>
-                        <a href="team.html">Team</a>
-                        <a href="catalog.html">Catalog</a>
-                        <a href="cart.html">Cart</a>
-                        <a href="checkIn.html">Check in</a>
-                        <a href="signIn.html">Sign in</a>
-                        <a href="options.html">Options</a>
+                        <a href="home.html" data-i18n="home">Home</a>
+                        <a href="team.html" data-i18n="team">Team</a>
+                        <a href="catalog.html" data-i18n="catalog">Catalog</a>
+                        <a href="cart.html" data-i18n="cart">Cart</a>
+                        <a href="checkIn.html" data-i18n="checkIn">Check in</a>
+                        <a href="signIn.html" data-i18n="signIn">Sign in</a>
+                        <a href="options.html" data-i18n="options">Options</a>
                     </div>
                 </div>
             </header>
         </div>
+
         <main class="banner">
             <div class="intro">
                 <div class="into-title">
-                    <h2>Check in</h2>
-                    <span>Home / Check in</span>
+                    <h2 data-i18n="checkInTitle">Check in</h2>
+                    <span data-i18n="homeCheckInBreadcrumb">Home / Check in</span>
                 </div>
             </div>
         </main>
+
         <div class="inter-info-form">
             <div class="inter-info-form-title">
-                <h2>We love meeting new people and helping them.</h2>
+                <h2 data-i18n="checkInHeadline">We love meeting new people and helping them.</h2>
             </div>
             <div class="contact-form">
                 <div class="form">
                     <div class="form-content">
                         <div class="content-field">
                             <div class="field-wrapper">
-                                <input type="text" id="name" placeholder="Name" required>
+                                <input type="text" id="name" placeholder="" data-i18n-placeholder="placeholderName"
+                                    required />
                             </div>
                             <div class="field-wrapper">
-                                <input type="text" id="surname" placeholder="Surname" required>
-                            </div>
-                        </div>
-                        <div class="content-field">
-                            <div class="field-wrapper">
-                                <input type="text" id="email" placeholder="Email" required>
-                            </div>
-                            <div class="field-wrapper">
-                                <input type="text" id="phone" placeholder="+375" pattern="\+375[0-9]{9}" required>
+                                <input type="text" id="surname" placeholder=""
+                                    data-i18n-placeholder="placeholderSurname" required />
                             </div>
                         </div>
                         <div class="content-field">
                             <div class="field-wrapper">
-                                <input type="text" id="birthdate" placeholder="Birthdate" required>
+                                <input type="text" id="email" placeholder="" data-i18n-placeholder="placeholderEmail"
+                                    required />
                             </div>
                             <div class="field-wrapper">
-                                <input type="text" id="nickname" placeholder="Nickname" required>
+                                <input type="text" id="phone" placeholder="" data-i18n-placeholder="placeholderPhone"
+                                    pattern="\+375[0-9]{9}" required />
                             </div>
                         </div>
                         <div class="content-field">
                             <div class="field-wrapper">
-                                <input type="text" id="password" placeholder="Password" required>
+                                <input type="text" id="birthdate" placeholder=""
+                                    data-i18n-placeholder="placeholderBirthdate" required />
                             </div>
                             <div class="field-wrapper">
-                                <input type="text" id="repeatPassword" placeholder="Repeat password" required>
+                                <input type="text" id="nickname" placeholder=""
+                                    data-i18n-placeholder="placeholderNickname" required />
+                            </div>
+                        </div>
+                        <div class="content-field">
+                            <div class="field-wrapper">
+                                <input type="password" id="password" placeholder=""
+                                    data-i18n-placeholder="placeholderPassword" required />
+                            </div>
+                            <div class="field-wrapper">
+                                <input type="password" id="repeatPassword" placeholder=""
+                                    data-i18n-placeholder="placeholderRepeatPassword" required />
                             </div>
                             <label class="checkbox-container">
-                                <input type="checkbox" id="autoGeneratePassword">
+                                <input type="checkbox" id="autoGeneratePassword" />
                                 <span class="custom-checkbox"></span>
-                                <span class="checkbox-label">Auto</span>
+                                <span class="checkbox-label" data-i18n="autoLabel">Auto</span>
                             </label>
                         </div>
                     </div>
                     <div class="form-down">
-                        <button type="button" id="generateNickname">Generate Nick</button>
+                        <button type="button" id="generateNickname" data-i18n="generateNickButton">
+                            Generate Nick
+                        </button>
                         <button type="button" class="create-account">
-                            <span>Create Account</span>
-                            <img src="./Assets/signInButArrow.svg" alt="arrow">
+                            <span data-i18n="createAccountButton">Create Account</span>
+                            <img src="./Assets/signInButArrow.svg" alt="arrow" data-i18n-alt="arrow" />
                         </button>
                     </div>
                 </div>
             </div>
         </div>
+
         <footer>
             <div class="interno">
                 <div class="interno-info">
                     <div class="interno-info-text">
                         <div class="logo">
-                            <img src="./Assets/Logo.png" alt="Logo Image">
-                            <h1>Interno</h1>
+                            <img src="./Assets/Logo.png" alt="Logo Image" />
+                            <h1 data-i18n="interno">Interno</h1>
                         </div>
-                        <p>"Design Your Dream, Live Your Vision"<Br>We create interiors that are an extension of your
-                            unique story.</p>
+                        <p data-i18n="footerSlogan">
+                            "Design Your Dream, Live Your Vision"<br />
+                            We create interiors that are an extension of your unique story.
+                        </p>
                     </div>
                     <div class="interno-info-media">
-                        <img src="./Assets/media.png" alt="Media icon">
-                        <img src="./Assets/meadia1.png" alt="Media icon">
-                        <img src="./Assets/meadia2.png" alt="Media icon">
-                        <img src="./Assets/meadia3.png" alt="Media icon">
+                        <img src="./Assets/media.png" alt="Media icon" />
+                        <img src="./Assets/meadia1.png" alt="Media icon" />
+                        <img src="./Assets/meadia2.png" alt="Media icon" />
+                        <img src="./Assets/meadia3.png" alt="Media icon" />
                     </div>
                 </div>
+
                 <div class="interno-page">
-                    <h3>Pages</h3>
-                    <a href="home.html">Home</a>
-                    <a href="catalog.html">Catalog</a>
-                    <a href="cart.html">Cart</a>
-                    <a href="team.html">Team</a>
-                    <a href="options.html">Options</a>
+                    <h3 data-i18n="pages">Pages</h3>
+                    <a href="home.html" data-i18n="home">Home</a>
+                    <a href="catalog.html" data-i18n="catalog">Catalog</a>
+                    <a href="cart.html" data-i18n="cart">Cart</a>
+                    <a href="team.html" data-i18n="team">Team</a>
+                    <a href="options.html" data-i18n="options">Options</a>
                 </div>
+
                 <div class="interno-service">
-                    <h3>Services</h3>
-                    <a href="catalog.html?category=Kitchen">Kitchen</a>
-                    <a href="catalog.html?category=Living%20Room">Living Room</a>
-                    <a href="catalog.html?category=Bathroom">Bathroom</a>
-                    <a href="catalog.html?category=Dining%20Hall">Dining Hall</a>
-                    <a href="catalog.html?category=Bedroom">Bedroom</a>
+                    <h3 data-i18n="services">Services</h3>
+                    <a href="catalog.html?category=Kitchen" data-i18n="kitchen">Kitchen</a>
+                    <a href="catalog.html?category=Living%20Room" data-i18n="livingRoom">Living Room</a>
+                    <a href="catalog.html?category=Bathroom" data-i18n="bathroom">Bathroom</a>
+                    <a href="catalog.html?category=Dining%20Hall" data-i18n="diningHall">Dining Hall</a>
+                    <a href="catalog.html?category=Bedroom" data-i18n="bedroom">Bedroom</a>
                 </div>
+
                 <div class="interno-contact">
-                    <h3>Contact</h3>
+                    <h3 data-i18n="contact">Contact</h3>
                     <div class="interno-contact-data">
-                        <span>55 East Birchwood Ave. Brooklyn, New York 11201</span>
-                        <span>interno@gmail.com</span>
-                        <span>(123) 456 - 7890</span>
+                        <span data-i18n="address">55 East Birchwood Ave. Brooklyn, New York 11201</span>
+                        <span data-i18n="email">interno@gmail.com</span>
+                        <span data-i18n="phone">(123) 456 - 7890</span>
                     </div>
                 </div>
             </div>
+
             <div class="copyright">
                 <div class="copyright-line"></div>
-                <span>Copyright © Interno | Designed by Anastacia Sax</span>
+                <span data-i18n="copyright">Copyright © Interno | Designed by Anastacia Sax</span>
             </div>
         </footer>
     </div>
-     <div id="termsModal" class="modal hidden">
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal hidden">
         <div class="modal-content">
-            <h2>User Agreement</h2>
-            <p>Consent is required to complete your check-in. Please review the terms.</p>
+            <h2 data-i18n="userAgreementTitle">User Agreement</h2>
+            <p data-i18n="userAgreementText">
+                Consent is required to complete your check-in. Please review the terms.
+            </p>
             <label>
                 <input type="checkbox" id="agreeTerms" />
-                I accept the User Agreement
+                <span data-i18n="userAgreementLabel">I accept the User Agreement</span>
             </label>
             <div class="modal-buttons">
-                <button id="confirmRegister" disabled>Confirm</button>
-                <button id="cancelModal">Cancel</button>
+                <button id="confirmRegister" disabled data-i18n="confirmRegisterButton">
+                    Confirm
+                </button>
+                <button id="cancelModal" data-i18n="cancelButton">Cancel</button>
             </div>
         </div>
     </div>
     <script src="checkInFunction.js"></script>
+    <script src="i18n.js" defer></script>
     <script src="settings.js" defer></script>
 </body>
 
