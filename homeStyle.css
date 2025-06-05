@@ -760,6 +760,11 @@ body.dark-theme .content-but {
 body.dark-theme .but-text a {
     color: #fff;
 }
+body.dark-theme .exit-button {
+    color: #fff;                  /* Белый цвет текста */
+    background-color: #8B6A1E;   /* Более темный золотистый фон */
+
+}
 
 /* Footer */
 
