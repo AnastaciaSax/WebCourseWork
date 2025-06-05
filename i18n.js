@@ -146,6 +146,10 @@ const translations = {
         catalogButton: "Catalog",
         back: "Back",
         next: "Next",
+        //catalog
+        catalogTitle: "Design Catalog",
+        homeCatalogBreadcrumb: "Home / Catalog",
+        cartButton: "Cart",
   },
 
   de: {
@@ -296,5 +300,9 @@ const translations = {
         catalogButton: "Katalog",
         back: "Zurück",
         next: "Weiter",
+        //catalog
+        catalogTitle: "Design Katalog",
+        homeCatalogBreadcrumb: "Startseite / Katalog",
+        cartButton: "Warenkorb",
   },
 };

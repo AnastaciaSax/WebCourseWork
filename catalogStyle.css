@@ -680,6 +680,11 @@ body.dark-theme .copyright span {
 body.dark-theme .not-found-message {
     color: #aaa;
 }
+body.dark-theme .exit-button {
+    color: #fff;                  /* Белый цвет текста */
+    background-color: #8B6A1E;   /* Более темный золотистый фон */
+
+}
 /* sign out but */
 .exit-button {
     font-size: 20px;

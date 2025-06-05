@@ -115,41 +115,37 @@ function renderServices(page) {
 
     const addToCartButton = card.querySelector(".add-to-cart");
     addToCartButton.addEventListener("click", async () => {
-  if (!userId) {
-    alert("Please sign in to add services to your cart.");
-    return;
-  }
+      if (!userId) {
+        alert("Please sign in to add services to your cart.");
+        return;
+      }
 
-  try {
-    const res = await fetch(
-      `http://localhost:3001/cart?userId=${userId}&serviceId=${service.id}`
-    );
-    const existingItems = await res.json();
+      try {
+        const res = await fetch(
+          `http://localhost:3001/cart?userId=${userId}&serviceId=${service.id}`
+        );
+        const existingItems = await res.json();
 
-    if (existingItems.length > 0) {
-      alert("This service is already in your cart.");
-      return;
-    }
+        if (existingItems.length > 0) {
+          alert("This service is already in your cart.");
+          return;
+        }
 
-    await fetch("http://localhost:3001/cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        userId: userId,
-        serviceId: service.id,
-        title: service.title,
-        price: service.price,
-        category: service.category,
-        photoURL: service.photoURL
-      })
+        await fetch("http://localhost:3001/cart", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            userId: Number(userId),
+            serviceId: service.id,
+          }),
+        });
+
+        updateCartCount();
+        alert("Service added to cart!");
+      } catch (error) {
+        console.error("Failed to add service to cart:", error);
+      }
     });
-
-    updateCartCount();
-    alert("Service added to cart!");
-  } catch (error) {
-    console.error("Failed to add service to cart:", error);
-  }
-});
 
     serviceContainer.appendChild(card);
   });
