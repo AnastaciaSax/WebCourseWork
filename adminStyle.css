@@ -377,6 +377,7 @@ header nav a {
 .admin-controls button{
     padding: 0;
 }
+
 .admin-controls button img{
      width: 60px;
     height: 60px;
@@ -658,6 +659,80 @@ body.dark-theme .copyright span {
 body.dark-theme .not-found-message {
     color: #aaa;
 }
+body.dark-theme .exit-button {
+    color: #fff;                  /* Белый цвет текста */
+    background-color: #8B6A1E;   /* Более темный золотистый фон */
+}
+
+/* Модальное окно - фон */
+body.dark-theme .modal {
+    background-color: rgba(10, 10, 10, 0.75); /* Более темное затемнение */
+}
+
+/* Модальное окно - контент */
+body.dark-theme .modal-content {
+    background-color: #1f1f1f; /* Темный фон */
+    color: #ddd;               /* Светлый текст */
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1); /* Светлая тень */
+}
+
+/* Заголовок в модалке */
+body.dark-theme .modal-content h2 {
+    color: #eee;
+}
+
+/* Параграф */
+body.dark-theme .modal-content p {
+    color: #ccc;
+}
+
+/* Инпуты в модалке */
+body.dark-theme .modal-content input[type="text"],
+body.dark-theme .modal-content input[type="number"] {
+    background-color: #333;      /* Темный фон */
+    color: #eee;                 /* Светлый текст */
+    border: 1px solid #555;      /* Темная рамка */
+}
+
+/* При ошибке в инпутах - красный цвет лучше сделать более заметным на темном фоне */
+body.dark-theme .input-error-field {
+    border-bottom: 2px solid #ff6b6b !important; /* Красный с оттенком */
+    box-shadow: 0 1px 0 #ff6b6b;
+}
+
+/* Кнопки в модальном окне */
+body.dark-theme .modal-buttons button {
+     background: #444;    /* Фон для основной кнопки */
+    color: #eee;
+        border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+body.dark-theme .modal-buttons button[type="button"],
+body.dark-theme .modal-buttons button#cancel-edit,
+body.dark-theme .modal-buttons button#cancel-delete,
+body.dark-theme .modal-buttons button#cancel-new {
+    background: transparent;
+    color: #ccc;
+    border: 2px solid #666;
+    box-shadow: none;
+}
+
+/* Стили для списка select */
+body.dark-theme .place-list select {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #eee;
+}
+
+/* Ошибки в тексте */
+body.dark-theme .input-error {
+    color: #ff6b6b;
+}
+body.dark-theme .admin-controls button{
+    background-color:transparent;
+}
+
 /* sign out but */
 .exit-button {
     font-size: 20px;

@@ -33,3 +33,11 @@
   border-color: #f09f44;
   outline: none;
 }
+body.dark-theme .modal-buttons button[type="button"]:hover,
+body.dark-theme .modal-buttons button#cancel-edit:hover,
+body.dark-theme .modal-buttons button#cancel-delete:hover,
+body.dark-theme .modal-buttons button#cancel-new:hover {
+    background: #666;
+    color: #fff;
+    border-color: #aaa;
+}
