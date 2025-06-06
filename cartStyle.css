@@ -546,3 +546,43 @@ body.dark-theme .exit-button {
 #exit-button-mobile {
     display: none;
 }
+/* preloader */ 
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* или #000 для темного */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+body.dark-theme #preloader {
+  background-color: #000000; 
+}
+
+/* Спиннер */
+#preloader .spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top-color: #f1b46f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Убрать плавно */
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
