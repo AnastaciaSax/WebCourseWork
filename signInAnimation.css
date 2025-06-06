@@ -14,16 +14,17 @@ body.dark-theme .modal-buttons button#cancel-new:hover {
     color: #fff;
     border-color: #aaa;
 }
-button, #generateNickname, .create-account {
+.down-but {
+    border:none;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-button:hover, #generateNickname:hover, .create-account:hover {
+.down-but:hover {
   background-color: #d87b2a;
   transform: scale(1.05);
 }
 
-button:active {
+.down-but:active {
   transform: scale(0.95);
 }
 
@@ -81,4 +82,14 @@ input[type="password"]:focus {
   border-color: #d87b2a; /* чуть более яркий акцент */
   box-shadow: 0 0 12px rgba(216, 123, 42, 0.8);
   transform: scale(1.02);
+}
+.form-down span a{
+    font-size: 22px;
+    color: #C98740;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.form-down span a:hover {
+  color: #555; 
+  transform: scale(1.05);
 }

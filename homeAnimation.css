@@ -1,0 +1,152 @@
+.exit-button {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.exit-button:hover {
+  background-color: #666;
+    color: #fff;
+}
+.burger-toggle {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.burger-toggle:hover {
+  transform: rotate(90deg);
+}
+.interno-info-media img {
+  transition: transform 0.3s;
+}
+.interno-info-media img:hover {
+  transform: scale(1.1);
+}
+nav a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.interno-page a,
+.interno-service a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.interno-page a:hover,
+.interno-service a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.banner-but{
+    border:none;
+    cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.banner-but:hover {
+  background-color: #d87b2a;
+  transform: scale(1.05);
+}
+
+.banner-but:active {
+  transform: scale(0.95);
+}
+.slider-but button {
+  background: none;
+  transition: transform 0.3s ease;
+}
+
+.slider-but .prev:hover img {
+  transform: translateX(-5px);
+}
+
+.slider-but .next:hover img {
+  transform: translateX(5px);
+}
+.slides a img {
+  transition: filter 0.3s ease;
+}
+
+.slides a:hover img {
+  filter: brightness(1.1) contrast(1.1);
+}
+@keyframes slow-zoom {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.01); }
+}
+
+.map-embed {
+  animation: slow-zoom 10s ease-in-out infinite;
+}
+
+.map-container:hover .map-embed {
+  animation-play-state: paused;
+}
+@keyframes subtle-rotate {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(20deg); }
+  50%  { transform: rotate(0deg); }
+  75%  { transform: rotate(-20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.content-contact img {
+  animation: subtle-rotate 6s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.client-logo img {
+  display: inline-block;
+  animation: jump 1s ease-in-out infinite;
+}
+
+/* Задержки для поочередного прыжка */
+.client-logo img:nth-child(1) {
+  animation-delay: 0s;
+}
+.client-logo img:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.client-logo img:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.client-logo img:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.client-logo img:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.wanna-join-content-but .content-but {
+    border:none;
+  cursor: pointer;
+  display: inline-flex;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wanna-join-content-but .content-but .but-text {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+
+.wanna-join-content-but .content-but:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(169, 99, 64, 0.4);
+}
+.wanna-join-content-but .content-but:hover .but-text img {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
+
+.wanna-join-content-but .content-but:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+.wanna-join-content-but .content-but:active .but-text img {
+  transform: translateX(2px);
+}

@@ -4,3 +4,68 @@
     background-color: #F4F0EC;
     border: none;
 }
+.pagination button {
+    transition: background-color 0.3s;
+}
+.pagination button:hover {
+ background-color: #CDA274;
+  color: #fff;
+}
+.exit-button {
+  transition: background-color 0.3s;
+}
+.exit-button:hover {
+  background-color: #666;
+    color: #fff;
+}
+.burger-toggle {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.burger-toggle:hover {
+  transform: rotate(90deg);
+}
+.interno-info-media img {
+  transition: transform 0.3s;
+}
+.interno-info-media img:hover {
+  transform: scale(1.1);
+}
+nav a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.interno-page a,
+.interno-service a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.interno-page a:hover,
+.interno-service a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.remove-from-cart {
+     background: transparent;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.remove-from-cart:hover {
+  transform: scale(1.15);
+  filter: saturate(2);
+}
+.catalog-butt a{
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.catalog-butt a:hover{
+  transform: scale(1.15);
+  color:#f09f44;
+}
+.catalog-butt a img {
+  transition: transform 0.3s ease;
+}
+
+.catalog-butt a:hover img {
+  transform: scale(1.15) rotate(10deg);
+}

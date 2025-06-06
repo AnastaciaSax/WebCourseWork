@@ -167,6 +167,9 @@ function renderServices(page) {
 
     serviceContainer.appendChild(card);
   });
+        if (typeof window.handleImageReplacement === "function") {
+  window.handleImageReplacement();
+    }
 }
 
 function renderPagination() {

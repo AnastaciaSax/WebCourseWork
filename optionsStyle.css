@@ -174,7 +174,7 @@ header nav a {
 
 /* purblind */
 
-.purblind-mode {
+.purblind {
     margin: 200px 0 100px !important;
     display: flex;
     width: 62.55%;
@@ -957,7 +957,7 @@ body.purblind-color-0 .intro {
     background: #fff;
 }
 body.purblind-color-1 .intro{
-background: #fff;
+background: #F4F0EC;
 }
 body.purblind-color-2 .intro {
     background: #292F36;

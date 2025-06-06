@@ -1,0 +1,80 @@
+.exit-button {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.exit-button:hover {
+  background-color: #666;
+    color: #fff;
+}
+.burger-toggle {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.burger-toggle:hover {
+  transform: rotate(90deg);
+}
+.interno-info-media img {
+  transition: transform 0.3s;
+}
+.interno-info-media img:hover {
+  transform: scale(1.1);
+}
+nav a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.interno-page a,
+.interno-service a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.interno-page a:hover,
+.interno-service a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.person-info-media img {
+  animation: pulseShake 4s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.person-info-media img {
+  animation: pulseShake 2.5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.person-info-media img:nth-child(1) {
+  animation-delay: 0s;
+}
+.person-info-media img:nth-child(2) {
+  animation-delay: 1.25s; /* половина длительности цикла */
+}
+
+@keyframes pulseShake {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.15) rotate(6deg);
+    opacity: 0.7;
+  }
+  60% {
+    transform: scale(1.1) rotate(-6deg);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(1.12) rotate(4deg);
+    opacity: 0.85;
+  }
+}
+.person-img img {
+  transition: filter 0.3s ease;
+  filter: saturate(1); /* нормальная насыщенность */
+}
+
+.person-img img:hover {
+  filter: saturate(0.1); /* сильно выцветает (насыщенность 30%) */
+}

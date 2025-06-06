@@ -41,3 +41,91 @@ body.dark-theme .modal-buttons button#cancel-new:hover {
     color: #fff;
     border-color: #aaa;
 }
+
+.search-input input {
+  transition: box-shadow 0.3s;
+}
+.search-input input:focus {
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+.search img {
+  transition: transform 0.3s;
+}
+.search img:hover {
+  transform: scale(1.1);
+}
+
+.sort-select {
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+.sort-select:focus {
+  border-color: #888;
+}
+.select-arrow {
+  transition: transform 0.3s;
+}
+.sort:hover .select-arrow {
+  transform: rotate(180deg);
+}
+
+.cart-butt button {
+  transition: background-color 0.3s;
+}
+.cart-butt button:hover {
+  background-color: #555;
+  color: #fff;
+}
+.pagination button {
+    transition: background-color 0.3s;
+}
+.pagination button:hover {
+ background-color: #CDA274;
+  color: #fff;
+}
+.exit-button {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.exit-button:hover {
+  background-color: #666;
+    color: #fff;
+}
+.burger-toggle {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.burger-toggle:hover {
+  transform: rotate(90deg);
+}
+.interno-info-media img {
+  transition: transform 0.3s;
+}
+.interno-info-media img:hover {
+  transform: scale(1.1);
+}
+nav a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.interno-page a,
+.interno-service a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.interno-page a:hover,
+.interno-service a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+
+.admin-controls button {
+  background: transparent;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.admin-controls button:hover {
+  transform: scale(1.15);
+  filter: saturate(2);
+}

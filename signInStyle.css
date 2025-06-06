@@ -139,6 +139,9 @@ nav a {
 }
 
 /* inter info */
+.field-wrapper:last-of-type{
+    width: 100%;
+}
 
 .inter-info-form {
     padding-top: 10px;
@@ -212,11 +215,6 @@ nav a {
 .form-down span,
 .form-down span a {
     font-size: 22px;
-}
-
-.form-down span a {
-    font-size: 22px;
-    color: #C98740;
 }
 
 .down-but {

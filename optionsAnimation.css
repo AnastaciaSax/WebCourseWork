@@ -13,3 +13,96 @@
 .dark-theme .theme-switch input:checked+label {
    filter: invert(0);
 }
+.exit-button {
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.exit-button:hover {
+  background-color: #666;
+    color: #fff;
+}
+.burger-toggle {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.burger-toggle:hover {
+  transform: rotate(90deg);
+}
+.interno-info-media img {
+  transition: transform 0.3s;
+}
+.interno-info-media img:hover {
+  transform: scale(1.1);
+}
+nav a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+nav a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.interno-page a,
+.interno-service a {
+  transition: color 0.3s, border-bottom 0.3s;
+}
+.interno-page a:hover,
+.interno-service a:hover {
+  color: #f09f44;
+  border-bottom: 2px solid #555;
+}
+.color-section-field-half > div {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Сам блеск — псевдоэлемент */
+.color-section-field-half > div::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+  pointer-events: none;
+  border-radius: 6px;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+.reset-but img {
+  display: inline-block; /* Чтобы transform корректно работал */
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.reset-but {
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.reset-but:hover {
+  background-color: #696666;
+}
+.reset-but:active {
+  background-color: #4c4a49; /* чуть темнее при нажатии */
+}

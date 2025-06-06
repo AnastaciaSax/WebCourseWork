@@ -149,6 +149,9 @@ function renderServices(page) {
 
     serviceContainer.appendChild(card);
   });
+  if (typeof window.handleImageReplacement === "function") {
+  window.handleImageReplacement();
+}
 
   const items = document.querySelectorAll(".service-item");
   items.forEach((item) => item.classList.remove("first", "last"));
