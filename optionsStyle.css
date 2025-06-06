@@ -7,7 +7,7 @@
 body,
 html {
     width: 1920px;
-    margin: 0 auto;
+    margin: 0 auto; 
     background: url('./Assets/optionsBg.png') no-repeat center center;
     background-size: cover;
     overflow-x: hidden;
@@ -76,7 +76,7 @@ button {
 }
 
 .container {
-    width: 100%;
+    width: 100% !important;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -86,7 +86,7 @@ button {
 
 /* header */
 .header-container {
-    margin: 55px auto;
+    margin: 55px auto !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -174,8 +174,8 @@ header nav a {
 
 /* purblind */
 
-.purblind {
-    margin: 200px 0 100px;
+.purblind-mode {
+    margin: 200px 0 100px !important;
     display: flex;
     width: 62.55%;
     padding: 40px 63px;
@@ -833,7 +833,7 @@ body.dark-theme button {
     box-shadow: 0 0 8px #222 inset;
 }
 
-body.dark-theme .purblind,
+body.dark-theme .purblind-mode,
 body.dark-theme .typo-container,
 body.dark-theme .lang-container,
 body.dark-theme .theme-container {
@@ -864,6 +864,20 @@ body.dark-theme .exit-button {
     /* Более темный золотистый фон */
 
 }
+body.dark-theme #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000; /* или #000 для темного */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
 
 /* sign out but */
 .exit-button {
@@ -883,19 +897,19 @@ body.dark-theme .exit-button {
 body.purblind-color-0 {
     background: none !important;
     background-color: #fff !important;
-    color: #000 !important;
+    color: #292F36 !important;
 }
 
 body.purblind-color-1 {
     background: none !important;
-    background-color: #222 !important;
-    color: #fff !important;
+    background-color: #F4F0EC !important;
+    color: #52402D !important;
 }
 
 body.purblind-color-2 {
     background: none !important;
-    background-color: #f5f5f5 !important;
-    color: #222 !important;
+    background-color: #292F36  !important;
+    color: #fff !important;
 }
 body.purblind-color-0 h1,
 body.purblind-color-0 h2,
@@ -906,7 +920,7 @@ body.purblind-color-0 p,
 body.purblind-color-0 a,
 body.purblind-color-0 span,
 body.purblind-color-0 button {
-    color: #000 !important;
+    color: #292F36  !important;
 }
 
 body.purblind-color-1 h1,
@@ -918,7 +932,7 @@ body.purblind-color-1 p,
 body.purblind-color-1 a,
 body.purblind-color-1 span,
 body.purblind-color-1 button {
-    color: #fff !important;
+    color: #52402D !important;
 }
 
 body.purblind-color-2 h1,
@@ -930,24 +944,57 @@ body.purblind-color-2 p,
 body.purblind-color-2 a,
 body.purblind-color-2 span,
 body.purblind-color-2 button {
-    color: #222 !important;
+    color: #fff!important;
+}
+body.purblind-color-2 .optionBut img,
+body.purblind-color-2 .burger-toggle img,
+body.purblind-color-2 .checkbox span,
+body.purblind-color-2 .reset-but-text img,
+body.purblind-color-2 .interno-info-media img {
+    filter: invert(1);
+}
+body.purblind-color-0 .intro {
+    background: #fff;
+}
+body.purblind-color-1 .intro{
+background: #fff;
+}
+body.purblind-color-2 .intro {
+    background: #292F36;
+}
+body.purblind-color-0 .purblind,
+body.purblind-color-0 .typo-container,
+body.purblind-color-0 .lang-container,
+body.purblind-color-0 .theme-container {
+    background: #eeeeee;
+}
+
+body.purblind-color-1 .purblind,
+body.purblind-color-1 .typo-container,
+body.purblind-color-1 .lang-container,
+body.purblind-color-1 .theme-container {
+    background: #e6e1e1;
+}
+
+body.purblind-color-2 .purblind,
+body.purblind-color-2 .typo-container,
+body.purblind-color-2 .lang-container,
+body.purblind-color-2 .theme-container {
+    background: #44454f;
 }
 body.purblind-typo-0 {
     font-size: 14px !important;
     line-height: 1.4 !important;
-    font-family: Arial, sans-serif !important;
 }
 
 body.purblind-typo-1 {
     font-size: 16px !important;
     line-height: 1.6 !important;
-    font-family: Verdana, sans-serif !important;
 }
 
 body.purblind-typo-2 {
     font-size: 18px !important;
     line-height: 1.8 !important;
-    font-family: Georgia, serif !important;
 }
 body.purblind-hide-images img,
 body.purblind-hide-images .img-container,
@@ -966,4 +1013,42 @@ body.purblind-hide-images picture {
     font-family: "Jost", sans-serif;
     font-style: normal;
     font-weight: 400;
+}
+
+/* preloader */ 
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* или #000 для темного */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+/* Спиннер */
+#preloader .spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top-color: #f1b46f;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Убрать плавно */
+#preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
 }

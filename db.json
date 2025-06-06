@@ -4,9 +4,9 @@
       "id": "1",
       "title": "Cozy Retreat",
       "category": "Decor",
-      "place": "Bedroom",
       "price": 200,
-      "photoURL": "./Assets/bed1.png"
+      "photoURL": "./Assets/bed1.png",
+      "place": "Bedroom"
     },
     {
       "id": "2",
@@ -20,9 +20,9 @@
       "id": "3",
       "title": "Bohemian Dreams",
       "category": "Decor",
-      "place": "Bedroom",
       "price": 2500,
-      "photoURL": "./Assets/bed3.png"
+      "photoURL": "./Assets/bed3.png",
+      "place": "Bedroom"
     },
     {
       "id": "4",
@@ -370,11 +370,6 @@
       "serviceId": 5
     },
     {
-      "id": "4",
-      "userId": 2,
-      "serviceId": 7
-    },
-    {
       "id": "6",
       "userId": 3,
       "serviceId": 2
@@ -425,13 +420,9 @@
       "serviceId": 5
     },
     {
-      "id": "eb2d",
-      "userId": "2",
-      "serviceId": "4",
-      "title": "Elegant Nights",
-      "price": 1000,
-      "category": "Architecture",
-      "photoURL": "./Assets/bed4.png"
+      "id": "a481",
+      "userId": 2,
+      "serviceId": "20"
     }
   ]
 }

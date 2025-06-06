@@ -95,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
       applyTranslations(selectedLang);
     });
   });
+  
 
   // // === Unified Purblind Settings ===
 const purblindMode = localStorage.getItem("purblind") === "true";
@@ -181,4 +182,44 @@ if (purblindMode) {
       typoBlocks[i].classList.toggle("active", i === parseInt(typoStyle));
     });
   }
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.classList.add('hidden');
+      setTimeout(() => preloader.remove(), 500); // удаляет из DOM
+    }
+  });
+  window.handleImageReplacement = function () {
+  const purblindMode = localStorage.getItem("purblind") === "true";
+  const showImages = localStorage.getItem("showImages") === "true";
+
+  if (purblindMode && !showImages) {
+    document.querySelectorAll(".alt-replacement").forEach((el) => el.remove());
+
+    document.querySelectorAll("img").forEach((img) => {
+      const altText = img.getAttribute("alt") || "Изображение скрыто";
+      if (img.style.display === "none") return;
+
+      const replacement = document.createElement("div");
+      replacement.className = "alt-replacement";
+      replacement.textContent = altText;
+
+      img.style.display = "none";
+      img.insertAdjacentElement("beforebegin", replacement);
+    });
+
+    document.querySelectorAll("picture").forEach((pic) => {
+      pic.style.display = "none";
+    });
+
+  } else {
+    document.querySelectorAll(".alt-replacement").forEach((el) => el.remove());
+    document.querySelectorAll("img").forEach((img) => {
+      img.style.display = "";
+    });
+    document.querySelectorAll("picture").forEach((pic) => {
+      pic.style.display = "";
+    });
+  }
+};
 });

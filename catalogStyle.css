@@ -738,3 +738,125 @@ body.dark-theme #preloader {
   opacity: 0;
   pointer-events: none;
 }
+
+/* purblind */
+body.purblind-color-0 {
+    background: none !important;
+    background-color: #fff !important;
+    color: #292F36 !important;
+}
+
+body.purblind-color-1 {
+    background: none !important;
+    background-color: #F4F0EC !important;
+    color: #52402D !important;
+}
+
+body.purblind-color-2 {
+    background: none !important;
+    background-color: #292F36  !important;
+    color: #fff !important;
+}
+body.purblind-color-0 h1,
+body.purblind-color-0 h2,
+body.purblind-color-0 h3,
+body.purblind-color-0 h4,
+body.purblind-color-0 h5,
+body.purblind-color-0 p,
+body.purblind-color-0 a,
+body.purblind-color-0 span,
+body.purblind-color-0 button {
+    color: #292F36  !important;
+}
+
+body.purblind-color-1 h1,
+body.purblind-color-1 h2,
+body.purblind-color-1 h3,
+body.purblind-color-1 h4,
+body.purblind-color-1 h5,
+body.purblind-color-1 p,
+body.purblind-color-1 a,
+body.purblind-color-1 span,
+body.purblind-color-1 button {
+    color: #52402D !important;
+}
+
+body.purblind-color-2 h1,
+body.purblind-color-2 h2,
+body.purblind-color-2 h3,
+body.purblind-color-2 h4,
+body.purblind-color-2 h5,
+body.purblind-color-2 p,
+body.purblind-color-2 a,
+body.purblind-color-2 span,
+body.purblind-color-2 button {
+    color: #fff!important;
+}
+body.purblind-color-2 .optionBut img,
+body.purblind-color-2 .burger-toggle img,
+body.purblind-color-2 .checkbox span,
+body.purblind-color-2 .reset-but-text img,
+body.purblind-color-2 .interno-info-media img {
+    filter: invert(1);
+}
+body.purblind-color-0 .intro {
+    background: #fff;
+}
+body.purblind-color-1 .intro{
+background: #fff;
+}
+body.purblind-color-2 .intro {
+    background: #292F36;
+}
+body.purblind-color-0 .purblind,
+body.purblind-color-0 .typo-container,
+body.purblind-color-0 .lang-container,
+body.purblind-color-0 .theme-container {
+    background: #eeeeee;
+}
+
+body.purblind-color-1 .purblind,
+body.purblind-color-1 .typo-container,
+body.purblind-color-1 .lang-container,
+body.purblind-color-1 .theme-container {
+    background: #e6e1e1;
+}
+
+body.purblind-color-2 .purblind,
+body.purblind-color-2 .typo-container,
+body.purblind-color-2 .lang-container,
+body.purblind-color-2 .theme-container {
+    background: #44454f;
+}
+body.purblind-typo-0 {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+}
+
+body.purblind-typo-1 {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+body.purblind-typo-2 {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+}
+body.purblind-hide-images img,
+body.purblind-hide-images .img-container,
+body.purblind-hide-images picture {
+    display: none !important;
+}
+.alt-replacement {
+    display: block;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #777;
+    background: #eee;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-family: "Jost", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}

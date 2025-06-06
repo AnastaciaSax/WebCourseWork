@@ -9,6 +9,8 @@ toggle.addEventListener("click", () => {
 
 //options
 document.addEventListener("DOMContentLoaded", () => {
+
+
   const body = document.body;
   const themeSwitch = document.querySelector(
     '.theme-switch input[type="checkbox"]'
