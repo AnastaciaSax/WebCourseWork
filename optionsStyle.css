@@ -548,6 +548,8 @@ header nav a {
 .lang-content a {
     font-size: 36px;
     letter-spacing: 0.36px;
+    pointer-events: none;
+  cursor: default;
 }
 
 /* theme */
